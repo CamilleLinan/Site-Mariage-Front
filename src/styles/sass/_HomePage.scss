@@ -1,17 +1,31 @@
 .homepage {
+    margin: 0 -8px 0 -8px;
+    background-color: rgba(255, 247, 236, 0.402);
     &_date {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+        position: relative;
         &_img {
-            width: 50%;
+            width: 70%;
+            margin: auto;
             &_2 {
                 display: flex;
                 align-self: flex-end;
             }
         }
         &_container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             display: flex;
             flex-direction: column;
             align-self: center;
             text-align: center;
+            font-size: 23px;
+            font-family: 'Montserrat-Light';
         }
     }
 }
