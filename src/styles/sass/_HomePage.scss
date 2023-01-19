@@ -1,0 +1,17 @@
+.homepage {
+    &_date {
+        &_img {
+            width: 50%;
+            &_2 {
+                display: flex;
+                align-self: flex-end;
+            }
+        }
+        &_container {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            text-align: center;
+        }
+    }
+}
