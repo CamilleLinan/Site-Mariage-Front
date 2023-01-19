@@ -1,0 +1,14 @@
+@import 'fonts';
+@import 'variables';
+@import 'Header';
+@import 'Banner';
+
+html {
+    margin: 0 -8px;
+    font-family: 'Montserrat';
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
