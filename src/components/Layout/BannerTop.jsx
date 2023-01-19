@@ -1,6 +1,6 @@
 import imgBanner from '../../styles/img/blog-mariage-banner1.jpg'
 
-const Banner = () => {
+const BannerTop = () => {
     return(
         <div className='banner'>
             <img src={imgBanner} alt='blog-mariage-banner' className='banner_img' />
@@ -9,4 +9,4 @@ const Banner = () => {
     )
 }
 
-export default Banner
+export default BannerTop

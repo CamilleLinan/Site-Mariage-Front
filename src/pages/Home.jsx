@@ -1,12 +1,12 @@
 import HomePage from "../components/Home/HomePage"
-import Banner from "../components/Layout/Banner"
+import BannerTop from "../components/Layout/BannerTop"
 import Header from "../components/Layout/Header"
 
 const Home = () => {
     return (
         <>
             <Header />
-            <Banner />
+            <BannerTop />
             <HomePage />
         </>
     )
