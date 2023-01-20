@@ -1,3 +1,17 @@
+@media screen and (max-width: 768px) {
+    .section_date {
+        &_img {
+            width: 95% !important;
+        }
+        &_container {
+            font-size: 18px !important;
+            & h3 {
+                margin: 0.7rem 1rem !important;
+            }
+        }
+    }
+}
+
 .section_date {
     display: flex;
     flex-direction: column;
@@ -10,11 +24,6 @@
         width: 65%;
         max-width: 620px;
         margin: auto;
-        
-        &_2 {
-            display: flex;
-            align-self: flex-end;
-        }
     }
     
     &_container {

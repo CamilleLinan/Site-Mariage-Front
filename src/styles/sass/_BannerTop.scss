@@ -1,3 +1,11 @@
+@media screen and (max-width: 768px) {
+    .banner_top {
+        &_img {
+            height: 380px !important;
+        }
+    }
+}
+
 .banner_top {
     position: relative;
     margin: 0 -8px 0 -8px;
@@ -15,5 +23,7 @@
         font-family: 'Montserrat-Light';
         font-size: 35px;
         margin: 0;
+        width: 98%;
+        text-align: center;
     }
 }
