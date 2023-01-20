@@ -1,11 +1,11 @@
-import SectionDate from "./SectionDate"
-import SectionWelcome from "./SectionWelcome"
+import HomeSectionDate from "./HomeSectionDate"
+import HomeSectionWelcome from "./HomeSectionWelcome"
 
 const HomePage = () => {
     return(
         <section className='homepage'>
-            <SectionDate />
-            <SectionWelcome />
+            <HomeSectionDate />
+            <HomeSectionWelcome />
         </section>
     )
 }

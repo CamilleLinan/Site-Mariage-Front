@@ -18,7 +18,10 @@ const BlogIntro = () => {
             <p>Nous espérons que notre blog vous inspirera et vous aidera dans la 
             planification de votre propre mariage.</p>
 
-            <button><i>{plusIcon}</i> Nouvel article</button>
+            <button className="blog_intro_btn">
+                <i className="blog_intro_btn_icon">{plusIcon}</i> 
+                <span className="blog_intro_btn_txt">Nouvel article</span>
+            </button>
         </article>
     )
 }

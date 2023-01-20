@@ -1,6 +1,6 @@
 import dateFrame from '../../styles/img/date-frame.png'
 
-const SectionDate = () => {
+const HomeSectionDate = () => {
     return (
         <article className='section_date'>
             <img src={dateFrame} alt='feuille en aquarelle' className='section_date_img' />
@@ -13,4 +13,4 @@ const SectionDate = () => {
     )
 }
 
-export default SectionDate
+export default HomeSectionDate

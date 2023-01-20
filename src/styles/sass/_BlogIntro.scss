@@ -14,4 +14,24 @@
         font-size: 32px;
         font-family: 'Montserrat-Light';
     }
+    &_btn {
+        background-color: $primary-clr;
+        border: 1px solid $primary-clr;
+        border-radius: 1rem;
+        height: 3rem;
+        width: 30%;
+        min-width: 165px;
+        font-size: 18px;
+        margin-top: 1.2rem;
+        box-shadow: 0 0 5px #0000002e;
+        transition: all 400ms ease-in-out;
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 16px #0000002e;
+            filter: brightness(1.05);
+        }
+        &_icon {
+            margin-right: 0.5rem;
+        }
+    }
 }
