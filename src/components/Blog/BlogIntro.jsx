@@ -1,3 +1,8 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+
+const plusIcon = <FontAwesomeIcon icon={faPlus} />
+
 const BlogIntro = () => {
     return (
         <article className="blog_intro">
@@ -12,6 +17,8 @@ const BlogIntro = () => {
             amis. Et maintenant, le moment est enfin arrivé !</p>
             <p>Nous espérons que notre blog vous inspirera et vous aidera dans la 
             planification de votre propre mariage.</p>
+
+            <button><i>{plusIcon}</i> Nouvel article</button>
         </article>
     )
 }

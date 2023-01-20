@@ -1,13 +1,17 @@
 import BlogPage from "../components/Blog/BlogPage"
-import BannerPages from "../components/Layout/BannerPages"
+import BannerBottomPages from "../components/Layout/BannerBottomPages"
+import BannerTopPages from "../components/Layout/BannerTopPages"
+import Footer from "../components/Layout/Footer"
 import Header from "../components/Layout/Header"
 
 const Blog = () => {
     return (
         <>
             <Header />
-            <BannerPages />
+            <BannerTopPages />
             <BlogPage />
+            <BannerBottomPages />
+            <Footer />
         </>
     )
 }
