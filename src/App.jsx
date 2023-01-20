@@ -1,8 +1,10 @@
+import IndexRoutes from "./components/Routes/IndexRoutes";
+
 const App = () => {
   return (
-    <div className="App">
-      
-    </div>
+    <>
+      <IndexRoutes />
+    </>
   );
 }
 

@@ -1,0 +1,28 @@
+@import 'fonts';
+@import 'variables';
+@import 'Header';
+@import 'BannerTop';
+@import 'HomePage';
+@import 'SectionDate';
+@import 'SectionWelcome';
+@import 'BannerBottom';
+@import 'Footer';
+
+html {
+    margin: auto;
+    font-family: 'Montserrat';
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    display: flex;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
