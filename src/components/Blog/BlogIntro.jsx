@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
@@ -18,10 +19,11 @@ const BlogIntro = () => {
             <p>Nous espérons que notre blog vous inspirera et vous aidera dans la 
             planification de votre propre mariage.</p>
 
-            <button className="blog_intro_btn">
-                <i className="blog_intro_btn_icon">{plusIcon}</i> 
-                <span className="blog_intro_btn_txt">Nouvel article</span>
-            </button>
+            <NavLink className="blog_intro_link" title='Nouvel article' end to='/newArticle'>
+                <i className="blog_intro_link_icon">{plusIcon}</i> 
+                <span className="blog_intro_link_txt">Nouvel article</span>
+            </NavLink>
+            
         </article>
     )
 }
