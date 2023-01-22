@@ -1,0 +1,93 @@
+@media screen and (max-width: 768px) {
+    .new_article {
+        width: 95% !important;
+    }
+}
+
+.new_article {
+    width: 80%;
+    max-width: 700px;
+    margin: auto;
+    
+    &_header {
+        &_title {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 32px;
+            font-family: 'Montserrat-Light';
+        }
+    }
+
+    &_form {
+        width: 100%;
+
+        &_label {
+            font-size: 19px;
+        }
+        
+        &_input {
+            margin: 0.5rem 0 1.5rem 0;
+            border-radius: 0.3rem;
+            font-size: 16px;
+
+            &_title {
+                width: 99%;
+                height: 1.4rem;
+                border: 2px solid $primary-clr;
+                &:focus {
+                    outline-color: #a7ab91;
+                }
+            }
+
+            &_description {
+                height: auto;
+                min-height: 10rem;
+            }
+        }
+    }
+
+    &_footer {
+        display: flex;
+        justify-content: center;
+        
+        &_btn {
+            text-align: center;
+            width: 30%;
+            padding: 0.8rem 0;
+            margin: 2rem 1rem -0.3rem 1rem;
+            font-family: 'Montserrat-Bold';
+            border: 1px solid $primary-clr;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 5px #0000002e;
+            transition: all 400ms ease-in-out;
+            
+            &_cancel {
+                &:hover {
+                    background-color: $primary-clr;
+                }
+            }
+            
+            &_confirm {
+                background-color: $primary-clr;
+                &:hover {
+                    background-color: #a7ab91;
+                }
+            }
+        }
+    }
+}
+
+.ql {
+    &-toolbar.ql-snow {
+        border: 2px solid $primary-clr !important;
+        border-radius: 0.3rem 0.3rem 0 0;
+    }
+    
+    &-container.ql-snow {
+        min-height: 8rem;
+        border: 2px solid $primary-clr !important;
+        border-top: 0px !important;
+        border-radius: 0 0 0.3rem 0.3rem;
+        font-size: 16px;
+    }
+}
