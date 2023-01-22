@@ -1,4 +1,4 @@
-const SectionWelcome = () => {
+const HomeSectionWelcome = () => {
     return (
         <article className="section_welcome">
             <h3 className="section_welcome_title">Bienvenue à notre mariage !</h3>
@@ -25,4 +25,4 @@ const SectionWelcome = () => {
     )
 }
 
-export default SectionWelcome
+export default HomeSectionWelcome

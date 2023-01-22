@@ -2,11 +2,14 @@
 @import 'variables';
 @import 'Header';
 @import 'BannerTop';
-@import 'HomePage';
 @import 'SectionDate';
 @import 'SectionWelcome';
 @import 'BannerBottom';
 @import 'Footer';
+@import 'BannerPages';
+@import 'BlogIntro';
+@import 'BlogArticle';
+@import 'NewArticle';
 
 html {
     margin: auto;
@@ -25,4 +28,8 @@ ul {
 
 li {
     list-style-type: none;
+}
+
+button {
+    cursor: pointer;
 }

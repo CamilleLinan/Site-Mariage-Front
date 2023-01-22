@@ -1,4 +1,4 @@
-import imgBannerBottom from '../../styles/img/blog-mariage-banner.jpg'
+import imgBannerBottom from '../../styles/img/blog-mariage-bannerBottom.jpg'
 
 const BannerBottom = () => {
     return (

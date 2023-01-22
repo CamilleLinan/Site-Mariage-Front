@@ -31,7 +31,7 @@ const Header = () => {
                     <li><NavLink 
                         title='Blog du mariage' 
                         className='header_nav_link' 
-                        end to='/'
+                        end to='/blog'
                     >
                         BLOG DU MARIAGE
                     </NavLink></li>

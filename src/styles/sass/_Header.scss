@@ -6,6 +6,7 @@
             margin-left: 25px !important;
             margin-bottom: 0.5rem !important;
             justify-content: flex-start !important;
+            width: auto !important;
         }
         &_btn {
             display: block !important;
@@ -66,7 +67,7 @@
         width: 40px;
         padding: 0.5rem;
         border-radius: 50%;
-        background-color: #d1d5bb;
+        background-color: $primary-clr;
         font-size: 18px;
         cursor: pointer;
         transition: all 0.5s ease-in-out;
