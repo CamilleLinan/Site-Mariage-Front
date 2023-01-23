@@ -66,11 +66,12 @@ const ContactUsForm = () => {
                             id="message"
                             rows='4' cols='100'
                             placeholder="Votre message..."
-                            className="contact_form_input"
+                            className="contact_form_input contact_form_input_message"
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
                             required
                         />
+                    <button className="contact_form_btn">Envoyer</button>
                 </div>
             </form>
         </article>
