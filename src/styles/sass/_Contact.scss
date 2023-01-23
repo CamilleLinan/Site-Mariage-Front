@@ -1,0 +1,86 @@
+@media screen and (max-width: 768px) {
+    .contact {
+        width: 95% !important;
+        &_form {
+            width: 90% !important;
+            &_btn {
+                width: 70% !important;
+            }
+        }
+    }
+}
+
+.contact {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    &_intro {
+        &_title {
+            margin-top: 1.5rem;
+            font-size: 32px;
+            font-family: 'Montserrat-Light';
+        }
+        
+        &_content {
+            margin: 0.5rem 0;
+            font-size: 16px;
+        }
+    }
+
+    &_form {
+        width: 80%;
+        margin: auto;
+        
+        & span {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        &_container {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid $secondary-clr;
+            border-radius: 0.3rem;
+            padding: 1rem 0.8rem;
+        }
+
+        &_input {
+            height: 2.3rem;
+            margin-bottom: 1.5rem;
+            font-size: 16px;
+            border-radius: 0.3rem;
+            border: 2px solid $primary-clr;
+            &::placeholder {
+                color: rgba(0, 0, 0, 0.681);
+                font-family: 'Montserrat-Bold';
+                font-size: 14px;
+            }
+            &:focus {
+                outline-color: $secondary-clr;
+                border: 3px solid $secondary-clr;
+            }
+
+            &_message {
+                height: 5rem;
+                margin-bottom: 0;
+            }
+        }
+
+        &_btn {
+            width: 50%;
+            margin: 1rem auto 0 auto;
+            height: 2rem;
+            border-radius: 0.3rem;
+            border: 1px solid $primary-clr;
+            background-color: $primary-clr;
+            font-family: 'Montserrat-Bold';
+            font-size: 16px;
+            box-shadow: 0 0 5px #0000002e;
+            transition: all 400ms ease-in-out;
+            &:hover {
+                background-color: $secondary-clr;
+                box-shadow: 0 0 16px #0000002e;
+            }
+        }
+    }
+}

@@ -1,19 +1,19 @@
 import Header from "../components/Layout/Header"
 import BannerTopPages from "../components/Layout/BannerTopPages"
-import BlogPage from "../components/Blog/BlogPage"
+import ContactPage from "../components/Contact/ContactPage"
 import BannerBottomPages from "../components/Layout/BannerBottomPages"
 import Footer from "../components/Layout/Footer"
 
-const Blog = () => {
+const Contact = () => {
     return (
         <>
             <Header />
             <BannerTopPages />
-            <BlogPage />
+            <ContactPage />
             <BannerBottomPages />
             <Footer />
         </>
     )
 }
 
-export default Blog
+export default Contact

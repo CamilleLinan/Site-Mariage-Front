@@ -4,7 +4,9 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 const NewArticlePage = () => {
+    const [title, setTitle] = useState('')
     const [description, setDescription] = useState('');
+
 
     return (
         <section className="new_article">
@@ -21,6 +23,8 @@ const NewArticlePage = () => {
                         name="title"
                         id="title"
                         className="new_article_form_input new_article_form_input_title"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
                         required
                     /> 
                     <br />
@@ -31,9 +35,9 @@ const NewArticlePage = () => {
                         theme="snow"
                         name='description' 
                         id="description"
-                        value={description} 
-                        onChange={setDescription} 
                         className="new_article_form_input new_article_form_input_description"
+                        value={description} 
+                        onChange={(e) => setDescription(e.target.value)} 
                         required 
                     />
 

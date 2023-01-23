@@ -1,19 +1,19 @@
 import Header from "../components/Layout/Header"
 import BannerTopPages from "../components/Layout/BannerTopPages"
-import BlogPage from "../components/Blog/BlogPage"
+import ConfirmPage from "../components/Confirm/ConfirmPage"
 import BannerBottomPages from "../components/Layout/BannerBottomPages"
 import Footer from "../components/Layout/Footer"
 
-const Blog = () => {
+const Confirm = () => {
     return (
         <>
             <Header />
             <BannerTopPages />
-            <BlogPage />
+            <ConfirmPage />
             <BannerBottomPages />
             <Footer />
         </>
     )
 }
 
-export default Blog
+export default Confirm
