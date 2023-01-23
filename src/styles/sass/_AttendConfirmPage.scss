@@ -1,0 +1,74 @@
+@media screen and (max-width: 768px) {
+    .confirm_section {
+        width: 95% !important;
+        &_form {
+            &_container {
+                width: 95% !important;
+            }
+            &_btn {
+                width: 50% !important;
+            }
+        }
+    }
+}
+
+.confirm_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+    max-width: 800px;
+    
+    &_content {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    &_form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        &_container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 76%;
+            margin-top: 1rem;
+        }
+
+        &_label {
+            display: none;
+        }
+
+        &_input {
+            width: 45%;
+            height: 2rem;
+            border: 2px solid $primary-clr;
+            border-radius: 0.3rem;
+            font-size: 16px;
+            &:focus {
+                outline-color: $secondary-clr;
+            }
+        }
+
+        &_btn {
+            width: 35%;
+            align-self: center;
+            font-family: 'Montserrat-Bold';
+            margin-top: 1.3rem;
+            border: 1px solid $primary-clr;
+            border-radius: 0.3rem;
+            height: 2.3rem;
+            background-color: $primary-clr;
+            box-shadow: 0 0 5px #0000002e;
+            transition: all 400ms ease-in-out;
+            font-size: 16px;
+            &:hover {
+                background-color: $secondary-clr;
+            }
+        }
+    }
+}

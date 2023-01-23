@@ -35,7 +35,7 @@
                 height: 1.4rem;
                 border: 2px solid $primary-clr;
                 &:focus {
-                    outline-color: #a7ab91;
+                    outline-color: $secondary-clr;
                 }
             }
 
@@ -70,7 +70,7 @@
             &_confirm {
                 background-color: $primary-clr;
                 &:hover {
-                    background-color: #a7ab91;
+                    background-color: $secondary-clr;
                 }
             }
         }
