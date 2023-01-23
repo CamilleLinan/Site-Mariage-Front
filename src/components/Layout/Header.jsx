@@ -55,7 +55,7 @@ const Header = () => {
                     <li><NavLink 
                         title='Nous contacter' 
                         className='header_nav_link' 
-                        end to='/'
+                        end to='/login'
                     >
                         SE CONNECTER
                     </NavLink></li>
