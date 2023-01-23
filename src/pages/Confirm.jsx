@@ -1,15 +1,15 @@
 import Header from "../components/Layout/Header"
 import BannerTopPages from "../components/Layout/BannerTopPages"
-import AttendConfirmPage from "../components/AttendConfirm/AttendConfirmPage"
+import ConfirmPage from "../components/Confirm/ConfirmPage"
 
-const AttendConfirm = () => {
+const Confirm = () => {
     return (
         <>
             <Header />
             <BannerTopPages />
-            <AttendConfirmPage />
+            <ConfirmPage />
         </>
     )
 }
 
-export default AttendConfirm
+export default Confirm

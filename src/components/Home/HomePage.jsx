@@ -3,7 +3,7 @@ import HomeSectionWelcome from "./HomeSectionWelcome"
 
 const HomePage = () => {
     return(
-        <section className='homepage'>
+        <section className='home'>
             <HomeSectionDate />
             <HomeSectionWelcome />
         </section>

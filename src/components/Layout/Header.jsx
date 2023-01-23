@@ -39,25 +39,25 @@ const Header = () => {
                     <li><NavLink 
                         title='Confirmer sa présence' 
                         className='header_nav_link' 
-                        end to='/attendConfirm'
+                        end to='/confirm'
                     >
                         CONFIRMER SA PRÉSENCE
                     </NavLink></li>
                     
                     <li><NavLink 
-                        title="Livre d'or" 
+                        title='Nous contacter' 
                         className='header_nav_link' 
-                        end to='/'
+                        end to='/contact'
                     >
-                        LIVRE D'OR
+                        NOUS CONTACTER
                     </NavLink></li>
-                    
+
                     <li><NavLink 
                         title='Nous contacter' 
                         className='header_nav_link' 
                         end to='/'
                     >
-                        NOUS CONTACTER
+                        SE CONNECTER
                     </NavLink></li>
                 </ul>
             </div>

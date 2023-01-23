@@ -1,15 +1,13 @@
 @import 'fonts';
 @import 'variables';
 @import 'Header';
-@import 'Banner';
-@import 'SectionDate';
-@import 'SectionWelcome';
-@import 'Footer';
-@import 'BannerPages';
-@import 'BlogIntro';
-@import 'BlogArticle';
+@import 'Banners';
+@import 'Home';
+@import 'Blog';
 @import 'NewArticle';
-@import 'AttendConfirmPage';
+@import 'Confirm';
+@import 'Contact';
+@import 'Footer';
 
 html {
     margin: auto;
@@ -19,6 +17,7 @@ html {
 a {
     text-decoration: none;
     color: black;
+    cursor: pointer;
 }
 
 ul {

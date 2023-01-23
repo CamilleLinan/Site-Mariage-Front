@@ -1,0 +1,51 @@
+.contact {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    &_intro {
+        &_title {
+            margin-top: 1.5rem;
+            font-size: 32px;
+            font-family: 'Montserrat-Light';
+        }
+        
+        &_content {
+            margin: 0.5rem 0;
+            font-size: 16px;
+        }
+    }
+
+    &_form {
+        width: 80%;
+        margin: auto;
+        & span {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        &_container {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid $secondary-clr;
+            border-radius: 0.3rem;
+            padding: 1rem 0.8rem;
+        }
+
+        &_input {
+            height: 2.3rem;
+            margin-bottom: 1.5rem;
+            font-size: 16px;
+            border-radius: 0.3rem;
+            border: 2px solid $primary-clr;
+            &::placeholder {
+                color: rgba(0, 0, 0, 0.681);
+                font-family: 'Montserrat-Bold';
+                font-size: 14px;
+            }
+            &:focus {
+                outline-color: $secondary-clr;
+                border: 3px solid $secondary-clr;
+            }
+        }
+    }
+}
