@@ -1,12 +1,14 @@
 import BlogArticle from "./BlogArticle"
 import BlogIntro from "./BlogIntro"
 
-const BlogPage = () => {
+const BlogPage = ({ propIsAdmin }) => {
     return (
-        <section className="blog_page">
-            <BlogIntro />
-            <BlogArticle />
-        </section>
+        <div className="container_blog_page">
+            <section className="blog_page">
+                <BlogIntro propIsAdmin={propIsAdmin} />
+                <BlogArticle />
+            </section>
+        </div>
     )
 }
 

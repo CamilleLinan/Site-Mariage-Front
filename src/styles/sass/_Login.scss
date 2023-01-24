@@ -1,7 +1,11 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
     .login {
         width: 80% !important;
     }
+}
+
+.container {
+    padding-bottom: 13rem;
 }
 
 .login {
@@ -59,6 +63,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            
             &_title {
                 text-align: center;
                 color: rgb(31, 139, 31);

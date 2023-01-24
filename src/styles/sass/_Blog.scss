@@ -1,4 +1,8 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
+    .container_blog_page {
+        padding-bottom: 15rem !important;
+    }
+
     .blog {
         &_intro {
             width: 95% !important;
@@ -11,6 +15,10 @@
             }
         }
     }
+}
+
+.container_blog_page {
+    padding-bottom: 22rem;
 }
 
 .blog {

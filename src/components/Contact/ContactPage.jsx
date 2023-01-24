@@ -3,10 +3,12 @@ import ContactIntro from "./ContactIntro"
 
 const ContactPage = () => {
     return (
-        <section className="contact">
-            <ContactIntro />
-            <ContactForm />
-        </section>
+        <div className="container_contact">
+            <section className="contact">
+                <ContactIntro />
+                <ContactForm />
+            </section>
+        </div>
     )
 }
 

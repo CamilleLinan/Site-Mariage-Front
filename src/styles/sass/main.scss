@@ -8,11 +8,19 @@
 @import 'Confirm';
 @import 'Contact';
 @import 'Login';
+@import 'ErrorAuth';
 @import 'Footer';
 
 html {
+    position: relative;
     margin: auto;
+    min-height: 100vh;
     font-family: 'Montserrat';
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
 }
 
 a {

@@ -1,4 +1,8 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
+    .container_contact {
+        padding-bottom: 16rem !important;
+    }
+
     .contact {
         width: 95% !important;
         &_form {
@@ -10,8 +14,13 @@
     }
 }
 
+.container_contact {
+    padding-bottom: 22rem;
+}
+
 .contact {
-    width: 60%;
+    width: 70%;
+    max-width: 800px;
     margin: auto;
     text-align: center;
     &_intro {
@@ -29,6 +38,7 @@
 
     &_form {
         width: 80%;
+        max-width: 500px;
         margin: auto;
         
         & span {
