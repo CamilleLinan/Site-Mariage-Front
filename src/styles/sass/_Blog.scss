@@ -111,5 +111,11 @@
             font-size: 16px;
             white-space: pre-line;
         }
+
+        &_comment {
+            margin-bottom: 0;
+            font-size: 14px;
+            opacity: 0.7;
+        }
     }
 }
