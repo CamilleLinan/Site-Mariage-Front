@@ -1,7 +1,5 @@
 import { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom"
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
 import AuthContext from "../../context/authContext";
 import axios from "axios";
 
@@ -68,16 +66,15 @@ const NewArticleForm = () => {
                     <br />
 
                 <label htmlFor="description" className="new_article_form_label">Description :</label>
-                    <ReactQuill
-                        theme="snow"
+                    <textarea
                         name='description' 
                         id="description"
                         className="new_article_form_input new_article_form_input_description"
                         value={articleDescription} 
-                        onChange={(e) => setArticleDescription(e.target.value)} 
+                        onChange={(e) => setArticleDescription(e.target.value)}
                         required 
                     />
-                
+
                 <label htmlFor="file" className="new_article_form_label">Ajouter une image :</label>
                     <div className="new_article_form_container">
                         {previewPicture && <img src={previewPicture} alt='article-mariage-cover' className="new_article_form_img" />}

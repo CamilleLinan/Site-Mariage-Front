@@ -65,18 +65,19 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 70%;
-        margin: auto;
+        width: 80%;
         max-width: 800px;
+        margin: auto;
         
         &_deco {
             display: flex;
             align-self: center;
             background-color: $primary-clr;
             height: 3px;
-            width: 50%;
+            width: 65%;
             min-width: 350px;
-            margin: 2.5rem 0 2.7rem 0;
+            max-width: 600px;
+            margin: 3rem 0;
             border-radius: 1rem;
         }
         
@@ -84,7 +85,7 @@
             display: flex;
             flex-direction: column;
             font-size: 26px;
-            margin: 0.5rem 0 0.7rem 0;
+            margin: -0.4rem 0 0.7rem 0;
             
             &_underline {
                 display: block;
@@ -95,11 +96,20 @@
                 background-color: $primary-clr;
             }
         }
+
+        &_img {
+            width: 90%;
+            object-fit: cover;
+            border-radius: 0.3rem;
+            margin: 1rem 0;
+            box-shadow: 0 0 16px #0000002e;
+        }
         
         &_content {
             margin: 0.5rem 0;
             text-align: center;
             font-size: 16px;
+            white-space: pre-line;
         }
     }
 }
