@@ -1,5 +1,6 @@
 const BlogArticle = () => {
     return (
+        <>
         <article className="blog_article">
             <span className="blog_article_deco"></span>
             <h3 className="blog_article_title">Titre de l'article <span className="blog_article_title_underline"></span></h3>
@@ -16,6 +17,7 @@ const BlogArticle = () => {
             mercede accepta lucris quosdam et prandiis inserunt subditicios ignobiles et 
             obscuros.</p>
         </article>
+        </>
     )
 }
 

@@ -4,7 +4,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const plusIcon = <FontAwesomeIcon icon={faPlus} />
 
-const BlogIntro = () => {
+const BlogIntro = ({ propIsAdmin }) => {
     return (
         <article className="blog_intro">
             <h2 className="blog_intro_title">Blog du mariage</h2>
@@ -18,12 +18,13 @@ const BlogIntro = () => {
             amis. Et maintenant, le moment est enfin arrivé !</p>
             <p>Nous espérons que notre blog vous inspirera et vous aidera dans la 
             planification de votre propre mariage.</p>
-
-            <NavLink className="blog_intro_link" title='Nouvel article' end to='/newArticle'>
-                <i className="blog_intro_link_icon">{plusIcon}</i> 
-                <span className="blog_intro_link_txt">Nouvel article</span>
-            </NavLink>
             
+            {propIsAdmin === true &&
+                <NavLink className="blog_intro_link" title='Nouvel article' end to='/newArticle'>
+                    <i className="blog_intro_link_icon">{plusIcon}</i> 
+                    <span className="blog_intro_link_txt">Nouvel article</span>
+                </NavLink>
+            }
         </article>
     )
 }

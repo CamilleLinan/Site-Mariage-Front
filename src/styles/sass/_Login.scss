@@ -1,0 +1,151 @@
+@media screen and (max-width: 850px) {
+    .container_login {
+        padding-bottom: 13rem !important;
+    }
+
+    .login {
+        width: 80% !important;
+    }
+}
+
+.container_login {
+    padding-bottom: 17rem;
+}
+
+.login {
+    width: 50%;
+    max-width: 450px;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid $secondary-clr;
+    border-radius: 0.3rem;
+    
+    &_header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        
+        &_btn {
+            width: 50%;
+            height: 3.5rem;
+            border: transparent; 
+            border-bottom: 2px solid $secondary-clr;
+            font-family: 'Montserrat-Bold';
+            font-size: 16px;
+            transition: all 400ms ease-in-out;
+            
+            &_1 {
+                border-radius: 0.2rem 0 0 0;
+            }
+            &_2 {
+                border-radius: 0 0 0.2rem 0;
+            }
+            
+            &_active {
+                background-color: $primary-clr;
+                &:hover {
+                    background-color: $secondary-clr;
+                }
+            }
+            &_inactive {
+                background-color: transparent;
+                &:hover {
+                    background-color: $secondary-clr;
+                }
+            }
+        }
+    }
+    
+    &_form {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+
+        &_container {
+            height: 170px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            &_title {
+                text-align: center;
+                color: rgb(31, 139, 31);
+                font-family: 'Montserrat-Bold';
+                margin: -0.8rem 0 0 0;
+                
+            }
+        }
+        
+        &_input {
+            height: 1.8rem;
+            border: 2px solid $primary-clr;
+            border-radius: 0.3rem;
+            margin: 0.3rem 0 0.5rem 0;
+            font-size: 16px;
+            &:focus {
+                outline-color: $secondary-clr;
+            }
+            
+            &_password {
+                width: 100%;
+            }
+            
+            &_error {
+                border: 2px solid rgb(207, 0, 0);
+                &:focus {
+                    outline-color: $secondary-clr !important;
+                    border: 2px solid rgb(207, 0, 0)
+                }
+            }
+        }
+
+        &_error {
+            color: rgb(207, 0, 0);
+            font-family: 'Montserrat-Bold';
+            margin: 0 0 0.7rem 0;
+            
+            &_server {
+                text-align: center;
+                margin-top: 0.5rem;
+            }
+        }
+        
+        &_btn {
+            margin-top: 0.5rem;
+            height: 2.5rem;
+            background-color: $primary-clr;
+            border: 1px solid $primary-clr;
+            border-radius: 0.3rem;
+            font-family: 'Montserrat-Bold';
+            font-size: 16px;
+            box-shadow: 0 0 5px #0000002e;
+            transition: all 400ms ease-in-out;
+            &:hover {
+                background-color: $secondary-clr;
+                box-shadow: 0 0 16px #0000002e;
+            }
+        }
+    }
+}
+
+// ICON PASSWORD \\
+.container_password_input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.icon_password {
+    position: absolute;
+    bottom: 10px;
+    right: 2px;
+    padding: 0.3rem 1rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid $primary-clr;
+    background-color: $primary-clr;
+    border-radius: 0 0.1rem 0.1rem 0;
+}

@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import AuthContext from "../../context/authContext";
 
 const menuIcon = <FontAwesomeIcon icon={faBars} />
 
 const Header = () => {
+    const authCtx = useContext(AuthContext);
+    const isLoggedIn = authCtx.isLoggedIn;
     const [isNavExpanded, setIsNavExpanded] = useState(false)
 
     return (
@@ -52,13 +55,24 @@ const Header = () => {
                         NOUS CONTACTER
                     </NavLink></li>
 
-                    <li><NavLink 
-                        title='Nous contacter' 
-                        className='header_nav_link' 
-                        end to='/'
-                    >
-                        SE CONNECTER
-                    </NavLink></li>
+                    {isLoggedIn ? 
+                        <li><NavLink 
+                            title='Se déconnecter'
+                            className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_2 header_nav_link_active" : "header_nav_link header_nav_link_2 header_nav_link_inactive")}
+                            onClick={authCtx.logout}
+                            end to='/'
+                        >
+                            DÉCONNEXION
+                        </NavLink></li> 
+                    :
+                        <li><NavLink 
+                        className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_2 header_nav_link_active" : "header_nav_link header_nav_link_2 header_nav_link_inactive")}
+                        title='Se connecter'
+                        end to='/login'
+                        >
+                            CONNEXION
+                        </NavLink></li> 
+                    }
                 </ul>
             </div>
         </header>

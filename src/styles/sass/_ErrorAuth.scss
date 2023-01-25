@@ -1,0 +1,28 @@
+@media screen and (max-width: 850px) {
+    .error_auth {
+        width: 80% !important;
+    }
+}
+
+.container_error_auth {
+    padding-bottom: 18rem;
+}
+
+.error_auth {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    max-width: 800px;
+    margin: 3rem auto 3rem auto;
+    text-align: center;
+    border: 2px solid $secondary-clr;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #f1f4e440;
+    
+    &_title {
+        margin-top: 0;
+    }
+}

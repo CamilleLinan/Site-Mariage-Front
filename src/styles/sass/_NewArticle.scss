@@ -1,11 +1,15 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
     .new_article {
         width: 95% !important;
     }
 }
 
+.container_new_article {
+    padding-bottom: 20rem;
+}
+
 .new_article {
-    width: 80%;
+    width: 70%;
     max-width: 700px;
     margin: auto;
     

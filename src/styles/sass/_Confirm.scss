@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
     .confirm_section {
         width: 95% !important;
         &_form {
@@ -10,6 +10,10 @@
             }
         }
     }
+}
+
+.container_confirm_section {
+    padding-bottom: 20rem;
 }
 
 .confirm_section {

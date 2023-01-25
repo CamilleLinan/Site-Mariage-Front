@@ -1,5 +1,5 @@
-@media screen and (max-width: 768px) {
-    .section {
+@media screen and (max-width: 850px) {
+    .home_section {
         &_date {
             &_img {
                 width: 95% !important;
@@ -20,8 +20,8 @@
     }
 }
 
-.home {
-    &_section_date {
+.home_section {
+    &_date {
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -48,7 +48,7 @@
         }
     }
 
-    &_section_welcome {
+    &_welcome {
         width: 60%;
         max-width: 700px;
         margin: auto;
