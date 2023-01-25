@@ -12,7 +12,7 @@ const LoginPage = () => {
     }
 
     return (
-        <div className="container">
+        <div className="container_login">
             <section className="login">
                 <header className="login_header">
                     <button onClick={handleModals} id="signup" className={signUpModal ? "login_header_btn login_header_btn_1 login_header_btn_active" : "login_header_btn login_header_btn_1 login_header_btn_inactive"}>S'inscrire</button>

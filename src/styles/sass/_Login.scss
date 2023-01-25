@@ -1,16 +1,20 @@
 @media screen and (max-width: 850px) {
+    .container_login {
+        padding-bottom: 13rem !important;
+    }
+
     .login {
         width: 80% !important;
     }
 }
 
-.container {
-    padding-bottom: 13rem;
+.container_login {
+    padding-bottom: 17rem;
 }
 
 .login {
     width: 50%;
-    max-width: 800px;
+    max-width: 450px;
     margin: 3rem auto;
     display: flex;
     flex-direction: column;
@@ -24,7 +28,7 @@
         
         &_btn {
             width: 50%;
-            height: 3rem;
+            height: 3.5rem;
             border: transparent; 
             border-bottom: 2px solid $secondary-clr;
             font-family: 'Montserrat-Bold';
@@ -122,10 +126,6 @@
                 box-shadow: 0 0 16px #0000002e;
             }
         }
-
-        &_div {
-            height: 110px;
-        }
     }
 }
 
@@ -148,5 +148,4 @@
     border: 1px solid $primary-clr;
     background-color: $primary-clr;
     border-radius: 0 0.1rem 0.1rem 0;
-    font-family: 'Montserrat-Bold';
 }
