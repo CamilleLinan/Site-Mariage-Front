@@ -1,6 +1,10 @@
 @media screen and (max-width: 850px) {
     .new_article {
         width: 95% !important;
+        &_form_img {
+            width: 98% !important;
+            max-width: 550px;
+        }
     }
 }
 
@@ -47,6 +51,21 @@
                 height: auto;
                 min-height: 10rem;
             }
+        }
+
+        &_container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &_img {
+            width: 85%;
+            object-fit: cover;
+            border-radius: 0.3rem;
+            margin: 1rem 0;
+            box-shadow: 0 0 16px #0000002e;
         }
     }
 
