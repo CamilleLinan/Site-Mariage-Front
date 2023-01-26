@@ -10,7 +10,7 @@ const BlogDisplayArticles = ({ propIsAdmin }) => {
     const [ articlesData, setArticlesData ] = useState([])
     const [ errorServer, setErrorServer ] = useState('');
 
-    const getSaucesData = useCallback(async () => {
+    const getArticlesData = useCallback(async () => {
         await axios({
             method: 'GET',
             url: 'http://localhost:5000/api/articles',
@@ -26,20 +26,20 @@ const BlogDisplayArticles = ({ propIsAdmin }) => {
     }, [authCtx.token, errorServer]);
 
     useEffect(() => {
-        getSaucesData();
-    }, [getSaucesData]);
+        getArticlesData();
+    }, [getArticlesData]);
 
     return(
         <>
             {articlesData.length > 0 ?
                 <ul className="blog_article">
                     {articlesData.map((article, i) => (
-                        <li key={i}>
+                        <li key={article._id}>
                             {propIsAdmin === true &&
-                                <BlogModifyArticle /> 
+                                <BlogModifyArticle propArticleId={article._id} /> 
                             }
                             <BlogArticle
-                                img={article.articlePicture}
+                                img={article.picture}
                                 title={article.title}
                                 description={article.description}    
                             />

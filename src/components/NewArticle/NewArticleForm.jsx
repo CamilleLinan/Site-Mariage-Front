@@ -8,8 +8,8 @@ const NewArticleForm = () => {
 
     const [ articleTitle, setArticleTitle ] = useState('')
     const [ articleDescription, setArticleDescription ] = useState('');
-    const [ previewPicture, setPreviewPicture ] = useState('');
     const [ articlePicture, setArticlePicture ] = useState('');
+    const [ previewPicture, setPreviewPicture ] = useState('');
 
     const [ errorServer, setErrorServer ] = useState('');
 
@@ -30,7 +30,6 @@ const NewArticleForm = () => {
         e.preventDefault();
 
         let formData = new FormData();
-        formData.append('userId', authCtx.userId);
         formData.append('title', articleTitle);
         formData.append('description', articleDescription);
         formData.append('image', articlePicture);
@@ -62,8 +61,7 @@ const NewArticleForm = () => {
                         value={articleTitle}
                         onChange={(e) => setArticleTitle(e.target.value)}
                         required
-                    /> 
-                    <br />
+                    />
 
                 <label htmlFor="description" className="new_article_form_label">Description :</label>
                     <textarea
