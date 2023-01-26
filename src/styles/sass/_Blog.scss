@@ -10,6 +10,11 @@
         
         &_article {
             width: 95% !important;
+            
+            &_modify {
+                right: 1rem !important;
+            }
+            
             &_deco {
                 width: 70% !important;
             }
@@ -68,6 +73,66 @@
         width: 80%;
         max-width: 800px;
         margin: auto;
+
+        & li {
+            position: relative;
+        }
+
+        &_modify {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: absolute;
+            right: 4rem;
+            top: 6rem;
+            
+            &_icon {
+                display: flex;
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+                border-radius: 5rem;
+                background-color: $primary-clr;
+                justify-content: center;
+                align-items: center;
+                align-self: end;
+                opacity: 0.5;
+                transition: all 350ms ease-in-out;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            
+            &_menu {
+                display: none;
+                
+                &_expanded {
+                    display: block;
+                    background-color: $tertiary-clr;
+                    border: 1px solid $secondary-clr;
+                    border-radius: 0.3rem;
+                    backdrop-filter: blur(10px);
+                    font-family: 'Montserrat-Bold';
+                    margin-top: 0.5rem;
+                    opacity: 1;
+                    text-align: center;
+                }
+
+                &_content {
+                    padding: 0 0.5rem;
+                    cursor: pointer;
+                }
+
+                &_deco {
+                    display: block;
+                    width: 100%;
+                    height: 1px;
+                    background-color: $secondary-clr;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+        }
         
         &_deco {
             display: flex;

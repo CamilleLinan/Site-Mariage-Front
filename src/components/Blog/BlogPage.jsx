@@ -6,7 +6,7 @@ const BlogPage = ({ propIsAdmin }) => {
         <div className="container_blog_page">
             <section className="blog_page">
                 <BlogIntro propIsAdmin={propIsAdmin} />
-                <BlogDisplayArticles />
+                <BlogDisplayArticles propIsAdmin={propIsAdmin} />
             </section>
         </div>
     )

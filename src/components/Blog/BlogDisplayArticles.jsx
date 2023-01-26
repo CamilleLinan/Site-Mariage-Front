@@ -2,8 +2,9 @@ import axios from "axios";
 import { useCallback, useContext, useEffect, useState } from "react";
 import AuthContext from "../../context/authContext";
 import BlogArticle from "./BlogArticle";
+import BlogModifyArticle from "./BlogModifyArticle";
 
-const BlogDisplayArticles = () => {
+const BlogDisplayArticles = ({ propIsAdmin }) => {
     const authCtx = useContext(AuthContext);
 
     const [ articlesData, setArticlesData ] = useState([])
@@ -34,6 +35,9 @@ const BlogDisplayArticles = () => {
                 <ul className="blog_article">
                     {articlesData.map((article, i) => (
                         <li key={i}>
+                            {propIsAdmin === true &&
+                                <BlogModifyArticle /> 
+                            }
                             <BlogArticle
                                 img={article.articlePicture}
                                 title={article.title}
