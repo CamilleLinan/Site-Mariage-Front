@@ -1,15 +1,33 @@
-@media screen and (max-width: 850px) {
-    .container_login {
-        padding-bottom: 13rem !important;
-    }
+@font-face {
+    font-family: 'The-Seasons';
+    src: url('fonts/The-Seasons.ttf');
+}
 
+@media screen and (max-width: 850px) {
     .login {
         width: 80% !important;
     }
 }
 
 .container_login {
-    padding-bottom: 17rem;
+    &_header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        margin-top: 2.5rem;
+        max-width: 800px;
+        &_logo {
+            width: 240px;
+            margin: auto;
+        }
+        &_title {
+            font-size: 25px;
+            margin: 2.5rem 0 0 0;
+            font-family: 'The-Seasons';
+        }
+    }
 }
 
 .login {
@@ -20,6 +38,10 @@
     flex-direction: column;
     border: 2px solid $secondary-clr;
     border-radius: 0.3rem;
+
+    &_title {
+        font-family: 'Miss-Katherine';
+    }
     
     &_header {
         width: 100%;

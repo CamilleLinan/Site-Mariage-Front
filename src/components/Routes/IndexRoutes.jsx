@@ -18,8 +18,8 @@ const IndexRoutes = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/home" element={<Home />} />
+                {isLoggedIn ? <Route path="/" element={<Home />} /> : <Route path="/" element={<Login />} />}
+                {isLoggedIn ? <Route path="/home" element={<Home />} /> : <Route path="/home" element={<ErrorAuth />} />}
                 {isLoggedIn ? <Route path="/blog" element={<Blog />} /> : <Route path="/blog" element={<ErrorAuth />} />}
                 {isLoggedIn ? <Route path="/newArticle" element={<NewArticle />} /> : <Route path="/newArticle" element={<ErrorAuth />} />}
                 {isLoggedIn ? <Route path="/updateArticle/:id" element={<UpdateArticle />} /> : <Route path="/updateArticle/" element={<ErrorAuth />} />}
