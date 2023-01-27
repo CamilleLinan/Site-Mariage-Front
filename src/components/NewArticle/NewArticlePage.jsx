@@ -8,7 +8,7 @@ const NewArticlePage = ({ propIsAdmin }) => {
                     <h2 className="new_article_header_title">Ajouter un nouvel article</h2>
                 </header> 
                 {propIsAdmin === true ?
-                    <NewArticleForm />
+                    <NewArticleForm propIsAdmin={propIsAdmin} />
                 :
                     <p>Seul l'administrateur de ce site peut poster un article.</p>
                 }

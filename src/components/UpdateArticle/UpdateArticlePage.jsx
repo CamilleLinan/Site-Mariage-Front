@@ -38,9 +38,9 @@ const UpdateArticlePage = ({ propIsAdmin }) => {
                     <h2 className="new_article_header_title">Modifier un article</h2>
                 </header> 
                 {propIsAdmin === true ?
-                    <UpdateArticleForm propData={articleData} propAuth={authCtx} />
+                    <UpdateArticleForm propData={articleData} propAuth={authCtx} propIsAdmin={propIsAdmin} />
                 :
-                    <p>Seul l'administrateur de ce site peut poster un article.</p>
+                    <p>Seul l'administrateur de ce site peut éditer un article.</p>
                 }
             </section>
         </div> 

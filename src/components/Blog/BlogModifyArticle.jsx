@@ -24,7 +24,8 @@ const BlogModifyArticle = ({ propArticleId, propIsAdmin }) => {
             url: `http://localhost:5000/api/articles/${propArticleId}`,
             headers: {
                 Authorization: `Bearer ${authCtx.token}`,
-            }
+            },
+            body: propIsAdmin
         })
             .then(() => {
                 alert('L\'article a bien été supprimé !');

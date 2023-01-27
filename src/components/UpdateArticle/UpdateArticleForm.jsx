@@ -2,7 +2,7 @@ import axios from "axios";
 import { useRef, useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
-const UpdateArticleForm = ({ propData, propAuth }) => {
+const UpdateArticleForm = ({ propData, propAuth, propIsAdmin }) => {
     const [ dataUpdate, setDataUpdate ] = useState(propData);
     const [ dataPicture, setDataPicture ] = useState(propData.picture);
     const [ newDataPicture, setNewDataPicture ] = useState('');
@@ -42,7 +42,9 @@ const UpdateArticleForm = ({ propData, propAuth }) => {
 
     const confirmUpdate = async (e) => {
         e.preventDefault();
+        
         let formData = new FormData();
+        formData.append('isAdmin', propIsAdmin);
         formData.append('title', dataUpdate.title);
         formData.append('description', dataUpdate.description);
         formData.append('image', newDataPicture);

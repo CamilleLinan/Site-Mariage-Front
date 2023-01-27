@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom"
 import AuthContext from "../../context/authContext";
 import axios from "axios";
 
-const NewArticleForm = () => {
+const NewArticleForm = ({ propIsAdmin }) => {
     const authCtx = useContext(AuthContext);
 
     const [ articleTitle, setArticleTitle ] = useState('')
@@ -30,6 +30,7 @@ const NewArticleForm = () => {
         e.preventDefault();
 
         let formData = new FormData();
+        formData.append('isAdmin', propIsAdmin);
         formData.append('title', articleTitle);
         formData.append('description', articleDescription);
         formData.append('image', articlePicture);
