@@ -36,7 +36,7 @@ const BlogDisplayArticles = ({ propIsAdmin }) => {
                     {articlesData.map((article, i) => (
                         <li key={article._id}>
                             {propIsAdmin === true &&
-                                <BlogModifyArticle propArticleId={article._id} /> 
+                                <BlogModifyArticle propArticleId={article._id} propIsAdmin={propIsAdmin} /> 
                             }
                             <BlogArticle
                                 img={article.picture}

@@ -1,15 +1,39 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import DeleteArticleModal from "./Modal/DeleteArticleModal";
-import { NavLink } from "react-router-dom";
+import axios from "axios";
+import AuthContext from "../../context/authContext";
 
 const dotIcon = <FontAwesomeIcon icon={faEllipsis} />
 
-const BlogModifyArticle = ({ propArticleId }) => {
+const BlogModifyArticle = ({ propArticleId, propIsAdmin }) => {
+    const authCtx = useContext(AuthContext);
 
     const [ isMenuExpanded, setIsMenuExpanded ] = useState(false)
     const [ popUpDelete, setPopUpDelete ] = useState(false);
+
+    const [ errorServer, setErrorServer ] = useState('');
+    
+    const confirmDelete = async (e) => {
+        e.preventDefault();
+
+        await axios({
+            method:'DELETE',
+            url: `http://localhost:5000/api/articles/${propArticleId}`,
+            headers: {
+                Authorization: `Bearer ${authCtx.token}`,
+            }
+        })
+            .then(() => {
+                alert('L\'article a bien été supprimé !');
+                window.location.reload();
+            })
+            .catch(() => {
+                setErrorServer({ ...errorServer, message: 'Une erreur est survenue, merci de revenir plus tard.' })
+            })
+    };
 
     return(
         <>
@@ -17,15 +41,27 @@ const BlogModifyArticle = ({ propArticleId }) => {
             <i onClick={() => {setIsMenuExpanded(!isMenuExpanded)}} className='blog_article_modify_icon'>
                 {dotIcon}
             </i>
+            
             <div className={isMenuExpanded ? "blog_article_modify_menu blog_article_modify_menu_expanded" : "blog_article_modify_menu"}>
-                <NavLink title='Modifier' end to={'/updateArticle/' + propArticleId} className="blog_article_modify_menu_content">Modifier</NavLink>
+                <p className="blog_article_modify_menu_content">
+                    <NavLink title='Modifier' end to={'/updateArticle/' + propArticleId}>
+                        Modifier
+                    </NavLink>
+                </p>
                 <span className="blog_article_modify_menu_deco"></span>
-                <p onClick={() => {setPopUpDelete(true)}} className="blog_article_modify_menu_content">Supprimer</p>
+                <p onClick={() => {setPopUpDelete(true)}} className="blog_article_modify_menu_content">
+                    Supprimer
+                </p>
             </div>
         </div>
+        
         {popUpDelete &&
             <DeleteArticleModal 
-            onCancel={() => {setPopUpDelete(false)}}
+                title="Supprimer l'article"
+                description="Êtes-vous sûr⸱e de vouloir supprimer cet article ?"
+                errorServer={errorServer} 
+                onCancel={() => {setPopUpDelete(false)}}
+                onConfirm={confirmDelete}
             />
         }
         </>

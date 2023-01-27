@@ -9,7 +9,7 @@ const UpdateArticlePage = ({ propIsAdmin }) => {
     const { id } = useParams();
     const authCtx = useContext(AuthContext);
 
-    const [ articleData, setArticleData ] = useState([]);
+    const [ articleData, setArticleData ] = useState();
     const [ errorServer, setErrorServer ] = useState('');
 
     const getArticleData = useCallback(async () => {
