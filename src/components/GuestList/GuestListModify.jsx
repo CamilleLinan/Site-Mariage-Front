@@ -1,22 +1,14 @@
-import axios from "axios"
 import { useState } from "react"
+import axios from "axios"
 
 const GuestListModify = ({ propAuth, propGuestId, propGuestPresent }) => {
     const [ guestPresent, setGuestPresent ] = useState(propGuestPresent)
+    const [ errorServer, setErrorServer ] = useState('')
 
     const options = [
-        {
-            value:'Oui',
-            label:'Oui'
-        },
-        {
-            value:'Ne sait pas encore',
-            label:'Ne sait pas encore'
-        },
-        {
-            value:'Non',
-            label:'Non'
-        }
+        { value: 'Confirmée', label: 'Confirmée' },
+        { value: 'En attente', label: 'En attente' },
+        { value: 'Annulée', label: 'Annulée' }
     ]
 
     const handleChange = async (e) => {
@@ -32,23 +24,25 @@ const GuestListModify = ({ propAuth, propGuestId, propGuestPresent }) => {
                 willBePresent: e.target.value
             }
         })
-            .then((res) => {
-                console.log(res.data);
-                console.log(e.target.value);
+            .then(() => {
+                alert('Statut modifié !')
             })
-            .catch((error) => {
-                console.log(error);
+            .catch(() => {
+                setErrorServer({ ...errorServer, message: 'Erreur interne.' }) 
             });
     };
 
     return (
-        <select names='present' id="present" defaultValue={guestPresent} onChange={handleChange} className="guest_list_item_content guest_list_item_content_present">
-            {options.map((option, i) => (
-                <option key={option.value} value={option.value}>
-                    {option.label}
-                </option>
-            ))}
-        </select>
+        <>
+            <select names='present' id="present" defaultValue={guestPresent} onChange={handleChange} className="guest_list_item_content guest_list_item_content_present">
+                {options.map((option, i) => (
+                    <option key={option.value} value={option.value}>
+                        {option.label}
+                    </option>
+                ))}
+            </select>
+            {errorServer && <p>{errorServer}</p>}
+        </>
     )
 }
 

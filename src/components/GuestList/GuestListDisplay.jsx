@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useCallback, useContext, useEffect, useState } from "react";
 import AuthContext from "../../context/authContext";
+import GuestListDelete from "./GuestListDelete";
 import GuestListModify from "./GuestListModify";
 
 const GuestListDisplay = () => {
@@ -28,7 +29,7 @@ const GuestListDisplay = () => {
     }, [getGuestsData])
 
     return(
-        <>
+        <div className="container_guest_list">
             {guestsData.length > 0 ?
                 <ul className="guest_list">
                     <header className="guest_list_header">
@@ -41,14 +42,15 @@ const GuestListDisplay = () => {
                             <div className="guest_list_item">
                                 <p className="guest_list_item_content guest_list_item_content_name">{guest.lastname} {guest.firstname}</p>
                                 <GuestListModify propAuth={authCtx} propGuestId={guest._id} propGuestPresent={guest.willBePresent} />
+                                <GuestListDelete propAuth={authCtx} propGuest={guest} />
                             </div>
                         </li>
                     ))}
                 </ul>
                 :
-                <p>Il n'y a aucun invité pour le moment</p>
+                <p className="guest_list_none">Il n'y a aucun invité pour le moment</p>
             }
-        </>
+            </div>
     )
 }
 

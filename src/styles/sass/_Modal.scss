@@ -17,6 +17,11 @@
     border: 2px solid $secondary-clr;
     box-shadow: 0 0 5px #0000002e;
     background-color: rgb(248, 247, 245);
+
+    &_guest_list {
+        top: 3rem;
+        width: 80%;
+    }
     
     &_header {
         display: flex;

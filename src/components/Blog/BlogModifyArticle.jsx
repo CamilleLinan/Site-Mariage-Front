@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import axios from "axios";
 import AuthContext from "../../context/authContext";
-import DeleteArticleModal from "./Modal/DeleteArticleModal";
+import DeleteModal from "../Layout/DeleteModal";
 
 const dotIcon = <FontAwesomeIcon icon={faEllipsis} />
 
@@ -56,15 +56,14 @@ const BlogModifyArticle = ({ propArticleId, propIsAdmin }) => {
             </div>
         </div>
         
-        {popUpDelete &&
-            <DeleteArticleModal 
-                title="Supprimer l'article"
-                description="Êtes-vous sûr⸱e de vouloir supprimer cet article ?"
-                errorServer={errorServer} 
-                onCancel={() => {setPopUpDelete(false)}}
-                onConfirm={confirmDelete}
-            />
-        }
+        {popUpDelete && <DeleteModal
+            className='modal_container' 
+            title="Supprimer l'article"
+            description="Êtes-vous sûr⸱e de vouloir supprimer cet article ?"
+            errorServer={errorServer} 
+            onCancel={() => {setPopUpDelete(false)}}
+            onConfirm={confirmDelete}
+        /> }
         </>
     )
 }

@@ -4,10 +4,10 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 const infoIcon = <FontAwesomeIcon icon={faInfoCircle} />
 
 const DeleteArticleModal = (props) => {
-    const { title, description, errorServer, onCancel, onConfirm } = props;
+    const { className, title, description, errorServer, onCancel, onConfirm } = props;
 
     return(
-        <div className="modal_container">
+        <div className={className}>
             <header className="modal_container_header">
                 <i className="modal_container_header_icon">{infoIcon}</i>
                 <h3 className="modal_container_header_title bold">{title}</h3>

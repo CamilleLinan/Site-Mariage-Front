@@ -44,7 +44,7 @@ const GuestListAdd = () => {
             
             <button className="blog_intro_link guest_list_btn" onClick={() => setPopUpOpen(true)}>
                 <i className="blog_intro_link_icon">{plusIcon}</i> 
-                <span className="blog_intro_link_txt">Ajouter un invité</span>
+                <span className="blog_intro_link_txt guest_list_btn_txt">Ajouter un invité</span>
             </button>
             
             {popUpOpen && 
@@ -73,9 +73,11 @@ const GuestListAdd = () => {
                                 required
                             />
                     </div>
-
-                    <button onClick={() => setPopUpOpen(false)} className="confirm_section_form_btn">Annuler</button>
-                    <button type="submit" className="confirm_section_form_btn">Ajouter</button>
+                    
+                    <div className='guest_list_form_btns'>
+                        <button onClick={() => setPopUpOpen(false)} className="confirm_section_form_btn guest_list_form_btns_btn_cancel">Annuler</button>
+                        <button type="submit" className="confirm_section_form_btn guest_list_form_btns_btn_valid">Ajouter</button>
+                    </div>
                 </form>
             }
         </article>

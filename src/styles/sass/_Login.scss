@@ -18,10 +18,12 @@
         margin: auto;
         margin-top: 2.5rem;
         max-width: 800px;
+        
         &_logo {
             width: 240px;
             margin: auto;
         }
+        
         &_title {
             font-size: 25px;
             margin: 2.5rem 0 0 0;
@@ -85,7 +87,7 @@
         padding: 1rem;
 
         &_container {
-            height: 170px;
+            height: auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -94,7 +96,7 @@
                 text-align: center;
                 color: rgb(31, 139, 31);
                 font-family: 'Montserrat-Bold';
-                margin: -0.8rem 0 0 0;
+                margin: 2rem 0;
                 
             }
         }
