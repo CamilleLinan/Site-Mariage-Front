@@ -4,6 +4,21 @@ import { useState } from "react"
 const GuestListModify = ({ propAuth, propGuestId, propGuestPresent }) => {
     const [ guestPresent, setGuestPresent ] = useState(propGuestPresent)
 
+    const options = [
+        {
+            value:'Oui',
+            label:'Oui'
+        },
+        {
+            value:'Ne sait pas encore',
+            label:'Ne sait pas encore'
+        },
+        {
+            value:'Non',
+            label:'Non'
+        }
+    ]
+
     const handleChange = async (e) => {
 
         await axios({
@@ -16,8 +31,8 @@ const GuestListModify = ({ propAuth, propGuestId, propGuestPresent }) => {
                 willBePresent: guestPresent
             }
         })
-            .then((response) => {
-                console.log(response);
+            .then((res) => {
+                console.log(res.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -28,9 +43,11 @@ const GuestListModify = ({ propAuth, propGuestId, propGuestPresent }) => {
         <>
         <label htmlFor='present'>Sera présent :</label>
         <select names='present' id="present" defaultValue={guestPresent} onChange={(e) => setGuestPresent(e.target.value)} className="guest_list_content guest_list_content_present">
-            <option value='Oui'>Oui</option>
-            <option value='Ne sait pas encore'>Ne sait pas encore</option>
-            <option value='Non'>Non</option>
+            {options.map((option, i) => (
+                <option key={option.value} value={option.value}>
+                    {option.label}
+                </option>
+            ))}
         </select>
         <button onClick={handleChange}>confirm</button>
         </>
