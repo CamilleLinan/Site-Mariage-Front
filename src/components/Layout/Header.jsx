@@ -1,15 +1,37 @@
-import { useContext, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import AuthContext from "../../context/authContext";
+import axios from "axios";
 
 const menuIcon = <FontAwesomeIcon icon={faBars} />
 
 const Header = () => {
     const authCtx = useContext(AuthContext);
     const isLoggedIn = authCtx.isLoggedIn;
-    const [isNavExpanded, setIsNavExpanded] = useState(false)
+
+    const [ userData, setUserData ] = useState([])
+    const [ errorServer, setErrorServer ] = useState('');
+    const [ isNavExpanded, setIsNavExpanded ] = useState(false)
+
+    const getUserData = useCallback(async () => {
+        await axios({
+            method: 'GET',
+            url: `http://localhost:5000/api/users/${authCtx.userId}`,
+            headers: {
+                Authorization: `Bearer ${authCtx.token}`,
+            }
+        })
+            .then((res) => { setUserData(res.data) })
+            .catch(() => {
+                setErrorServer({ ...errorServer, message: 'Une erreur interne est survenue. Merci de revenir plus tard.' });
+            });
+    },[authCtx.token, authCtx.userId, errorServer]);
+
+    useEffect(() => {
+        getUserData();
+    }, [getUserData])
 
     return (
         <header className="header">
@@ -39,13 +61,23 @@ const Header = () => {
                         BLOG DU MARIAGE
                     </NavLink></li>
                     
-                    <li><NavLink 
+                    {!userData.isAdmin ?
+                        <li><NavLink 
+                            title='Confirmer sa présence' 
+                            className='header_nav_link' 
+                            end to='/confirm'
+                        >
+                            CONFIRMER SA PRÉSENCE
+                        </NavLink></li>
+                    :
+                        <li><NavLink 
                         title='Confirmer sa présence' 
                         className='header_nav_link' 
-                        end to='/confirm'
-                    >
-                        CONFIRMER SA PRÉSENCE
-                    </NavLink></li>
+                        end to='/guestList'
+                        >
+                            LISTE DES INVITÉS
+                        </NavLink></li>
+                    }
                     
                     <li><NavLink 
                         title='Nous contacter' 

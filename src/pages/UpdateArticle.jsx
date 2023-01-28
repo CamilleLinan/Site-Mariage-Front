@@ -4,10 +4,10 @@ import BannerBottomPages from "../components/Layout/BannerBottomPages"
 import BannerTopPages from "../components/Layout/BannerTopPages"
 import Footer from "../components/Layout/Footer"
 import Header from "../components/Layout/Header"
-import NewArticlePage from "../components/NewArticle/NewArticlePage"
+import UpdateArticlePage from "../components/UpdateArticle/UpdateArticlePage"
 import AuthContext from "../context/authContext"
 
-const NewArticle = () => {
+const UpdateArticle = () => {
     const [ userData, setUserData ] = useState('');
     const [ errorServer, setErrorServer ] = useState('');
 
@@ -35,11 +35,11 @@ const NewArticle = () => {
         <>
             <Header />
             <BannerTopPages />
-            <NewArticlePage propIsAdmin={userData.isAdmin} />
+            <UpdateArticlePage propIsAdmin={userData.isAdmin} />
             <BannerBottomPages />
             <Footer />
         </>
     )
 }
 
-export default NewArticle
+export default UpdateArticle

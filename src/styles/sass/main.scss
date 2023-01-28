@@ -5,7 +5,9 @@
 @import 'Home';
 @import 'Blog';
 @import 'NewArticle';
+@import 'Modal';
 @import 'Confirm';
+@import 'GuestList';
 @import 'Contact';
 @import 'Login';
 @import 'ErrorAuth';
@@ -16,6 +18,7 @@ html {
     margin: auto;
     min-height: 100vh;
     font-family: 'Montserrat';
+    background-color: rgba(241, 240, 237, 0.276);
 }
 
 body {
@@ -40,4 +43,8 @@ li {
 
 button {
     cursor: pointer;
+}
+
+input {
+    font-family: 'Montserrat';
 }

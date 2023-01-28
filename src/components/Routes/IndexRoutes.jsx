@@ -8,6 +8,8 @@ import Contact from "../../pages/Contact";
 import Login from "../../pages/Login";
 import AuthContext from "../../context/authContext";
 import ErrorAuth from "../../pages/ErrorAuth";
+import UpdateArticle from "../../pages/UpdateArticle";
+import GuestList from "../../pages/GuestList";
 
 // Routes de l'application
 const IndexRoutes = () => {
@@ -17,11 +19,13 @@ const IndexRoutes = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/home" element={<Home />} />
+                {isLoggedIn ? <Route path="/" element={<Home />} /> : <Route path="/" element={<Login />} />}
+                {isLoggedIn ? <Route path="/home" element={<Home />} /> : <Route path="/home" element={<ErrorAuth />} />}
                 {isLoggedIn ? <Route path="/blog" element={<Blog />} /> : <Route path="/blog" element={<ErrorAuth />} />}
                 {isLoggedIn ? <Route path="/newArticle" element={<NewArticle />} /> : <Route path="/newArticle" element={<ErrorAuth />} />}
+                {isLoggedIn ? <Route path="/updateArticle/:id" element={<UpdateArticle />} /> : <Route path="/updateArticle/" element={<ErrorAuth />} />}
                 {isLoggedIn ? <Route path="/confirm" element={<Confirm />} /> : <Route path="/confirm" element={<ErrorAuth />} />}
+                {isLoggedIn ? <Route path="/guestList" element={<GuestList />} /> : <Route path="/confirm" element={<ErrorAuth />} />}
                 {isLoggedIn ? <Route path="/contact" element={<Contact />} /> : <Route path="/contact" element={<ErrorAuth />} />}
                 <Route path="/login" element={<Login />} />
                 <Route path="*" element={<Home />} />
