@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useCallback, useContext, useEffect, useState } from "react";
 import AuthContext from "../../context/authContext";
+import GuestListModify from "./GuestListModify";
 
 const GuestListDisplay = () => {
     const [ guestsData, setGuestsData ] = useState([]);
@@ -34,7 +35,7 @@ const GuestListDisplay = () => {
                         <li key={guest._id}>
                             <div className="guest_list_item">
                                 <p className="guest_list_content guest_list_content_name">{guest.lastname} {guest.firstname}</p>
-                                <p className="guest_list_content guest_list_content_present">{guest.willBePresent}</p>
+                                <GuestListModify propAuth={authCtx} propGuestId={guest._id} propGuestPresent={guest.willBePresent} />
                             </div>
                             <span className="guest_list_deco"></span>
                         </li>

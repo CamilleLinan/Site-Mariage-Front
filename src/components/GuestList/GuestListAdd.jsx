@@ -42,7 +42,7 @@ const GuestListAdd = () => {
         <article className="blog_intro">
             <h2 className='blog_intro_title'>Liste des invités</h2>
             
-            <button className="blog_intro_link" onClick={() => setPopUpOpen(true)}>
+            <button className="blog_intro_link guest_list_btn" onClick={() => setPopUpOpen(true)}>
                 <i className="blog_intro_link_icon">{plusIcon}</i> 
                 <span className="blog_intro_link_txt">Ajouter un invité</span>
             </button>
