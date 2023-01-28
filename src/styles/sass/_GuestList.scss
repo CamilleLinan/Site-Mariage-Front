@@ -6,14 +6,37 @@
     border: 2px solid $secondary-clr;
     border-radius: 0.3rem;
 
+    &_header {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+        font-family: 'Montserrat-bold';
+    }
+
     &_item {
         display: flex;
         justify-content: space-between;
-    }
+        
+        &_content {
+            &_name {
+                padding-left: 1rem;
+            }
 
-    &_content {
-        padding-left: 1rem;
-        padding-right: 1rem;
+            &_present {
+                padding: 0 0.3rem;
+                background-color: $primary-clr;
+                text-align: center;
+                border: none;
+                border-left: 1px solid $secondary-clr;
+                font-family: 'Montserrat';
+                font-size: 14px;
+                border-radius: 0.1rem;
+                cursor: pointer;
+                &:focus {
+                    outline-color: $secondary-clr;
+                }
+            }
+        }
     }
 
     &_deco {

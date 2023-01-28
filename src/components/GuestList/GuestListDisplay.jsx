@@ -31,13 +31,17 @@ const GuestListDisplay = () => {
         <>
             {guestsData.length > 0 ?
                 <ul className="guest_list">
+                    <header className="guest_list_header">
+                        <p className="guest_list_header_content">Nom de l'invité :</p>
+                        <p className="guest_list_header_content">Sera présent :</p>
+                    </header>
                     {guestsData.map((guest, i) => (
                         <li key={guest._id}>
+                            <span className="guest_list_deco"></span>
                             <div className="guest_list_item">
-                                <p className="guest_list_content guest_list_content_name">{guest.lastname} {guest.firstname}</p>
+                                <p className="guest_list_item_content guest_list_item_content_name">{guest.lastname} {guest.firstname}</p>
                                 <GuestListModify propAuth={authCtx} propGuestId={guest._id} propGuestPresent={guest.willBePresent} />
                             </div>
-                            <span className="guest_list_deco"></span>
                         </li>
                     ))}
                 </ul>

@@ -20,6 +20,7 @@ const GuestListModify = ({ propAuth, propGuestId, propGuestPresent }) => {
     ]
 
     const handleChange = async (e) => {
+        setGuestPresent(e.target.value)
 
         await axios({
             method:'PUT',
@@ -28,11 +29,12 @@ const GuestListModify = ({ propAuth, propGuestId, propGuestPresent }) => {
                 Authorization: `Bearer ${propAuth.token}`,
             },
             data: {
-                willBePresent: guestPresent
+                willBePresent: e.target.value
             }
         })
             .then((res) => {
                 console.log(res.data);
+                console.log(e.target.value);
             })
             .catch((error) => {
                 console.log(error);
@@ -40,17 +42,13 @@ const GuestListModify = ({ propAuth, propGuestId, propGuestPresent }) => {
     };
 
     return (
-        <>
-        <label htmlFor='present'>Sera présent :</label>
-        <select names='present' id="present" defaultValue={guestPresent} onChange={(e) => setGuestPresent(e.target.value)} className="guest_list_content guest_list_content_present">
+        <select names='present' id="present" defaultValue={guestPresent} onChange={handleChange} className="guest_list_item_content guest_list_item_content_present">
             {options.map((option, i) => (
                 <option key={option.value} value={option.value}>
                     {option.label}
                 </option>
             ))}
         </select>
-        <button onClick={handleChange}>confirm</button>
-        </>
     )
 }
 
