@@ -29,15 +29,19 @@ const GuestListDisplay = () => {
     return(
         <>
             {guestsData.length > 0 ?
-                <ul>
+                <ul className="guest_list">
                     {guestsData.map((guest, i) => (
                         <li key={guest._id}>
-                            <p>{guest.lastname} {guest.firstname}</p>
+                            <div className="guest_list_item">
+                                <p className="guest_list_content guest_list_content_name">{guest.lastname} {guest.firstname}</p>
+                                <p className="guest_list_content guest_list_content_present">{guest.willBePresent}</p>
+                            </div>
+                            <span className="guest_list_deco"></span>
                         </li>
                     ))}
                 </ul>
                 :
-                <p>Il n'y a aucun invités pour le moment</p>
+                <p>Il n'y a aucun invité pour le moment</p>
             }
         </>
     )
