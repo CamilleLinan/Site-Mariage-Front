@@ -33,7 +33,7 @@ const AttendConfirmPage = () => {
         <div className="container_confirm_section">
             <section className="confirm_section">
                 <ConfirmPageIntro />
-                <ConfirmPageForm propUserData={userData} />
+                <ConfirmPageForm propUserData={userData} propAuth={authCtx} />
             </section>
         </div>
     )

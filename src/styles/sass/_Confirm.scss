@@ -75,4 +75,16 @@
             }
         }
     }
+
+    &_corresp {
+        width: 80%;
+        text-align: center;
+        margin-top: 1rem;
+        &_content {
+            &_bold {
+                font-family: 'Montserrat-Bold';
+                font-size: 18px;
+            }
+        }
+    }
 }
