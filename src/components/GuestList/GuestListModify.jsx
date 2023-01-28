@@ -5,7 +5,6 @@ const GuestListModify = ({ propAuth, propGuestId, propGuestPresent }) => {
     const [ guestPresent, setGuestPresent ] = useState(propGuestPresent)
 
     const handleChange = async (e) => {
-        setGuestPresent(e.target.value)
 
         await axios({
             method:'PUT',
@@ -27,12 +26,13 @@ const GuestListModify = ({ propAuth, propGuestId, propGuestPresent }) => {
 
     return (
         <>
-        <select defaultValue={guestPresent} onChange={handleChange} className="guest_list_content guest_list_content_present">
+        <label htmlFor='present'>Sera présent :</label>
+        <select names='present' id="present" defaultValue={guestPresent} onChange={(e) => setGuestPresent(e.target.value)} className="guest_list_content guest_list_content_present">
             <option value='Oui'>Oui</option>
             <option value='Ne sait pas encore'>Ne sait pas encore</option>
             <option value='Non'>Non</option>
         </select>
-        
+        <button onClick={handleChange}>confirm</button>
         </>
     )
 }
