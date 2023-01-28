@@ -9,6 +9,7 @@ import Login from "../../pages/Login";
 import AuthContext from "../../context/authContext";
 import ErrorAuth from "../../pages/ErrorAuth";
 import UpdateArticle from "../../pages/UpdateArticle";
+import GuestList from "../../pages/GuestList";
 
 // Routes de l'application
 const IndexRoutes = () => {
@@ -24,6 +25,7 @@ const IndexRoutes = () => {
                 {isLoggedIn ? <Route path="/newArticle" element={<NewArticle />} /> : <Route path="/newArticle" element={<ErrorAuth />} />}
                 {isLoggedIn ? <Route path="/updateArticle/:id" element={<UpdateArticle />} /> : <Route path="/updateArticle/" element={<ErrorAuth />} />}
                 {isLoggedIn ? <Route path="/confirm" element={<Confirm />} /> : <Route path="/confirm" element={<ErrorAuth />} />}
+                {isLoggedIn ? <Route path="/guestList" element={<GuestList />} /> : <Route path="/confirm" element={<ErrorAuth />} />}
                 {isLoggedIn ? <Route path="/contact" element={<Contact />} /> : <Route path="/contact" element={<ErrorAuth />} />}
                 <Route path="/login" element={<Login />} />
                 <Route path="*" element={<Home />} />

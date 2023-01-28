@@ -73,7 +73,7 @@ const Header = () => {
                         <li><NavLink 
                         title='Confirmer sa présence' 
                         className='header_nav_link' 
-                        end to='/confirm'
+                        end to='/guestList'
                         >
                             LISTE DES INVITÉS
                         </NavLink></li>

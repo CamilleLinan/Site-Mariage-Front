@@ -2,9 +2,9 @@ import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
-import DeleteArticleModal from "./Modal/DeleteArticleModal";
 import axios from "axios";
 import AuthContext from "../../context/authContext";
+import DeleteArticleModal from "./Modal/DeleteArticleModal";
 
 const dotIcon = <FontAwesomeIcon icon={faEllipsis} />
 
