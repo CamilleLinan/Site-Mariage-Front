@@ -1,43 +1,39 @@
-import { useState } from "react"
+import { useCallback, useContext, useEffect } from "react";
+import AuthContext from "../../context/authContext";
+import ConfirmPageIntro from "./ConfirmPageIntro";
+import ConfirmPageForm from "./ConfirmPageForm";
+import axios from "axios";
+import { useState } from "react";
 
 const AttendConfirmPage = () => {
-    const [lastname, setLastname] = useState('')
-    const [firstname, setFirstname] = useState('');
+    const authCtx = useContext(AuthContext);
+
+    const [ userData, setUserData ] = useState([])
+    const [ errorServer, setErrorServer ] = useState('')
+
+    const getUserData = useCallback(async () => {
+        await axios({
+            method: 'GET',
+            url: `http://localhost:5000/api/users/${authCtx.userId}`,
+            headers: {
+                Authorization: `Bearer ${authCtx.token}`,
+            }
+        })
+            .then((res) => { setUserData(res.data) })
+            .catch(() => {
+                setErrorServer({ ...errorServer, message: 'Une erreur interne est survenue. Merci de revenir plus tard.' });
+            });
+    },[authCtx.token, authCtx.userId, errorServer]);
+
+    useEffect(() => {
+        getUserData();
+    }, [getUserData])
 
     return (
         <div className="container_confirm_section">
             <section className="confirm_section">
-                <h2 className="confirm_section_title">Confirmer sa présence</h2>
-                <p className="confirm_section_content">Pour confirmer votre présence à notre mariage, vous 
-                pouvez écrire votre nom et cliquer sur Rechercher.</p>
-                <p className="confirm_section_content">Vous verrez alors apparaître votre nom et pourrez confirmer ou 
-                non votre venue.</p>
-                
-                <form className="confirm_section_form">
-                    <div className="confirm_section_form_container">
-                        <label htmlFor="lastname" className="confirm_section_form_label"></label>
-                        <input 
-                            type='text' 
-                            name='lastname'
-                            id="lastname"
-                            placeholder="Votre nom"
-                            className="confirm_section_form_input"
-                            value={lastname}
-                            onChange={setLastname}
-                        />
-                        <label htmlFor="firstname" className="confirm_section_form_label"></label>
-                        <input 
-                            type='text' 
-                            name='firstname'
-                            id="firstname"
-                            placeholder="Votre prénom"
-                            className="confirm_section_form_input"
-                            value={firstname}
-                            onChange={setFirstname}
-                        />
-                    </div>
-                    <button className="confirm_section_form_btn">Rechercher</button>
-                </form>
+                <ConfirmPageIntro />
+                <ConfirmPageForm propUserData={userData} />
             </section>
         </div>
     )

@@ -13,7 +13,7 @@ const Header = () => {
 
     const [ userData, setUserData ] = useState([])
     const [ errorServer, setErrorServer ] = useState('');
-    const [isNavExpanded, setIsNavExpanded] = useState(false)
+    const [ isNavExpanded, setIsNavExpanded ] = useState(false)
 
     const getUserData = useCallback(async () => {
         await axios({
