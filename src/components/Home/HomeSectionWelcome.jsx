@@ -5,7 +5,7 @@ const HomeSectionWelcome = () => {
             <p className="home_section_welcome_content">Chers amis et famille,</p>
             <p className="home_section_welcome_content">
                 Nous avons le plaisir de vous annoncer notre mariage qui aura lieu le 
-                21 juin 2024 à Paris. Nous serions honorés de votre présence pour célébrer 
+                21 juin 2023 à Paris. Nous serions honorés de votre présence pour célébrer 
                 cette occasion spéciale avec nous.
             </p>
             <p className="home_section_welcome_content">
