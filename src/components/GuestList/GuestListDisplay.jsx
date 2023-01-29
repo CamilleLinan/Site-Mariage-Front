@@ -34,7 +34,7 @@ const GuestListDisplay = () => {
                 <ul className="guest_list">
                     <header className="guest_list_header">
                         <p className="guest_list_header_content">Nom de l'invité :</p>
-                        <p className="guest_list_header_content">Sera présent :</p>
+                        <p className="guest_list_header_content">Présence :</p>
                     </header>
                     {guestsData.map((guest, i) => (
                         <li key={guest._id}>

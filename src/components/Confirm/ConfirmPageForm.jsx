@@ -21,7 +21,7 @@ const ConfirmPageForm = ({ propUserData, propAuth }) => {
             .then((res) => { 
                 setGuestData(res.data);
                 if (propUserData.lastname !== guestData.lastname) {
-                    setNoCorresp('Une erreur est survenue, merci de bien vouloir nous contacter')
+                    setNoCorresp('Une erreur est survenue, merci de bien vouloir nous contacter.')
                 }
             })
             .catch(() => {
@@ -63,10 +63,10 @@ const ConfirmPageForm = ({ propUserData, propAuth }) => {
                         <p className="confirm_section_corresp_content">Pour des raisons d'organisations, merci de nous prévenir avant le 20 avril 2024.</p>
                     </article>
                     
-                    <div className="guest_list">
+                    <div className="guest_list confirm_section_guest_list">
                         <header className="guest_list_header">
                             <p className="guest_list_header_content">Nom de l'invité :</p>
-                            <p className="guest_list_header_content">Sera présent :</p>
+                            <p className="guest_list_header_content">Présence :</p>
                         </header>
                         
                         <span className="guest_list_deco"></span>
