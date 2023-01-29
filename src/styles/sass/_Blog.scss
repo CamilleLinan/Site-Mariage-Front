@@ -38,6 +38,11 @@
             font-size: 32px;
             font-family: 'Montserrat-Light';
         }
+
+        &_content {
+            width: 80%;
+            margin: auto;
+        }
         
         &_link {
             display: flex;
