@@ -15,7 +15,7 @@ const HomeSectionWelcome = () => {
             </p>
             <p className="home_section_welcome_content">
                 S'il vous plaît, faites-nous savoir si vous serez des nôtres dans 
-                la section "Confirmer votre présence" avant le 1 avril 2024.
+                la section "Confirmer votre présence" avant le 20 avril 2023.
             </p>
             <p className="home_section_welcome_content">
                 Avec amour et gratitude,

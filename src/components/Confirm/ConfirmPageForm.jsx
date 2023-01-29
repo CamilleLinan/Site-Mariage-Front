@@ -60,7 +60,7 @@ const ConfirmPageForm = ({ propUserData, propAuth }) => {
                     <article className="confirm_section_corresp">
                         <p className="confirm_section_corresp_content confirm_section_corresp_content_bold">Vous êtes sur la liste !</p>
                         <p className="confirm_section_corresp_content">Vous pouvez à présent indiquer si vous serez présent ou non au mariage.</p>
-                        <p className="confirm_section_corresp_content">Pour des raisons d'organisations, merci de nous prévenir avant le 20 avril 2024.</p>
+                        <p className="confirm_section_corresp_content">Pour des raisons d'organisations, merci de nous prévenir avant le 20 avril 2023.</p>
                     </article>
                     
                     <div className="guest_list confirm_section_guest_list">
