@@ -91,7 +91,7 @@ const Header = () => {
                         <li><NavLink 
                             title='Nous contacter' 
                             className='header_nav_link' 
-                            end to='/contact'
+                            end to='/messages'
                         >
                             MESSAGES
                         </NavLink></li>
