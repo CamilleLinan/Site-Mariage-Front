@@ -19,6 +19,6 @@ J'ai voulu aller plus loin en ajoutant des fonctionnalités comme une section "b
 Plusieurs fonctionnalités sont encore à améliorer, ceci est un projet personnel en cours de progression.
 
 + Langages utilisés :
-Node.js / Express.js / MongoDB
+HTML5 / CSS3 / SASS / JavaScript / React
 
 Plus d'informations sur mon portfolio : https://camillelinan.com/project/Site%20de%20Mariage
