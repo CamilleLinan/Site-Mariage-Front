@@ -1,9 +1,8 @@
-import { useCallback, useContext, useEffect } from "react";
+import { useState, useCallback, useContext, useEffect } from "react";
 import AuthContext from "../../context/authContext";
-import ConfirmPageIntro from "./ConfirmPageIntro";
-import ConfirmPageForm from "./ConfirmPageForm";
+import ConfirmIntro from "./ConfirmIntro";
+import ConfirmForm from "./ConfirmForm";
 import axios from "axios";
-import { useState } from "react";
 
 const AttendConfirmPage = () => {
     const authCtx = useContext(AuthContext);
@@ -32,8 +31,8 @@ const AttendConfirmPage = () => {
     return (
         <div className="container_confirm_section">
             <section className="confirm_section">
-                <ConfirmPageIntro />
-                <ConfirmPageForm propUserData={userData} propAuth={authCtx} />
+                <ConfirmIntro />
+                <ConfirmForm propUserData={userData} propAuth={authCtx} />
             </section>
         </div>
     )

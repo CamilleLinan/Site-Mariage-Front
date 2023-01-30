@@ -79,13 +79,23 @@ const Header = () => {
                         </NavLink></li>
                     }
                     
-                    <li><NavLink 
-                        title='Nous contacter' 
-                        className='header_nav_link' 
-                        end to='/contact'
-                    >
-                        NOUS CONTACTER
-                    </NavLink></li>
+                    {!userData.isAdmin ?
+                        <li><NavLink 
+                            title='Nous contacter' 
+                            className='header_nav_link' 
+                            end to='/contact'
+                        >
+                            NOUS CONTACTER
+                        </NavLink></li>
+                    :
+                        <li><NavLink 
+                            title='Nous contacter' 
+                            className='header_nav_link' 
+                            end to='/contact'
+                        >
+                            MESSAGES
+                        </NavLink></li>
+                    }
 
                     {isLoggedIn ? 
                         <li><NavLink 

@@ -1,57 +1,34 @@
 import axios from "axios";
-import { useCallback, useContext, useEffect, useState } from "react";
-import AuthContext from "../../context/authContext";
+import { useState } from "react";
 
-const ContactUsForm = () => {
-    const [email, setEmail] = useState('');
-    const [subject, setSubject] = useState('');
+const ContactUsForm = ({ propUserData, propAuth }) => {
+    const [object, setObject] = useState('');
     const [message, setMessage] = useState('');
-
-    const authCtx = useContext(AuthContext);
-
-    const [ userData, setUserData ] = useState([])
-    const [ errorServer, setErrorServer ] = useState('')
-
-    const getUserData = useCallback(async () => {
-        await axios({
-            method: 'GET',
-            url: `http://localhost:5000/api/users/${authCtx.userId}`,
-            headers: {
-                Authorization: `Bearer ${authCtx.token}`,
-            }
-        })
-            .then((res) => { setUserData(res.data) })
-            .catch(() => {
-                setErrorServer({ ...errorServer, message: 'Une erreur interne est survenue. Merci de revenir plus tard.' });
-            });
-    },[authCtx.token, authCtx.userId, errorServer]);
-
-    useEffect(() => {
-        getUserData();
-    }, [getUserData])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         
         await axios({
             method: 'POST',
-            url: `http://localhost:5000/api/users/sendMail`,
+            url: `http://localhost:5000/api/messages`,
             headers: {
-                Authorization: `Bearer ${authCtx.token}`,
+                Authorization: `Bearer ${propAuth}`,
             },
             data: {
-                email: email,
-                subject: subject,
+                lastname: propUserData.lastname,
+                firstname: propUserData.firstname,
+                email: propUserData.email,
+                object: object,
                 message: message
             }
         })
             .then(res => {
                 console.log(res);
-                alert('Email envoyé avec succès');
+                alert('Message envoyé avec succès');
             })
             .catch(err => {
                 console.log(err);
-                alert('Erreur lors de l\'envoi de l\'email');
+                alert('Erreur lors de l\'envoi du message');
             });
     }
 
@@ -60,15 +37,33 @@ const ContactUsForm = () => {
             <form className="contact_form" onSubmit={handleSubmit}>
                 <span className="blog_article_deco"></span>
                 <div className="contact_form_container">
+                    <label htmlFor="lastname" className="contact_form_label"></label>
+                        <input 
+                            type='text' 
+                            name='lastname'
+                            id="lastname"
+                            className="contact_form_input"
+                            defaultValue={propUserData.lastname}
+                            required
+                        />
+                    
+                    <label htmlFor="firstname" className="contact_form_label"></label>
+                        <input 
+                            type='text' 
+                            name='firstname'
+                            id="firstname"
+                            className="contact_form_input"
+                            defaultValue={propUserData.firstname}
+                            required
+                        />
+                    
                     <label htmlFor="email" className="contact_form_label"></label>
                         <input 
                             type='email' 
                             name='email'
                             id="email"
-                            placeholder="Email"
                             className="contact_form_input"
-                            value={userData.email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            defaultValue={propUserData.email}
                             required
                         />
 
@@ -79,8 +74,8 @@ const ContactUsForm = () => {
                             id="object"
                             placeholder="Objet"
                             className="contact_form_input"
-                            value={subject}
-                            onChange={(e) => setSubject(e.target.value)}
+                            value={object}
+                            onChange={(e) => setObject(e.target.value)}
                             required
                         />
                     

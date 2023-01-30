@@ -57,17 +57,15 @@
         &_input {
             height: 2.3rem;
             margin-bottom: 1.5rem;
-            font-size: 16px;
+            font-size: 14px;
             border-radius: 0.3rem;
             border: 2px solid $primary-clr;
-            &::placeholder {
-                color: rgba(0, 0, 0, 0.681);
-                font-family: 'Montserrat-Bold';
-                font-size: 14px;
-            }
+            font-family: 'Montserrat-Bold';
+            color: rgba(0, 0, 0, 0.681);
             &:focus {
                 outline-color: $secondary-clr;
                 border: 3px solid $secondary-clr;
+                font-family: 'Montserrat';
             }
 
             &_message {
@@ -90,6 +88,19 @@
             &:hover {
                 background-color: $secondary-clr;
                 box-shadow: 0 0 16px #0000002e;
+            }
+        }
+    }
+
+    &_message {
+        &_list {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            &_item {
+                border: 2px solid $secondary-clr;
+                margin: 0.5rem 0;
+                padding: 0 1rem;
             }
         }
     }

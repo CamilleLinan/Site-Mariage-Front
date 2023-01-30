@@ -1,9 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
-import ConfirmPageModify from "./ConfirmPageModify";
+import ConfirmModify from "./ConfirmModify";
 
 const ConfirmPageForm = ({ propUserData, propAuth }) => {
-
     const [ guestData, setGuestData ] = useState([])
     const [ noCorresp, setNoCorresp ] = useState(false)
     const [ errorServer, setErrorServer ] = useState('')
@@ -72,7 +71,7 @@ const ConfirmPageForm = ({ propUserData, propAuth }) => {
                         <span className="guest_list_deco"></span>
                         <div className="guest_list_item">
                             <p className="guest_list_item_content guest_list_item_content_name">{guestData.lastname} {guestData.firstname}</p>
-                            <ConfirmPageModify propAuth={propAuth} propGuestData={guestData} />
+                            <ConfirmModify propAuth={propAuth} propGuestData={guestData} />
                         </div>
                     </div>
                 </>
