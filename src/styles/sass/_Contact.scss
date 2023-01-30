@@ -23,7 +23,11 @@
     max-width: 800px;
     margin: auto;
     text-align: center;
+    
     &_intro {
+        width: 80%;
+        margin: auto;
+
         &_title {
             margin-top: 1.5rem;
             font-size: 32px;
@@ -31,7 +35,7 @@
         }
         
         &_content {
-            margin: 0.5rem 0;
+            margin: 0;
             font-size: 16px;
         }
     }
@@ -39,7 +43,8 @@
     &_form {
         width: 80%;
         max-width: 500px;
-        margin: auto;
+        margin: 0 auto 4rem auto;
+        background-color: $tertiary-clr;
         
         & span {
             margin-left: auto;
@@ -93,14 +98,66 @@
     }
 
     &_message {
+        width: 80%;
+        margin: auto;
+        
+        &_deco {
+            max-width: 350px;
+        }
+
+        &_title {
+            margin-top: -1rem;
+            font-size: 25px;
+        }
+
         &_list {
             display: flex;
             flex-direction: column;
             text-align: left;
+            
             &_item {
+                position: relative;
                 border: 2px solid $secondary-clr;
+                background-color: $tertiary-clr;
+                border-radius: 0.3rem;
                 margin: 0.5rem 0;
                 padding: 0 1rem;
+                
+                &_container {
+                    display: flex;
+                    align-items: center;
+                    margin: 1rem 0;
+                }
+                
+                &_title {
+                    margin: 0 0 0 0.5rem;
+                }
+
+                &_subtitle {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    font-family: 'Montserrat-Bold';
+                }
+
+                &_message {
+                    margin-top: 0.5rem;
+                    margin-bottom: 2rem;
+                }
+
+                &_deco {
+                    display: block;
+                    position: absolute;
+                    top: 7.2rem;
+                    left: 0;
+                    right: 0;
+                    height: 2px;
+                    background-color: $primary-clr;
+                }
+
+                &_response {
+                    margin-top: 0.5rem;
+                    font-family: 'Montserrat-Light';
+                }
             }
         }
     }

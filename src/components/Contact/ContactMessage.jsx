@@ -29,6 +29,7 @@ const ContactMessage = ({ propUserData, propAuth }) => {
     return (
         <> {ownMessageData.length > 0 &&
             <article className="contact_message">
+                <span className="blog_article_deco contact_message_deco"></span>
                 <h3 className="contact_message_title">Vos questions :</h3>
                     <ul className="contact_message_list">
                         {ownMessageData.map((message, i) => (
@@ -41,11 +42,13 @@ const ContactMessage = ({ propUserData, propAuth }) => {
                                 <h4 className="contact_message_list_item_subtitle">Message :</h4>
                                 <p className="contact_message_list_item_message">{message.message}</p>
                                 
+                                <span className="contact_message_list_item_deco"></span>
+
                                 <h4 className="contact_message_list_item_subtitle">Réponse :</h4>
                                 {message.response ? 
                                     <p className="contact_message_list_item_response">{message.response}</p>
                                 : 
-                                    <p className="contact_message_list_item_response">Vous n'avez pas encore de réponse pour le moment</p>
+                                    <p className="contact_message_list_item_response">Vous n'avez pas encore de réponse pour le moment.</p>
                                 }
                             </li>
                         ))}
