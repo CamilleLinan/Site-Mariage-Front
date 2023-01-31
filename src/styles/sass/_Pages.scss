@@ -1,0 +1,46 @@
+@media screen and (max-width: 850px) {
+    .pages {
+        &_intro {
+            width: 92% !important;
+        }
+    }
+}
+
+.pages {
+    &_intro {
+        margin: auto;
+        text-align: center;
+        width: 60%;
+        max-width: 800px;
+        
+        &_title {
+            margin-top: 1.5rem;
+            font-size: 32px;
+            font-family: "Montserrat-Light";
+        }
+
+        &_btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $primary-clr;
+            border: 1px solid $primary-clr;
+            border-radius: 1rem;
+            font-size: 18px;
+            margin: 2rem auto 0 auto;
+            padding: 0.2rem 1rem;
+            box-shadow: 0 0 5px #0000002e;
+            transition: all 400ms ease-in-out;
+            cursor: pointer;
+            &:hover {
+                box-shadow: 0 0 16px #0000002e;
+                background-color: $secondary-clr;
+                border: 1px solid $secondary-clr;
+            }
+
+            &_icon {
+                margin-right: 0.5rem;
+            }
+        }
+    }
+}

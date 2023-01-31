@@ -29,7 +29,6 @@ const ContactMessage = ({ propUserData, propAuth }) => {
     return (
         <> {ownMessageData.length > 0 &&
             <article className="contact_message">
-                <span className="blog_article_deco contact_message_deco"></span>
                 <h3 className="contact_message_title">Vos questions :</h3>
                     <ul className="contact_message_list">
                         {ownMessageData.map((message, i) => (

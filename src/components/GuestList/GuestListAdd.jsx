@@ -39,12 +39,12 @@ const GuestListAdd = () => {
     };
 
     return(
-        <article className="blog_intro">
-            <h2 className='blog_intro_title'>Liste des invités</h2>
+        <article className="pages_intro">
+            <h2 className='pages_intro_title'>Liste des invités</h2>
             
-            <button className="blog_intro_link guest_list_btn" onClick={() => setPopUpOpen(true)}>
-                <i className="blog_intro_link_icon">{plusIcon}</i> 
-                <span className="blog_intro_link_txt guest_list_btn_txt">Ajouter un invité</span>
+            <button className="pages_intro_btn guest_list_btn" onClick={() => setPopUpOpen(true)}>
+                <i className="pages_intro_btn_icon">{plusIcon}</i> 
+                <span className="pages_intro_btn_txt guest_list_btn_txt">Ajouter un invité</span>
             </button>
             
             {popUpOpen && 

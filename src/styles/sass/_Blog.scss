@@ -1,13 +1,5 @@
 @media screen and (max-width: 850px) {
-    .container_blog_page {
-        padding-bottom: 15rem !important;
-    }
-
     .blog {
-        &_intro {
-            width: 95% !important;
-        }
-        
         &_article {
             width: 95% !important;
             
@@ -22,52 +14,13 @@
     }
 }
 
-.container_blog_page {
-    padding-bottom: 19rem;
-}
-
 .blog {
-    &_intro {
-        margin: auto;
-        text-align: center;
-        width: 60%;
-        max-width: 800px;
-        
-        &_title {
-            margin-top: 1.5rem;
-            font-size: 32px;
-            font-family: 'Montserrat-Light';
-        }
+    margin: auto;
 
-        &_content {
-            width: 80%;
-            margin: auto;
-        }
-        
-        &_link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: $primary-clr;
-            border: 1px solid $primary-clr;
-            border-radius: 1rem;
+    &_intro {
+        &_btn {
             height: 3rem;
-            width: 30%;
-            min-width: 165px;
-            font-size: 18px;
-            margin: 2rem auto 0 auto;
-            box-shadow: 0 0 5px #0000002e;
-            transition: all 400ms ease-in-out;
-            padding: 0.2rem 1rem;
-            cursor: pointer;
-            &:hover {
-                transform: scale(1.05);
-                box-shadow: 0 0 16px #0000002e;
-            }
-            
-            &_icon {
-                margin-right: 0.5rem;
-            }
+            width: 170px;
         }
     }
 

@@ -32,18 +32,16 @@ const UpdateArticlePage = ({ propIsAdmin }) => {
     }, [getArticleData]);
 
     return(
-        <div className="container_new_article">
-            <section className="new_article">
-                <header className="new_article_header">
-                    <h2 className="new_article_header_title">Modifier un article</h2>
-                </header> 
-                {propIsAdmin === true ?
-                    <UpdateArticleForm propData={articleData} propAuth={authCtx} propIsAdmin={propIsAdmin} />
-                :
-                    <p>Seul l'administrateur de ce site peut éditer un article.</p>
-                }
-            </section>
-        </div> 
+        <section className="new_article">
+            <header className="new_article_header">
+                <h2 className="new_article_header_title">Modifier un article</h2>
+            </header> 
+            {propIsAdmin === true ?
+                <UpdateArticleForm propData={articleData} propAuth={authCtx} propIsAdmin={propIsAdmin} />
+            :
+                <p>Seul l'administrateur de ce site peut éditer un article.</p>
+            }
+        </section>
     )
 }
 

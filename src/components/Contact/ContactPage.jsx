@@ -28,14 +28,13 @@ const ContactPage = () => {
     useEffect(() => {
         getUserData();
     }, [getUserData])
+
     return (
-        <div className="container_contact">
-            <section className="contact">
-                <ContactIntro />
-                <ContactForm propUserData={userData} propAuth={authCtx.token} />
-                <ContactMessage propUserData={userData} propAuth={authCtx.token} />
-            </section>
-        </div>
+        <section className="contact">
+            <ContactIntro />
+            <ContactForm propUserData={userData} propAuth={authCtx.token} />
+            <ContactMessage propUserData={userData} propAuth={authCtx.token} />
+        </section>
     )
 }
 

@@ -3,12 +3,10 @@ import GuestListDisplay from "./GuestListDisplay"
 
 const GuestListPage = () => {
     return(
-        <div className="container_blog_page">
-            <section className="blog_page">
-                <GuestListAdd />
-                <GuestListDisplay />
-            </section>
-        </div>
+        <section className="guest_list_page pages">
+            <GuestListAdd />
+            <GuestListDisplay />
+        </section>
     )
 }
 

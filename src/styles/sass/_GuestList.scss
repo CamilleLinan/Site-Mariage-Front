@@ -2,7 +2,6 @@
     .guest_list {
         width: 80% !important;
         &_btn {
-            width: 60% !important;
             margin-bottom: 1rem;
         }
         &_form_btns {
@@ -36,8 +35,7 @@
     box-shadow: 0 0 5px #0000002e;
 
     &_btn {
-        width: 35%;
-        max-width: 200px;
+        width: 210px;
         height: 3.5rem;
         & span {
             padding: 0.5rem 0 !important;
@@ -46,17 +44,15 @@
 
     &_form_btns {
         display: flex;
-        justify-content: space-around;
-        width: 80%;
+        justify-content: space-between;
+        align-items: center;
+        width: 76%;
+        margin-top: 1rem;
         
         &_btn {
+            width: 45%;
             &_cancel {
                 background-color: rgb(212, 212, 212);
-                width: 45%;
-            }
-            
-            &_valid {
-                width: 45%;
             }
         }
     }

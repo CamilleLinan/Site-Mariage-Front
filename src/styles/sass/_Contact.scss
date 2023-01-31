@@ -122,12 +122,14 @@
                 border-radius: 0.3rem;
                 margin: 0.5rem 0;
                 padding: 0 1rem;
-                
+
                 &_container {
                     display: flex;
                     align-items: center;
                     margin: 1rem 0;
                 }
+                
+                
                 
                 &_title {
                     margin: 0 0 0 0.5rem;
@@ -152,6 +154,9 @@
                     right: 0;
                     height: 2px;
                     background-color: $primary-clr;
+                    &_2 {
+                        top: 13.8rem;
+                    }
                 }
 
                 &_response {

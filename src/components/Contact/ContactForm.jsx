@@ -35,7 +35,7 @@ const ContactUsForm = ({ propUserData, propAuth }) => {
     return (
         <article>
             <form className="contact_form" onSubmit={handleSubmit}>
-                <span className="blog_article_deco"></span>
+                <span className="blog_article_deco blog_article_deco_top"></span>
                 <div className="contact_form_container">
                     <label htmlFor="lastname" className="contact_form_label"></label>
                         <input 
@@ -92,6 +92,7 @@ const ContactUsForm = ({ propUserData, propAuth }) => {
                         />
                     <button className="contact_form_btn">Envoyer</button>
                 </div>
+                <span className="blog_article_deco blog_article_deco_bottom"></span>
             </form>
         </article>
     )
