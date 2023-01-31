@@ -7,13 +7,11 @@
 }
 
 .message {
-    & ul {
+    &_list {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-    
-    &_list {
+        
         &_item {
             width: 60%;
             max-width: 450px;

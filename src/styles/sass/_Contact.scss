@@ -46,11 +46,6 @@
         margin: 0 auto 4rem auto;
         background-color: $tertiary-clr;
         
-        & span {
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
         &_container {
             display: flex;
             flex-direction: column;
@@ -60,16 +55,13 @@
         }
 
         &_input {
-            height: 2.3rem;
-            margin-bottom: 1.5rem;
-            font-size: 14px;
-            border-radius: 0.3rem;
-            border: 2px solid $primary-clr;
+            margin-top: 0;
+            margin-bottom: 1.3rem;
+            height: 2.1rem;
+            font-size: 15px;
             font-family: 'Montserrat-Bold';
             color: rgba(0, 0, 0, 0.681);
             &:focus {
-                outline-color: $secondary-clr;
-                border: 3px solid $secondary-clr;
                 font-family: 'Montserrat';
             }
 
@@ -81,8 +73,8 @@
 
         &_btn {
             width: 50%;
+            height: 2.3rem;
             margin: 1rem auto 0 auto;
-            
         }
     }
 

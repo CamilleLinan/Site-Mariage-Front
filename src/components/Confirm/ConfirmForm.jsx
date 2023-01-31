@@ -30,39 +30,40 @@ const ConfirmPageForm = ({ propUserData, propAuth }) => {
 
     return(
         <>
-            <form className="confirm_section_form" onSubmit={getGuestData}>
-                <div className="confirm_section_form_container">
-                    <label htmlFor="lastname" className="confirm_section_form_label"></label>
+            <form className="confirm_form" onSubmit={getGuestData}>
+                <div className="confirm_form_container">
+                    <label htmlFor="lastname" className="confirm_form_label"></label>
                     <input 
                         type='text' 
                         name='lastname'
                         id="lastname"
-                        className="confirm_section_form_input"
+                        className="pages_input confirm_form_input"
                         value={propUserData.lastname}
                         required
                     />
-                    <label htmlFor="firstname" className="confirm_section_form_label"></label>
+                    <label htmlFor="firstname" className="confirm_form_label"></label>
                     <input 
                         type='text' 
                         name='firstname'
                         id="firstname"
-                        className="confirm_section_form_input"
+                        className="pages_input confirm_form_input"
                         value={propUserData.firstname}
                         required
                     />
                 </div>
                 {errorServer && <p>{errorServer}</p>}
-                <button className="confirm_section_form_btn">Rechercher</button>
+                <button className="pages_button confirm_form_btn">Rechercher</button>
             </form>
+            
             {(propUserData.lastname === guestData.lastname && propUserData.firstname === guestData.firstname) ? 
                 <>
-                    <article className="confirm_section_corresp">
-                        <p className="confirm_section_corresp_content confirm_section_corresp_content_bold">Vous êtes sur la liste !</p>
-                        <p className="confirm_section_corresp_content">Vous pouvez à présent indiquer si vous serez présent ou non au mariage.</p>
-                        <p className="confirm_section_corresp_content">Pour des raisons d'organisations, merci de nous prévenir avant le 20 avril 2023.</p>
+                    <article className="confirm_corresp">
+                        <p className="confirm_corresp_content confirm_corresp_content_bold">Vous êtes sur la liste !</p>
+                        <p className="confirm_corresp_content">Vous pouvez à présent indiquer si vous serez présent ou non au mariage.</p>
+                        <p className="confirm_corresp_content">Pour des raisons d'organisations, merci de nous prévenir avant le 20 avril 2023.</p>
                     </article>
                     
-                    <div className="guest_list confirm_section_guest_list">
+                    <div className="guest_list confirm_guest_list">
                         <header className="guest_list_header">
                             <p className="guest_list_header_content">Nom de l'invité :</p>
                             <p className="guest_list_header_content">Présence :</p>

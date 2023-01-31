@@ -2,9 +2,9 @@ import axios from "axios";
 import { useRef, useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
-const UpdateArticleForm = ({ propData, propAuth, propIsAdmin }) => {
+const UpdateArticleForm = ({ propData, propDataPicture, propAuth, propIsAdmin }) => {
     const [ dataUpdate, setDataUpdate ] = useState(propData);
-    const [ dataPicture, setDataPicture ] = useState(propData.picture);
+    const [ dataPicture, setDataPicture ] = useState(propDataPicture);
     const [ newDataPicture, setNewDataPicture ] = useState('');
     const [ errorServer, setErrorServer ] = useState('');    
 
@@ -88,19 +88,20 @@ const UpdateArticleForm = ({ propData, propAuth, propIsAdmin }) => {
                         ref={descriptionInputRef}
                         required 
                     />
-
-                <label htmlFor="file" className="article_form_label">Modifier l'image :</label>
-                    <div className="article_form_container">
-                        <img src={dataPicture} alt='' className="article_form_img" />
-                        <input 
-                            type="file" 
-                            name="file" 
-                            id="file"
-                            className="article_form_input_file"
-                            accept=".jpg, .jpeg, .png, .gif"
-                            onChange={changeHandlerPicture}
-                        />
-                    </div>
+                {dataPicture && <>
+                    <label htmlFor="file" className="article_form_label">Modifier l'image :</label>
+                        <div className="article_form_container">
+                            <img src={dataPicture} alt='' className="article_form_img" />
+                            <input 
+                                type="file" 
+                                name="file" 
+                                id="file"
+                                className="article_form_input_file"
+                                accept=".jpg, .jpeg, .png, .gif"
+                                onChange={changeHandlerPicture}
+                            />
+                        </div>
+                </> }   
             </div>
             
             {errorServer && <p className="error bold modal_container_section_message">{errorServer}</p>}

@@ -29,7 +29,7 @@ const AttendConfirmPage = () => {
     }, [getUserData])
 
     return (
-        <section className="confirm_section pages">
+        <section className="pages confirm">
             <ConfirmIntro />
             <ConfirmForm propUserData={userData} propAuth={authCtx} />
         </section>

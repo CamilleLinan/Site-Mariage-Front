@@ -42,7 +42,7 @@ const ContactUsForm = ({ propUserData, propAuth }) => {
                             type='text' 
                             name='lastname'
                             id="lastname"
-                            className="contact_form_input"
+                            className="pages_input contact_form_input"
                             defaultValue={propUserData.lastname}
                             required
                         />
@@ -52,7 +52,7 @@ const ContactUsForm = ({ propUserData, propAuth }) => {
                             type='text' 
                             name='firstname'
                             id="firstname"
-                            className="contact_form_input"
+                            className="pages_input contact_form_input"
                             defaultValue={propUserData.firstname}
                             required
                         />
@@ -62,7 +62,7 @@ const ContactUsForm = ({ propUserData, propAuth }) => {
                             type='email' 
                             name='email'
                             id="email"
-                            className="contact_form_input"
+                            className="pages_input contact_form_input"
                             defaultValue={propUserData.email}
                             required
                         />
@@ -73,7 +73,7 @@ const ContactUsForm = ({ propUserData, propAuth }) => {
                             name='object'
                             id="object"
                             placeholder="Objet"
-                            className="contact_form_input"
+                            className="pages_input contact_form_input"
                             value={object}
                             onChange={(e) => setObject(e.target.value)}
                             required
@@ -85,7 +85,7 @@ const ContactUsForm = ({ propUserData, propAuth }) => {
                             id="message"
                             rows='4' cols='100'
                             placeholder="Votre message..."
-                            className="contact_form_input contact_form_input_message"
+                            className="pages_input_textarea contact_form_input contact_form_input_message"
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
                             required

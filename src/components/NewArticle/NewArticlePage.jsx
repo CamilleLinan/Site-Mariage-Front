@@ -2,9 +2,9 @@ import NewArticleForm from "./NewArticleForm"
 
 const NewArticlePage = ({ propIsAdmin }) => {
     return (
-        <section className="new_article">
-            <header className="new_article_header">
-                <h2 className="new_article_header_title">Ajouter un nouvel article</h2>
+        <section className="pages new_article">
+            <header className="pages_intro">
+                <h2 className="pages_intro_title">Ajouter un nouvel article</h2>
             </header> 
             {propIsAdmin === true ?
                 <NewArticleForm propIsAdmin={propIsAdmin} />

@@ -28,27 +28,31 @@ const ContactMessage = ({ propUserData, propAuth }) => {
 
     return (
         <> {ownMessageData.length > 0 &&
-            <article className="contact_message">
-                <h3 className="contact_message_title">Vos questions :</h3>
-                    <ul className="contact_message_list">
+            <article className="message">
+                <h3 className="message_title">Vos questions :</h3>
+                    <ul className="message_list">
                         {ownMessageData.map((message, i) => (
-                            <li key={message._id} className="contact_message_list_item">
-                                <div className="contact_message_list_item_container">
-                                    <h4 className="contact_message_list_item_subtitle">Objet :</h4>
-                                    <p className="contact_message_list_item_title">{message.object}</p>
-                                </div>
-                                
-                                <h4 className="contact_message_list_item_subtitle">Message :</h4>
-                                <p className="contact_message_list_item_message">{message.message}</p>
-                                
-                                <span className="contact_message_list_item_deco"></span>
+                            <li key={message._id} className="message_list_item">
+                                <div className="message_list_item_container">
+                                    <div className="message_list_item_container_titles">
+                                        <h4 className="message_list_item_titles">Objet :</h4>
+                                        <p className="message_list_item_subtitles">{message.object}</p>
+                                    </div>
 
-                                <h4 className="contact_message_list_item_subtitle">Réponse :</h4>
-                                {message.response ? 
-                                    <p className="contact_message_list_item_response">{message.response}</p>
-                                : 
-                                    <p className="contact_message_list_item_response">Vous n'avez pas encore de réponse pour le moment.</p>
-                                }
+                                    <h4 className="message_list_item_titles">Message :</h4>
+                                    <p className="message_list_item_subtitles">{message.message}</p>
+                                </div>
+
+                                <span className="message_list_item_deco"></span>
+                                
+                                <div className="message_list_item_response">
+                                    <h4 className="message_list_item_titles">Réponse :</h4>
+                                    {message.response ? 
+                                        <p className="message_list_item_subtitles message_list_item_subtitles_message">{message.response}</p>
+                                    : 
+                                        <p className="message_list_item_subtitles message_list_item_subtitles_message">Vous n'avez pas encore de réponse pour le moment.</p>
+                                    }
+                                </div>
                             </li>
                         ))}
                     </ul>
