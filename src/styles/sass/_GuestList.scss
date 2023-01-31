@@ -1,22 +1,6 @@
 @media screen and (max-width: 850px) {
     .guest_list {
         width: 80% !important;
-        &_btn {
-            margin-bottom: 1rem;
-        }
-        &_form_btns {
-            width: 80% !important;
-            &_btn {
-                &_cancel {
-                    margin-right: 1rem;
-                    margin-left: 1rem;
-                }
-                &_valid {
-                    margin-right: 1rem;
-                    margin-left: 1rem;
-                }
-            }
-        }
     }
 }
 
@@ -37,22 +21,34 @@
     &_btn {
         width: 210px;
         height: 3.5rem;
+        margin-bottom: 1rem;
         & span {
             padding: 0.5rem 0 !important;
         }
     }
 
-    &_form_btns {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 76%;
-        margin-top: 1rem;
-        
-        &_btn {
+    &_form {
+        width: 90%;
+        max-width: 700px;
+        &_input {
+            margin: 0rem 0.5rem 0 0.5rem;
             width: 45%;
-            &_cancel {
-                background-color: rgb(212, 212, 212);
+        }
+
+        &_btns {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 65%;
+            max-width: 500px;
+            margin-top: 1rem;
+            
+            &_btn {
+                width: 150px;
+                margin: 0 0.5rem;
+                &_cancel {
+                    background-color: rgb(212, 212, 212);
+                }
             }
         }
     }

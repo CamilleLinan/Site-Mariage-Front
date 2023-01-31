@@ -48,26 +48,26 @@ const GuestListAdd = () => {
             </button>
             
             {popUpOpen && 
-                <form action="" onSubmit={onSubmit} className="confirm_section_form">
-                    <div className="confirm_section_form_container">
-                        <label htmlFor="lastname" className="confirm_section_form_label"></label>
+                <form action="" onSubmit={onSubmit} id='guest-list-form' className="confirm_form guest_list_form">
+                    <div className="confirm_form_container">
+                        <label htmlFor="lastname" className="confirm_form_label"></label>
                             <input 
                                 type='text' 
                                 name='lastname'
                                 id="lastname"
                                 placeholder="Nom"
-                                className="confirm_section_form_input"
+                                className="pages_input guest_list_form_input"
                                 value={lastname}
                                 onChange={(e) => setLastname(e.target.value)}
                                 required
                             />
-                        <label htmlFor="firstname" className="confirm_section_form_label"></label>
+                        <label htmlFor="firstname" className="confirm_form_label"></label>
                             <input 
                                 type='text' 
                                 name='firstname'
                                 id="firstname"
                                 placeholder="Prénom"
-                                className="confirm_section_form_input"
+                                className="pages_input guest_list_form_input"
                                 value={firstname}
                                 onChange={(e) => setFirstname(e.target.value)}
                                 required
@@ -75,8 +75,8 @@ const GuestListAdd = () => {
                     </div>
                     
                     <div className='guest_list_form_btns'>
-                        <button onClick={() => setPopUpOpen(false)} className="confirm_section_form_btn guest_list_form_btns_btn_cancel">Annuler</button>
-                        <button type="submit" className="confirm_section_form_btn guest_list_form_btns_btn_valid">Ajouter</button>
+                        <button onClick={() => setPopUpOpen(false)} className="pages_button guest_list_form_btns_btn guest_list_form_btns_btn_cancel">Annuler</button>
+                        <button type="submit" className="pages_button guest_list_form_btns_btn guest_list_form_btns_btn_valid">Ajouter</button>
                     </div>
                 </form>
             }

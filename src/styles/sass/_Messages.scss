@@ -7,6 +7,13 @@
 }
 
 .message {
+    &_title {
+        font-family: 'Montserrat-Light';
+        font-size: 27px;
+        margin: -2rem auto 2rem auto;
+        text-align: center;
+    }
+
     &_list {
         display: flex;
         flex-direction: column;
@@ -14,16 +21,17 @@
         
         &_item {
             width: 60%;
-            max-width: 450px;
+            max-width: 600px;
             border: 2px solid $secondary-clr;
             border-radius: 0.3rem;
             margin-bottom: 1.5rem;
             background-color: $tertiary-clr;
+            box-shadow: 0 0 10px #0000002e;
             
             &_container {
                 display: flex;
                 flex-direction: column;
-                padding: 0.8rem 0 0.3rem 1rem;
+                padding: 0.8rem 1rem 0.3rem 1rem;
                 
                 &_titles {
                     display: flex;
@@ -63,7 +71,7 @@
             }
 
             &_response {
-                padding: 0.8rem 0 0.3rem 1rem;
+                padding: 0.8rem 1rem 0.3rem 1rem;
             }
 
             &_reply {

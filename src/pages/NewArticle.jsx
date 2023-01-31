@@ -4,7 +4,7 @@ import BannerBottomPages from "../components/Layout/BannerBottomPages"
 import BannerTopPages from "../components/Layout/BannerTopPages"
 import Footer from "../components/Layout/Footer"
 import Header from "../components/Layout/Header"
-import NewArticlePage from "../components/NewArticle/NewArticlePage"
+import NewArticlePage from "../components/Article/NewArticle/NewArticlePage"
 import AuthContext from "../context/authContext"
 
 const NewArticle = () => {

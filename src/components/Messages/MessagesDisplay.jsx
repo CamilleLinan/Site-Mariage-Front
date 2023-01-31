@@ -56,7 +56,7 @@ const MessagesDisplay = ({ propAuth }) => {
 
                         {message.response ?
                             <div className="message_list_item_response">
-                                <h4 className="message_list_item_titles">Réponse :</h4>
+                                <h4 className="message_list_item_titles">Votre réponse :</h4>
                                 <p className="message_list_item_subtitles message_list_item_subtitles_message">{message.response}</p>
                             </div>
                         : 

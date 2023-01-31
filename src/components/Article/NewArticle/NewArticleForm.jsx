@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom"
-import AuthContext from "../../context/authContext";
+import AuthContext from "../../../context/authContext";
 import axios from "axios";
 
 const NewArticleForm = ({ propIsAdmin }) => {

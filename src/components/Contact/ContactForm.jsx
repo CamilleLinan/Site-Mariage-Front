@@ -23,11 +23,10 @@ const ContactUsForm = ({ propUserData, propAuth }) => {
             }
         })
             .then(res => {
-                console.log(res);
                 alert('Message envoyé avec succès');
+                window.location.reload()
             })
             .catch(err => {
-                console.log(err);
                 alert('Erreur lors de l\'envoi du message');
             });
     }

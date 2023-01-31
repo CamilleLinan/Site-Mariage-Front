@@ -1,8 +1,7 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useCallback, useContext } from "react";
+import { useEffect, useState, useCallback, useContext } from "react";
 import { useParams } from "react-router-dom";
-import AuthContext from "../../context/authContext";
+import axios from "axios";
+import AuthContext from "../../../context/authContext";
 import UpdateArticleForm from "./UpdateArticleForm"
 
 const UpdateArticlePage = ({ propIsAdmin }) => {
