@@ -39,18 +39,18 @@ const ContactMessage = ({ propUserData, propAuth }) => {
                                         <p className="message_list_item_subtitles">{message.object}</p>
                                     </div>
 
-                                    <h4 className="message_list_item_titles">Message :</h4>
-                                    <p className="message_list_item_subtitles">{message.message}</p>
+                                    <h4 className="message_list_item_titles message_list_item_titles_contact">Message :</h4>
+                                    <p className="message_list_item_subtitles message_list_item_subtitles_contact">{message.message}</p>
                                 </div>
 
                                 <span className="message_list_item_deco"></span>
                                 
                                 <div className="message_list_item_response">
-                                    <h4 className="message_list_item_titles">Réponse :</h4>
+                                    <h4 className="message_list_item_titles message_list_item_titles_contact">Réponse :</h4>
                                     {message.response ? 
-                                        <p className="message_list_item_subtitles message_list_item_subtitles_message">{message.response}</p>
+                                        <p className="message_list_item_subtitles message_list_item_subtitles_message message_list_item_subtitles_message_contact">{message.response}</p>
                                     : 
-                                        <p className="message_list_item_subtitles message_list_item_subtitles_message">Vous n'avez pas encore de réponse pour le moment.</p>
+                                        <p className="message_list_item_subtitles message_list_item_subtitles_message message_list_item_subtitles_message_contact">Vous n'avez pas encore de réponse pour le moment.</p>
                                     }
                                 </div>
                             </li>

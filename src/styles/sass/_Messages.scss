@@ -35,13 +35,23 @@
             &_titles {
                 font-family: 'Montserrat-bold';
                 margin: 0;
+                &_contact {
+                    text-align: initial;
+                }
             }
             
             &_subtitles {
                 margin: 0 0.5rem;
+                &_contact {
+                    text-align: initial;
+                    margin: 0.5rem 0;
+                }
                 
                 &_message {
                     margin: 0.5rem 0;
+                    &_contact {
+                        text-align: initial;
+                    }
                 }
             }
 

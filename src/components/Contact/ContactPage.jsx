@@ -30,7 +30,7 @@ const ContactPage = () => {
     }, [getUserData])
 
     return (
-        <section className="contact">
+        <section className="pages contact">
             <ContactIntro />
             <ContactForm propUserData={userData} propAuth={authCtx.token} />
             <ContactMessage propUserData={userData} propAuth={authCtx.token} />
