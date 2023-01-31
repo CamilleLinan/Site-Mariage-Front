@@ -1,10 +1,15 @@
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 820px) {
     .article_form {
         width: 90% !important;
         &_img {
             width: 98% !important;
             max-width: 550px;
         }
+    }
+}
+@media screen and (min-width: 820px) and (max-width: 1000px) {
+    .article_form {
+        padding-bottom: 4rem;
     }
 }
 

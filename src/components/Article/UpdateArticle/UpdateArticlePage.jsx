@@ -31,7 +31,7 @@ const UpdateArticlePage = ({ propIsAdmin }) => {
     }, [getArticleData]);
 
     return(
-        <section className="pages new_article">
+        <section className="pages article">
             <div className="pages_intro">
                 <h2 className="pages_intro_title">Modifier un article</h2>
             </div>
