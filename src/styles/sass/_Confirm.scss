@@ -1,13 +1,21 @@
 @media screen and (max-width: 850px) {
-    .confirm_section {
+    .confirm {
         width: 95% !important;
+        
         &_form {
+            width: 98% !important;
+            
             &_container {
                 width: 95% !important;
             }
+            
             &_btn {
                 width: 50% !important;
             }
+        }
+        
+        &_corresp {
+            width: 95% !important;
         }
     }
 }
@@ -56,6 +64,7 @@
         width: 80%;
         text-align: center;
         margin-top: 1rem;
+        
         &_content {
             &_bold {
                 font-family: 'Montserrat-Bold';

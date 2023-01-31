@@ -3,7 +3,7 @@ import BlogDisplayArticles from "./BlogDisplayArticles"
 
 const BlogPage = ({ propIsAdmin }) => {
     return (
-        <section className="blog_page pages">
+        <section className="pages blog">
             <BlogIntro propIsAdmin={propIsAdmin} />
             <BlogDisplayArticles propIsAdmin={propIsAdmin} />
         </section>

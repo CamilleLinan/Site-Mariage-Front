@@ -7,6 +7,11 @@
         &_bottom_img {
             height: 190px !important;
         }
+        &_pages {
+            &_img {
+                width: 100% !important;
+            }
+        }
     }
 }
 
@@ -62,7 +67,6 @@
         &_img {
             object-fit: cover;
             width: 60%;
-            min-width: 450px;
             max-width: 650px;
             
             &_bottom {

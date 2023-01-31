@@ -1,7 +1,7 @@
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 650px) {
     .blog {
         &_article {
-            width: 95% !important;
+            width: 98% !important;
             
             &_modify {
                 right: 1rem !important;
@@ -10,6 +10,15 @@
             &_deco {
                 width: 70% !important;
             }
+        }
+    }
+}
+
+@media screen and (min-width: 650px) and (max-width: 1000px) {
+    .blog {
+        margin-bottom: 4rem !important;
+        &_article {
+            width: 90% !important;
         }
     }
 }
@@ -94,14 +103,12 @@
         }
         
         &_deco {
-            display: flex;
-            align-self: center;
             background-color: $primary-clr;
             height: 3px;
             width: 65%;
-            min-width: 350px;
+            min-width: 250px;
             max-width: 600px;
-            margin: 3rem auto;
+            margin: 2.5rem auto;
             border-radius: 1rem;
         }
         
@@ -137,7 +144,7 @@
         }
 
         &_comment {
-            margin-bottom: 0;
+            margin-bottom: 0.3rem;
             font-size: 14px;
             opacity: 0.7;
         }

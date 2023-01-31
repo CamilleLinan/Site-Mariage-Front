@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
+import SimpleDateTime from 'react-simple-timestamp-to-date';
 import MessageReply from "./MessagesReply";
 
 const MessagesDisplay = ({ propAuth }) => {
@@ -49,6 +50,7 @@ const MessagesDisplay = ({ propAuth }) => {
                             </div>
                         
                             <h4 className="message_list_item_titles">Message :</h4>
+                            <span className='message_list_item_sendAt'>Envoyé le <SimpleDateTime dateFormat="DMY" dateSeparator="/"  showTime="0">{message.createdAt}</SimpleDateTime></span>
                             <p className="message_list_item_subtitles message_list_item_subtitles_message">{message.message}</p>
                         </div>
                         

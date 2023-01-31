@@ -1,5 +1,10 @@
 @media screen and (max-width: 850px) {
     .pages {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        width: 95% !important;
         &_intro {
             width: 95% !important;
         }

@@ -1,7 +1,10 @@
 @media screen and (max-width: 850px) {
-    .message_list {
-        &_item {
-            width: 90% !important;
+    .message {
+        margin-bottom: 3rem !important;
+        &_list {
+            &_item {
+                width: 90% !important;
+            }
         }
     }
 }
@@ -24,7 +27,7 @@
             max-width: 600px;
             border: 2px solid $secondary-clr;
             border-radius: 0.3rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2.2rem;
             background-color: $tertiary-clr;
             box-shadow: 0 0 10px #0000002e;
             
@@ -38,6 +41,13 @@
                     align-items: center;
                     margin: 0rem 1rem 0.5rem 0rem;
                 }
+            }
+
+            &_sendAt {
+                font-size: 13px;
+                margin-top: 0.3rem;
+                font-family: 'Montserrat-Italic';
+                color: rgba(0, 0, 0, 0.7);
             }
             
             &_titles {

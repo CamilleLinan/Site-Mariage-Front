@@ -1,6 +1,5 @@
 @media screen and (max-width: 850px) {
     .contact {
-        width: 95% !important;
         &_form {
             width: 90% !important;
             &_btn {
@@ -28,9 +27,11 @@
     }
 
     &_form {
-        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         max-width: 500px;
-        margin: 0 auto 4rem auto;
+        margin: 0 auto 1.2rem auto;
         background-color: $tertiary-clr;
         
         &_container {
@@ -48,6 +49,7 @@
             font-size: 15px;
             font-family: 'Montserrat-Bold';
             color: rgba(0, 0, 0, 0.681);
+            width: 98%;
             &:focus {
                 font-family: 'Montserrat';
             }
