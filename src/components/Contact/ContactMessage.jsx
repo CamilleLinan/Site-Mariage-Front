@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
+import SimpleDateTime from 'react-simple-timestamp-to-date';
 
 const ContactMessage = ({ propUserData, propAuth }) => {
     const [ ownMessageData, setOwnMessageData ] = useState([])
@@ -40,6 +41,7 @@ const ContactMessage = ({ propUserData, propAuth }) => {
                                     </div>
 
                                     <h4 className="message_list_item_titles message_list_item_titles_contact">Message :</h4>
+                                    <span className='message_list_item_sendAt'>Envoyé le <SimpleDateTime dateFormat="DMY" dateSeparator="/"  showTime="0">{message.createdAt}</SimpleDateTime></span>
                                     <p className="message_list_item_subtitles message_list_item_subtitles_contact">{message.message}</p>
                                 </div>
 
@@ -48,9 +50,20 @@ const ContactMessage = ({ propUserData, propAuth }) => {
                                 <div className="message_list_item_response">
                                     <h4 className="message_list_item_titles message_list_item_titles_contact">Réponse :</h4>
                                     {message.response ? 
-                                        <p className="message_list_item_subtitles message_list_item_subtitles_message message_list_item_subtitles_message_contact">{message.response}</p>
+                                        <>
+                                            <span className='message_list_item_sendAt'>Envoyé le
+                                                <SimpleDateTime dateFormat="DMY" dateSeparator="/"  showTime="0">
+                                                    {message.updatedAt}
+                                                </SimpleDateTime>
+                                            </span>
+                                            <p className="message_list_item_subtitles message_list_item_subtitles_message message_list_item_subtitles_message_contact">
+                                                {message.response}
+                                            </p> 
+                                        </>
                                     : 
-                                        <p className="message_list_item_subtitles message_list_item_subtitles_message message_list_item_subtitles_message_contact">Vous n'avez pas encore de réponse pour le moment.</p>
+                                        <p className="message_list_item_subtitles message_list_item_subtitles_message message_list_item_subtitles_message_contact message_list_item_subtitles_message_contact_italic">
+                                            Vous n'avez pas encore de réponse pour le moment.
+                                        </p>
                                     }
                                 </div>
                             </li>
