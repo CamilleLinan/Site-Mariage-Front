@@ -61,7 +61,7 @@ const LoginFormSignIn = () => {
                     type="email" 
                     name="email" 
                     id="email"
-                    className={!errors.email ? "login_form_input" : "login_form_input login_form_input_error"} 
+                    className={!errors.email ? "pages_input" : " pages_input login_form_input_error"} 
                     {...register('email')}
                 />
                 {errors.email && <p className="login_form_error">{errors.email.message}</p>}
@@ -72,7 +72,7 @@ const LoginFormSignIn = () => {
                         type={!passwordIsVisible ? "password" : "text"} 
                         name="password" 
                         id="password"
-                        className={!errors.password ? "login_form_input login_form_input_password" : "login_form_input login_form_input_password login_form_input_error"}
+                        className={!errors.password ? "pages_input login_form_input_password" : "pages_input login_form_input_password login_form_input_error"}
                         {...register('password')}
                     />
                     <div id="icon-password-signup" className="icon_password" onClick={() => setPasswordIsVisible(!passwordIsVisible)}>
@@ -84,7 +84,7 @@ const LoginFormSignIn = () => {
                 {errorSignIn && <p className="login_form_error login_form_error_server">{errorSignIn.message}</p>}
                 {errorServer && <p className="login_form_error login_form_error_server">{errorServer.message}</p>}
 
-            <button type="submit" className="login_form_btn">Se connecter</button>
+            <button type="submit" className="pages_button login_form_btn">Se connecter</button>
         </form>
     )
 }

@@ -1,3 +1,11 @@
+@media screen and (max-width: 850px) {
+    .message_list {
+        &_item {
+            width: 90% !important;
+        }
+    }
+}
+
 .message {
     & ul {
         display: flex;
@@ -60,6 +68,7 @@
                     &_btn {
                         margin-top: 0;
                         font-size: 15px;
+                        width: 60%;
                     }
                 }
                 
@@ -74,7 +83,7 @@
                     justify-content: space-around;
                     &_btn {
                         margin-top: 0.3rem;
-                        width: 40% !important;
+                        width: 40%;
                         &_cancel {
                             background-color: rgb(196, 196, 196);
                         }

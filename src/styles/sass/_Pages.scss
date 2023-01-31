@@ -43,4 +43,44 @@
             }
         }
     }
+
+    &_input {
+        height: 1.8rem;
+        border: 2px solid $primary-clr;
+        border-radius: 0.3rem;
+        margin: 0.3rem 0 0.5rem 0;
+        font-size: 16px;
+        &:focus {
+            outline-color: $secondary-clr;
+        }
+
+        &_textarea {
+            border: 2px solid $primary-clr;
+            border-radius: 0.3rem;
+            font-size: 16px;
+            font-family: 'Montserrat';
+            &:focus {
+                outline-color: $secondary-clr;
+            }
+        }
+    }
+
+    &_button {
+        height: 2rem;
+        border-radius: 0.3rem;
+        border: 1px solid $primary-clr;
+        background-color: $primary-clr;
+        font-family: 'Montserrat-Bold';
+        font-size: 16px;
+        box-shadow: 0 0 5px #0000002e;
+        transition: all 400ms ease-in-out;
+        &:hover {
+            background-color: $secondary-clr;
+            box-shadow: 0 0 16px #0000002e;
+        }
+
+        &_cancel {
+            background-color: $cancel-color;
+        }
+    }
 }

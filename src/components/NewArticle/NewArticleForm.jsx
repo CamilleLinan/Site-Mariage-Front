@@ -51,48 +51,50 @@ const NewArticleForm = ({ propIsAdmin }) => {
     };
 
     return(
-        <form action="" onSubmit={onSubmit} id='new-article-form' className="new_article_form"> 
-            <div className="new_article_form_section">
-                <label htmlFor="title" className="new_article_form_label">Titre de l'article :</label>
+        <form action="" onSubmit={onSubmit} id='new-article-form' className="article_form"> 
+            <div className="article_form_section">
+                <label htmlFor="title" className="article_form_label">Titre de l'article :</label>
                     <input 
                         type='text'
                         name="title"
                         id="title"
-                        className="new_article_form_input new_article_form_input_title"
+                        className="pages_input article_form_input"
                         value={articleTitle}
                         onChange={(e) => setArticleTitle(e.target.value)}
                         required
                     />
 
-                <label htmlFor="description" className="new_article_form_label">Description :</label>
+                <label htmlFor="description" className="article_form_label">Description :</label>
                     <textarea
                         name='description' 
                         id="description"
-                        className="new_article_form_input new_article_form_input_description"
+                        className="pages_input_textarea article_form_input article_form_input_description"
                         value={articleDescription} 
                         onChange={(e) => setArticleDescription(e.target.value)}
                         required 
                     />
 
-                <label htmlFor="file" className="new_article_form_label">Ajouter une image :</label>
-                    <div className="new_article_form_container">
-                        {previewPicture && <img src={previewPicture} alt='article-mariage-cover' className="new_article_form_img" />}
+                <label htmlFor="file" className="article_form_label">Ajouter une image :</label>
+                    <div className="article_form_container">
+                        {previewPicture && <img src={previewPicture} alt='article-mariage-cover' className="article_form_img" />}
                         <input 
                             type="file" 
                             name="file" 
                             id="file"
-                            className=""
+                            className="article_form_input_file"
                             accept=".jpg, .jpeg, .png, .gif"
                             onChange={changeHandlerPicture}
                         />
                     </div>
             </div>
             
-            <footer className="new_article_footer">
-                <NavLink className="new_article_footer_btn new_article_footer_btn_cancel" title="Annuler" end to='/blog'>
-                    Annuler
-                </NavLink>
-                <button type="submit" className="new_article_footer_btn new_article_footer_btn_confirm">
+            <footer className="article_form_footer">
+                <button className="pages_button pages_button_cancel article_form_footer_btn">
+                    <NavLink title="Annuler" end to='/blog' className='article_form_footer_btn_navlink'>
+                            Annuler
+                    </NavLink>
+                </button>
+                <button type="submit" className="pages_button article_form_footer_btn">
                     Confirmer
                 </button>
             </footer>

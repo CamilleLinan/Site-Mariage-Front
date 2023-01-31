@@ -32,10 +32,10 @@ const UpdateArticlePage = ({ propIsAdmin }) => {
     }, [getArticleData]);
 
     return(
-        <section className="new_article">
-            <header className="new_article_header">
-                <h2 className="new_article_header_title">Modifier un article</h2>
-            </header> 
+        <section className="pages new_article">
+            <div className="pages_intro">
+                <h2 className="pages_intro_title">Modifier un article</h2>
+            </div>
             {propIsAdmin === true ?
                 <UpdateArticleForm propData={articleData} propAuth={authCtx} propIsAdmin={propIsAdmin} />
             :

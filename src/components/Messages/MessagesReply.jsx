@@ -29,7 +29,7 @@ const MessageReply = ({ propAuth, propMsgId, propFirstname }) => {
         <>
             {!openInput && 
                 <div className="message_list_item_reply_box">
-                    <button onClick={() => setOpenInput(true)} className="contact_form_btn message_list_item_reply_box_btn">Répondre à {propFirstname}</button>
+                    <button onClick={() => setOpenInput(true)} className="pages_button message_list_item_reply_box_btn">Répondre à {propFirstname}</button>
                 </div>
             }
 
@@ -45,8 +45,8 @@ const MessageReply = ({ propAuth, propMsgId, propFirstname }) => {
                             required
                         />
                     <div className="message_list_item_reply_btns">
-                        <button onClick={() => setOpenInput(false)} className="contact_form_btn message_list_item_reply_btns_btn message_list_item_reply_btns_btn_cancel">Annuler</button>
-                        <button type='submit' className="contact_form_btn message_list_item_reply_btns_btn message_list_item_reply_btns_btn_confirm">Envoyer</button>
+                        <button onClick={() => setOpenInput(false)} className="pages_button message_list_item_reply_btns_btn message_list_item_reply_btns_btn_cancel">Annuler</button>
+                        <button type='submit' className="pages_button message_list_item_reply_btns_btn message_list_item_reply_btns_btn_confirm">Envoyer</button>
                     </div>
                 </form>
             </> }

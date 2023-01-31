@@ -90,7 +90,7 @@ const ContactUsForm = ({ propUserData, propAuth }) => {
                             onChange={(e) => setMessage(e.target.value)}
                             required
                         />
-                    <button className="contact_form_btn">Envoyer</button>
+                    <button className="pages_button contact_form_btn">Envoyer</button>
                 </div>
                 <span className="blog_article_deco blog_article_deco_bottom"></span>
             </form>
