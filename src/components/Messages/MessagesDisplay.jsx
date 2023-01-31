@@ -33,34 +33,36 @@ const MessagesDisplay = ({ propAuth }) => {
                 {allMessageData.map((message, i) => (
                     <li key={message._id} className="message_list_item">
                         <div className="message_list_item_container">
-                            <h4 className="message_list_item_title">Nom :</h4>
-                            <p className="message_list_item_subtitle">{message.lastname}</p>
+                            <div className="message_list_item_container_titles">
+                                <h4 className="message_list_item_titles">De :</h4>
+                                <p className="message_list_item_subtitles">{message.lastname} {message.firstname}</p>
+                            </div>
 
-                            <h4 className="message_list_item_title">Prénom :</h4>
-                            <p className="message_list_item_subtitle">{message.firstname}</p>
+                            <div className="message_list_item_container_titles">
+                                <h4 className="message_list_item_titles">Email :</h4>
+                                <p className="message_list_item_subtitles">{message.email}</p>
+                            </div>
 
-                            <h4 className="message_list_item_title">Email :</h4>
-                            <p className="message_list_item_subtitle">{message.email}</p>
+                            <div className="message_list_item_container_titles">
+                                <h4 className="message_list_item_titles">Objet :</h4>
+                                <p className="message_list_item_subtitles">{message.object}</p>
+                            </div>
+                        
+                            <h4 className="message_list_item_titles">Message :</h4>
+                            <p className="message_list_item_subtitles message_list_item_subtitles_message">{message.message}</p>
                         </div>
-
-                        <div className="message_list_item_container">
-                            <h4 className="message_list_item_title">Objet :</h4>
-                            <p className="message_list_item_subtitle">{message.object}</p>
-                        </div>
                         
-                        <h4 className="message_list_item_title">Message :</h4>
-                        <p className="message_list_item_subtitle">{message.message}</p>
-                        
-                        
-                        <span className="message_list_item_deco message_list_item_deco_2"></span>
+                        <span className="message_list_item_deco"></span>
 
                         {message.response ?
-                            <div className="message_list_item_reponse">
-                                <h4 className="message_list_item_title">Réponse :</h4>
-                                <p className="message_list_item_response_content">{message.response}</p>
+                            <div className="message_list_item_response">
+                                <h4 className="message_list_item_titles">Réponse :</h4>
+                                <p className="message_list_item_subtitles message_list_item_subtitles_message">{message.response}</p>
                             </div>
                         : 
-                            <MessageReply propAuth={propAuth} propMsgId={message._id} />
+                            <div className="message_list_item_reply">
+                                <MessageReply propAuth={propAuth} propMsgId={message._id} propFirstname={message.firstname} />
+                            </div>
                         }
                     </li>
                 ))}

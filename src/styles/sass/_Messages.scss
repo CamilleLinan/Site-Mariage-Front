@@ -1,0 +1,86 @@
+.message {
+    & ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    &_list {
+        &_item {
+            width: 60%;
+            max-width: 450px;
+            border: 2px solid $secondary-clr;
+            border-radius: 0.3rem;
+            margin-bottom: 1.5rem;
+            background-color: $tertiary-clr;
+            
+            &_container {
+                display: flex;
+                flex-direction: column;
+                padding: 0.8rem 0 0.3rem 1rem;
+                
+                &_titles {
+                    display: flex;
+                    align-items: center;
+                    margin: 0rem 1rem 0.5rem 0rem;
+                }
+            }
+            
+            &_titles {
+                font-family: 'Montserrat-bold';
+                margin: 0;
+            }
+            
+            &_subtitles {
+                margin: 0 0.5rem;
+                
+                &_message {
+                    margin: 0.5rem 0;
+                }
+            }
+
+            &_deco {
+                height: 2px;
+                width: 100%;
+                background-color: $secondary-clr;
+                display: block;
+            }
+
+            &_response {
+                padding: 0.8rem 0 0.3rem 1rem;
+            }
+
+            &_reply {
+                padding: 1rem;
+                
+                &_box {
+                    display: flex;
+                    justify-content: center;
+                    
+                    &_btn {
+                        margin-top: 0;
+                        font-size: 15px;
+                    }
+                }
+                
+                &_textarea {
+                    width: 98%;
+                    height: 80px;
+                    margin: 0.5rem auto;
+                }
+
+                &_btns {
+                    display: flex;
+                    justify-content: space-around;
+                    &_btn {
+                        margin-top: 0.3rem;
+                        width: 40% !important;
+                        &_cancel {
+                            background-color: rgb(196, 196, 196);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

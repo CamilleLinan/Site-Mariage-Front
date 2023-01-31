@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react"
 
-const MessageReply = ({ propAuth, propMsgId }) => {
+const MessageReply = ({ propAuth, propMsgId, propFirstname }) => {
     const [ openInput, setOpenInput ] = useState(false);
     const [ response, setResponse ] = useState('');
     const [ errorServer, setErrorServer ] = useState('');
@@ -26,29 +26,31 @@ const MessageReply = ({ propAuth, propMsgId }) => {
     };
 
     return(
-        <div>
+        <>
             {!openInput && 
-                <button onClick={() => setOpenInput(true)}>Répondre</button>
+                <div className="message_list_item_reply_box">
+                    <button onClick={() => setOpenInput(true)} className="contact_form_btn message_list_item_reply_box_btn">Répondre à {propFirstname}</button>
+                </div>
             }
 
             {openInput && <>
                 <form action="" onSubmit={onSubmit}>
-                    <label htmlFor="response" className="contact_form_label">Votre réponse :</label>
+                    <label htmlFor="response" className="message_list_item_titles">Votre réponse :</label>
                         <textarea
                             name="response"
                             id="response"
-                            rows='4' cols='60'
-                            className="contact_form_input contact_form_input_response"
+                            rows='5'
+                            className="contact_form_input contact_form_input_response message_list_item_reply_textarea"
                             onChange={(e) => setResponse(e.target.value)}
                             required
                         />
-                    <div>
-                        <button onClick={() => setOpenInput(false)} className="contact_form_btn">Annuler</button>
-                        <button type='submit' className="contact_form_btn">Envoyer</button>
+                    <div className="message_list_item_reply_btns">
+                        <button onClick={() => setOpenInput(false)} className="contact_form_btn message_list_item_reply_btns_btn message_list_item_reply_btns_btn_cancel">Annuler</button>
+                        <button type='submit' className="contact_form_btn message_list_item_reply_btns_btn message_list_item_reply_btns_btn_confirm">Envoyer</button>
                     </div>
                 </form>
             </> }
-        </div>
+        </>
     )
 }
 

@@ -6,8 +6,10 @@ const MessagesPage = () => {
     const authCtx = useContext(AuthContext);
 
     return(
-        <section className="message">
-            <h2 className="message_intro_title">Vos messages</h2>
+        <section className="message pages">
+            <div className="pages_intro">
+                <h2 className="pages_intro_title">Vos messages</h2>
+            </div>
             <MessagesDisplay propAuth={authCtx.token} />
         </section>
     )
