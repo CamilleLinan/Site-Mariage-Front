@@ -29,7 +29,6 @@
             border-radius: 0.3rem;
             margin-bottom: 2.2rem;
             background-color: $tertiary-clr;
-            box-shadow: 0 0 10px #0000002e;
             
             &_container {
                 display: flex;
@@ -41,6 +40,11 @@
                     align-items: center;
                     margin: 0rem 1rem 0.5rem 0rem;
                 }
+            }
+
+            &_isNotRead {
+                box-shadow: 0 0 10px #0000002e;
+                border: 3px solid rgb(154, 0, 0);
             }
 
             &_sendAt {

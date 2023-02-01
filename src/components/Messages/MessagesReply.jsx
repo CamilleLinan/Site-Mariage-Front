@@ -14,11 +14,13 @@ const MessageReply = ({ propAuth, propMsgId, propFirstname }) => {
                 Authorization: `Bearer ${propAuth}`,
             },
             data: {
-                response: response
+                response: response,
+                isRead: true
             }
         })
             .then(() => {
                 alert('Réponse envoyée !')
+                window.location.reload()
             })
             .catch(() => {
                 setErrorServer({ ...errorServer, message: 'Erreur interne.' }) 

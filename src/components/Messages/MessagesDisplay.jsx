@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import SimpleDateTime from 'react-simple-timestamp-to-date';
 import MessageReply from "./MessagesReply";
+import MessageIsRead from "./MessageIsRead";
 
 const MessagesDisplay = ({ propAuth }) => {
     const [ allMessageData, setAllMessageData ] = useState([])
@@ -32,11 +33,12 @@ const MessagesDisplay = ({ propAuth }) => {
         <> {allMessageData.length > 0 ? 
             <ul className="message_list">
                 {allMessageData.map((message, i) => (
-                    <li key={message._id} className="message_list_item">
+                    <li key={message._id} className={message.isRead === true ? "message_list_item" : "message_list_item message_list_item_isNotRead"}>
                         <div className="message_list_item_container">
                             <div className="message_list_item_container_titles">
                                 <h4 className="message_list_item_titles">De :</h4>
                                 <p className="message_list_item_subtitles">{message.lastname} {message.firstname}</p>
+                                <MessageIsRead propAuth={propAuth} propMsgId={message._id} propMsgIsRead={message.isRead} />
                             </div>
 
                             <div className="message_list_item_container_titles">
