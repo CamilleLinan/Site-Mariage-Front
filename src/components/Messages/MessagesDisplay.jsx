@@ -53,7 +53,7 @@ const MessagesDisplay = ({ propAuth }) => {
                                         <p className="message_list_item_subtitles">{poster.lastname} {poster.firstname}</p>
                                     </div>
                                     <div className="message_list_item_container_titles message_list_item_container_titles_2">
-                                        <span className='message_list_item_sendAt'>Reçu le <SimpleDateTime dateFormat="DMY" dateSeparator="/"  showTime="0">{message.createdAt}</SimpleDateTime></span>
+                                        <span className='message_list_item_sendAt'><span>Reçu le</span> <SimpleDateTime dateFormat="DMY" dateSeparator="/"  showTime="0">{message.createdAt}</SimpleDateTime></span>
                                         <MessageIsRead propAuth={propAuth} propMsgId={message._id} propMsgIsRead={message.isRead} onReadUpdate={handleReadUpdate} />
                                     </div>
                                 </div>

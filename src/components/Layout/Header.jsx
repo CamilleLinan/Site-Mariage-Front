@@ -11,6 +11,8 @@ const Header = () => {
     const authCtx = useContext(AuthContext);
     const isLoggedIn = authCtx.isLoggedIn;
 
+    const [ unreadMessagesCount, setUnreadMessagesCount ] = useState(0);
+    const [ unreadResponsesCount, setUnreadResponsesCount ] = useState(0);
     const [ userData, setUserData ] = useState([])
     const [ errorServer, setErrorServer ] = useState('');
     const [ isNavExpanded, setIsNavExpanded ] = useState(false)
@@ -32,6 +34,24 @@ const Header = () => {
     useEffect(() => {
         getUserData();
     }, [getUserData])
+
+    useEffect(() => {
+        axios({
+            method: 'GET',
+            url: `http://localhost:5000/api/messages`,
+            headers: {
+                Authorization: `Bearer ${authCtx.token}`,
+            }
+        })
+        
+            .then(response => {
+                const unreadMessages = response.data.filter(message => !message.isRead);
+                setUnreadMessagesCount(unreadMessages.length);
+                const unreadResponses = response.data.filter(message => !message.response.isRead);
+                setUnreadResponsesCount(unreadResponses.length);
+            });
+
+    }, [authCtx.token]);
 
     return (
         <header className="header">
@@ -82,18 +102,24 @@ const Header = () => {
                     {!userData.isAdmin ?
                         <li><NavLink 
                             title='Nous contacter' 
-                            className='header_nav_link' 
+                            className='header_nav_link header_nav_link_messages' 
                             end to='/contact'
                         >
-                            NOUS CONTACTER
+                            CONTACT
+                            {unreadResponsesCount > 0 &&
+                                <span className="header_nav_link_messages_number">{unreadResponsesCount}</span>
+                            }
                         </NavLink></li>
                     :
                         <li><NavLink 
                             title='Nous contacter' 
-                            className='header_nav_link' 
+                            className='header_nav_link header_nav_link_messages' 
                             end to='/messages'
                         >
-                            MESSAGES
+                            MESSAGES 
+                            {unreadMessagesCount > 0 &&
+                                <span className="header_nav_link_messages_number">{unreadMessagesCount}</span>
+                            }
                         </NavLink></li>
                     }
 
