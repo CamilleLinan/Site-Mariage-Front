@@ -1,11 +1,35 @@
+import axios from 'axios';
+import { useCallback, useEffect, useState } from 'react';
 import SimpleDateTime from 'react-simple-timestamp-to-date';
 import ContactResIsRead from './ContactResIsRead';
 
 const ContactMessage = ({ propAuth, propMsgData }) => {
-    const msgData = propMsgData
+    const [msgData, setMsgData] = useState(propMsgData);
+    const [ errorServer, setErrorServer ] = useState('')
+
+    const getOwnMessageData = useCallback(async() => {
+        await axios({
+            method: 'GET',
+            url: `http://localhost:5000/api/messages/${propAuth.userId}`,
+            headers: {
+                Authorization: `Bearer ${propAuth.token}`,
+            }
+        })
+            .then((res) => { 
+                setMsgData(res.data.messages);
+            })
+            .catch(() => {
+                setErrorServer({ ...errorServer, message: 'Une erreur interne est survenue. Merci de revenir plus tard.' });
+            });
+
+    }, [propAuth.userId, propAuth.token, errorServer]);
+
+    useEffect(() => {
+        getOwnMessageData();
+    }, [getOwnMessageData])
 
     const handleReadUpdate = (id, isRead) => {
-        msgData(prev => prev.map(message => {
+        setMsgData(prev => prev.map(message => {
             if (message._id === id) {
                 message.response.isRead = isRead;
             }
@@ -14,7 +38,7 @@ const ContactMessage = ({ propAuth, propMsgData }) => {
     };
 
     return (
-        <> {msgData.length > 0 &&
+        <> {(msgData && msgData.length > 0) &&
             <article className="message">
                 <h3 className="message_title">Vos questions :</h3>
                     <ul className="message_list">

@@ -20,7 +20,8 @@ const ContactResIsRead = ({ propAuth, propMsgId, propResIsRead, onReadUpdate }) 
         })
             .then((res) => { 
                 setIsRead(true)
-                onReadUpdate(propMsgId, res.data.isRead)
+                onReadUpdate(propMsgId, res.data.response.isRead)
+                console.log(res.data)
             })
             .catch(() => {
                 setErrorServer({ ...errorServer, message: 'Une erreur interne est survenue. Merci de revenir plus tard.' });
@@ -43,7 +44,8 @@ const ContactResIsRead = ({ propAuth, propMsgId, propResIsRead, onReadUpdate }) 
         })
             .then((res) => { 
                 setIsRead(false)
-                onReadUpdate(propMsgId, res.data.isRead)
+                onReadUpdate(propMsgId, res.data.response.isRead)
+                console.log(res.data)
             })
             .catch(() => {
                 setErrorServer({ ...errorServer, message: 'Une erreur interne est survenue. Merci de revenir plus tard.' });
