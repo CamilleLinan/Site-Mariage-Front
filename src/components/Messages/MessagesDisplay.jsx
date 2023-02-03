@@ -43,6 +43,7 @@ const MessagesDisplay = ({ propAuth }) => {
             <ul className="message_list">
                 {allMessageData.map((message, i) => (
                     <li key={message._id} className={message.isRead === true ? "message_list_item" : "message_list_item message_list_item_isNotRead"}>
+                        {!message.isRead && <span className="message_list_item_decoUnread"></span>}
                         <div className="message_list_item_container">
                             {message.User.map((poster, i) => ( 
                             <div key={poster._id}>
@@ -51,7 +52,7 @@ const MessagesDisplay = ({ propAuth }) => {
                                         <h4 className="message_list_item_titles">De :</h4>
                                         <p className="message_list_item_subtitles">{poster.lastname} {poster.firstname}</p>
                                     </div>
-                                    <div>
+                                    <div className="message_list_item_container_titles message_list_item_container_titles_2">
                                         <span className='message_list_item_sendAt'>Reçu le <SimpleDateTime dateFormat="DMY" dateSeparator="/"  showTime="0">{message.createdAt}</SimpleDateTime></span>
                                         <MessageIsRead propAuth={propAuth} propMsgId={message._id} propMsgIsRead={message.isRead} onReadUpdate={handleReadUpdate} />
                                     </div>

@@ -1,5 +1,10 @@
-import axios from "axios";
 import { useState } from "react";
+import axios from "axios";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
+
+const EnvOpenIcon = <FontAwesomeIcon icon={faEnvelopeOpen} />
+const EnvIcon = <FontAwesomeIcon icon={faEnvelope} />
 
 const MessageIsRead = ({ propAuth, propMsgId, propMsgIsRead, onReadUpdate }) => {
     const [ isRead, setIsRead ] = useState(propMsgIsRead)
@@ -51,9 +56,9 @@ const MessageIsRead = ({ propAuth, propMsgId, propMsgIsRead, onReadUpdate }) => 
 
     return(
         <> {!isRead ?
-                <button onClick={putReadOn}>Marquer comme lu</button>
+                <button onClick={putReadOn} title='Marquer comme lu' className='message_list_item_btn'>{EnvIcon}</button>
             :
-                <button onClick={putReadOff}>Marquer comme non lu</button>
+                <button onClick={putReadOff} title='Marquer comme non lu' className='message_list_item_btn'>{EnvOpenIcon}</button>
         } </>
     )
 }

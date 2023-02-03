@@ -60,13 +60,13 @@ const ContactMessage = ({ propAuth, propMsgData }) => {
                                 <span className="message_list_item_deco"></span>
                                 
                                 <div className={message.response.isRead === true ? "message_list_item_response" : "message_list_item_response message_list_item_isNotRead"}>
+                                {!message.response.isRead && <span className="message_list_item_decoUnread"></span>}
                                     <div className="message_list_item_container_titles message_list_item_container_titles_1">
                                         <h4 className="message_list_item_titles message_list_item_titles_contact">Réponse :</h4>
-                                        <ContactResIsRead propAuth={propAuth} propMsgId={message._id} propResIsRead={message.response.isRead} onReadUpdate={handleReadUpdate} />
                                         {message.response.text && 
-                                            <div>
+                                            <div className="message_list_item_container_titles message_list_item_container_titles_2">
                                                 <span className='message_list_item_sendAt'>Reçue le <SimpleDateTime dateFormat="DMY" dateSeparator="/"  showTime="0">{message.updatedAt}</SimpleDateTime></span>
-                                                
+                                                <ContactResIsRead propAuth={propAuth} propMsgId={message._id} propResIsRead={message.response.isRead} onReadUpdate={handleReadUpdate} />
                                             </div> 
                                         }
                                     </div>
