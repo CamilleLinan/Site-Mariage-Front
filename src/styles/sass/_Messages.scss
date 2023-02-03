@@ -25,10 +25,11 @@
         &_item {
             width: 60%;
             max-width: 600px;
-            border: 2px solid $secondary-clr;
+            border: 1px solid $secondary-clr;
             border-radius: 0.3rem;
             margin-bottom: 2.2rem;
             background-color: $tertiary-clr;
+            @include box-shadow;
             
             &_container {
                 display: flex;
@@ -38,13 +39,17 @@
                 &_titles {
                     display: flex;
                     align-items: center;
-                    margin: 0rem 1rem 0.5rem 0rem;
+                    margin: 0 0 0.5rem 0;
+
+                    &_1 {
+                        justify-content: space-between;
+                    }
                 }
             }
 
             &_isNotRead {
-                box-shadow: 0 0 10px #0000002e;
-                border: 3px solid rgb(154, 0, 0);
+                box-shadow: 0 0 16px #0000002e;
+                border-left: 7px solid $secondary-clr;
             }
 
             &_sendAt {
@@ -59,6 +64,9 @@
                 margin: 0;
                 &_contact {
                     text-align: initial;
+                }
+                &_container {
+                    display: flex;
                 }
             }
             

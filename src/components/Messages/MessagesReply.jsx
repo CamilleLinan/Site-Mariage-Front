@@ -1,21 +1,23 @@
 import axios from "axios";
 import { useState } from "react"
 
-const MessageReply = ({ propAuth, propMsgId, propFirstname }) => {
+const MessageReply = ({ propAuth, propMsgId, propPoster }) => {
     const [ openInput, setOpenInput ] = useState(false);
     const [ response, setResponse ] = useState('');
     const [ errorServer, setErrorServer ] = useState('');
 
     const onSubmit = async () => {
         await axios({
-            method:'PUT',
+            method:'PATCH',
             url: `http://localhost:5000/api/messages/${propMsgId}`,
             headers: {
                 Authorization: `Bearer ${propAuth}`,
             },
             data: {
-                response: response,
-                isRead: true
+                response: {
+                    text: response,
+                    isRead: false
+                }
             }
         })
             .then(() => {
@@ -29,10 +31,12 @@ const MessageReply = ({ propAuth, propMsgId, propFirstname }) => {
 
     return(
         <>
-            {!openInput && 
-                <div className="message_list_item_reply_box">
-                    <button onClick={() => setOpenInput(true)} className="pages_button message_list_item_reply_box_btn">Répondre à {propFirstname}</button>
-                </div>
+            {!openInput && <>
+                {propPoster.map((poster, i) => ( 
+                <div key={poster._id} className="message_list_item_reply_box">
+                    <button onClick={() => setOpenInput(true)} className="pages_button message_list_item_reply_box_btn">Répondre à {poster.firstname}</button>
+                </div> 
+                ))} </>
             }
 
             {openInput && <>

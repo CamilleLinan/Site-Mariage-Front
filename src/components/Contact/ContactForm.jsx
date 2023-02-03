@@ -12,12 +12,10 @@ const ContactUsForm = ({ propUserData, propAuth }) => {
             method: 'POST',
             url: `http://localhost:5000/api/messages`,
             headers: {
-                Authorization: `Bearer ${propAuth}`,
+                Authorization: `Bearer ${propAuth.token}`,
             },
             data: {
-                lastname: propUserData.lastname,
-                firstname: propUserData.firstname,
-                email: propUserData.email,
+                posterId: propAuth.userId,
                 object: object,
                 message: message
             }
@@ -36,36 +34,11 @@ const ContactUsForm = ({ propUserData, propAuth }) => {
             <form className="contact_form" onSubmit={handleSubmit}>
                 <span className="blog_article_deco blog_article_deco_top"></span>
                 <div className="contact_form_container">
-                    <label htmlFor="lastname" className="contact_form_label"></label>
-                        <input 
-                            type='text' 
-                            name='lastname'
-                            id="lastname"
-                            className="pages_input contact_form_input"
-                            defaultValue={propUserData.lastname}
-                            required
-                        />
-                    
-                    <label htmlFor="firstname" className="contact_form_label"></label>
-                        <input 
-                            type='text' 
-                            name='firstname'
-                            id="firstname"
-                            className="pages_input contact_form_input"
-                            defaultValue={propUserData.firstname}
-                            required
-                        />
-                    
-                    <label htmlFor="email" className="contact_form_label"></label>
-                        <input 
-                            type='email' 
-                            name='email'
-                            id="email"
-                            className="pages_input contact_form_input"
-                            defaultValue={propUserData.email}
-                            required
-                        />
-
+                    <div className="contact_form_intro">
+                        <h3 className="contact_form_intro_title">Vos informations :</h3>
+                        <p className="contact_form_intro_content">{propUserData.lastname} {propUserData.firstname}</p>
+                        <p className="contact_form_intro_content">{propUserData.email}</p>
+                    </div>
                     <label htmlFor="object" className="contact_form_label"></label>
                         <input 
                             type='text' 

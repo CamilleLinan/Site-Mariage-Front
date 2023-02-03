@@ -3,3 +3,7 @@ $secondary-clr: #a7ab91;
 $tertiary-clr: #f1f4e440;
 
 $cancel-color: rgb(214, 214, 214);
+
+@mixin box-shadow {
+    box-shadow: 0 0 5px #0000002e;
+}

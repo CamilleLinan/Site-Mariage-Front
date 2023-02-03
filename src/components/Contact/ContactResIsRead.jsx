@@ -1,19 +1,21 @@
-import axios from "axios";
 import { useState } from "react";
+import axios from "axios";
 
-const MessageIsRead = ({ propAuth, propMsgId, propMsgIsRead, onReadUpdate }) => {
-    const [ isRead, setIsRead ] = useState(propMsgIsRead)
+const ContactResIsRead = ({ propAuth, propMsgId, propResIsRead, onReadUpdate }) => {
+    const [ isRead, setIsRead ] = useState(propResIsRead)
     const [ errorServer, setErrorServer ] = useState('')
 
     const putReadOn = async () => {
         await axios({
             method: 'PATCH',
-            url: `http://localhost:5000/api/messages/${propMsgId}/msgIsRead`,
+            url: `http://localhost:5000/api/messages/${propMsgId}/resIsRead`,
             headers: {
-                Authorization: `Bearer ${propAuth}`,
+                Authorization: `Bearer ${propAuth.token}`,
             },
             data: {
-                isRead: true
+                response: {
+                    isRead: true
+                }
             }
         })
             .then((res) => { 
@@ -29,12 +31,14 @@ const MessageIsRead = ({ propAuth, propMsgId, propMsgIsRead, onReadUpdate }) => 
     const putReadOff = async () => {
         await axios({
             method: 'PATCH',
-            url: `http://localhost:5000/api/messages/${propMsgId}/msgIsRead`,
+            url: `http://localhost:5000/api/messages/${propMsgId}/resIsRead`,
             headers: {
-                Authorization: `Bearer ${propAuth}`,
+                Authorization: `Bearer ${propAuth.token}`,
             },
             data: {
-                isRead: false
+                response: {
+                    isRead: false
+                }
             }
         })
             .then((res) => { 
@@ -49,11 +53,11 @@ const MessageIsRead = ({ propAuth, propMsgId, propMsgIsRead, onReadUpdate }) => 
 
     return(
         <> {!isRead ?
-                <button onClick={putReadOn}>Marquer comme lu</button>
+                <button onClick={putReadOn}>Marquer comme Lu</button>
             :
                 <button onClick={putReadOff}>Marquer comme non lu</button>
         } </>
     )
 }
 
-export default MessageIsRead
+export default ContactResIsRead

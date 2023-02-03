@@ -29,22 +29,39 @@ const MessagesDisplay = ({ propAuth }) => {
         getAllMessageData();
     }, [getAllMessageData])
 
+    const handleReadUpdate = (id, isRead) => {
+        setAllMessageData(prev => prev.map(message => {
+            if (message._id === id) {
+                message.isRead = isRead;
+            }
+            return message;
+        }));
+    };
+
     return(
         <> {allMessageData.length > 0 ? 
             <ul className="message_list">
                 {allMessageData.map((message, i) => (
                     <li key={message._id} className={message.isRead === true ? "message_list_item" : "message_list_item message_list_item_isNotRead"}>
                         <div className="message_list_item_container">
-                            <div className="message_list_item_container_titles">
-                                <h4 className="message_list_item_titles">De :</h4>
-                                <p className="message_list_item_subtitles">{message.lastname} {message.firstname}</p>
-                                <MessageIsRead propAuth={propAuth} propMsgId={message._id} propMsgIsRead={message.isRead} />
-                            </div>
+                            {message.User.map((poster, i) => ( 
+                            <div key={poster._id}>
+                                <div className="message_list_item_container_titles message_list_item_container_titles_1">
+                                    <div className="message_list_item_titles_container">
+                                        <h4 className="message_list_item_titles">De :</h4>
+                                        <p className="message_list_item_subtitles">{poster.lastname} {poster.firstname}</p>
+                                    </div>
+                                    <div>
+                                        <span className='message_list_item_sendAt'>Reçu le <SimpleDateTime dateFormat="DMY" dateSeparator="/"  showTime="0">{message.createdAt}</SimpleDateTime></span>
+                                        <MessageIsRead propAuth={propAuth} propMsgId={message._id} propMsgIsRead={message.isRead} onReadUpdate={handleReadUpdate} />
+                                    </div>
+                                </div>
 
-                            <div className="message_list_item_container_titles">
-                                <h4 className="message_list_item_titles">Email :</h4>
-                                <p className="message_list_item_subtitles">{message.email}</p>
-                            </div>
+                                <div className="message_list_item_container_titles">
+                                    <h4 className="message_list_item_titles">Email :</h4>
+                                    <p className="message_list_item_subtitles">{poster.email}</p>
+                                </div>
+                            </div> ))}
 
                             <div className="message_list_item_container_titles">
                                 <h4 className="message_list_item_titles">Objet :</h4>
@@ -52,21 +69,20 @@ const MessagesDisplay = ({ propAuth }) => {
                             </div>
                         
                             <h4 className="message_list_item_titles">Message :</h4>
-                            <span className='message_list_item_sendAt'>Envoyé le <SimpleDateTime dateFormat="DMY" dateSeparator="/"  showTime="0">{message.createdAt}</SimpleDateTime></span>
                             <p className="message_list_item_subtitles message_list_item_subtitles_message">{message.message}</p>
                         </div>
                         
                         <span className="message_list_item_deco"></span>
 
-                        {message.response ?
+                        {message.response.text ?
                             <div className="message_list_item_response">
                                 <h4 className="message_list_item_titles">Votre réponse :</h4>
-                                <span className='message_list_item_sendAt'>Envoyé le <SimpleDateTime dateFormat="DMY" dateSeparator="/"  showTime="0">{message.updatedAt}</SimpleDateTime></span>
-                                <p className="message_list_item_subtitles message_list_item_subtitles_message">{message.response}</p>
+                                <span className='message_list_item_sendAt'>Envoyée le <SimpleDateTime dateFormat="DMY" dateSeparator="/"  showTime="0">{message.updatedAt}</SimpleDateTime></span>
+                                <p className="message_list_item_subtitles message_list_item_subtitles_message">{message.response.text}</p>
                             </div>
                         : 
                             <div className="message_list_item_reply">
-                                <MessageReply propAuth={propAuth} propMsgId={message._id} propFirstname={message.firstname} />
+                                <MessageReply propAuth={propAuth} propMsgId={message._id} propPoster={message.User} />
                             </div>
                         }
                     </li>
