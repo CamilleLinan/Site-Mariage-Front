@@ -43,14 +43,12 @@ const Header = () => {
                 Authorization: `Bearer ${authCtx.token}`,
             }
         })
-        
             .then(response => {
                 const unreadMessages = response.data.filter(message => !message.isRead);
                 setUnreadMessagesCount(unreadMessages.length);
                 const unreadResponses = response.data.filter(message => !message.response.isRead);
                 setUnreadResponsesCount(unreadResponses.length);
             });
-
     }, [authCtx.token]);
 
     return (
@@ -66,8 +64,8 @@ const Header = () => {
             <div className={isNavExpanded ? "header_nav expanded" : "header_nav"}>
                 <ul>
                     <li><NavLink 
-                        title='Accueil' 
-                        className='header_nav_link' 
+                        title='Accueil'
+                        className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_active" : "header_nav_link")} 
                         end to='/'
                     >
                         ACCUEIL
@@ -75,7 +73,7 @@ const Header = () => {
                     
                     <li><NavLink 
                         title='Blog du mariage' 
-                        className='header_nav_link' 
+                        className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_active" : "header_nav_link")} 
                         end to='/blog'
                     >
                         BLOG DU MARIAGE
@@ -84,7 +82,7 @@ const Header = () => {
                     {!userData.isAdmin ?
                         <li><NavLink 
                             title='Confirmer sa présence' 
-                            className='header_nav_link' 
+                            className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_active" : "header_nav_link")} 
                             end to='/confirm'
                         >
                             CONFIRMER SA PRÉSENCE
@@ -92,7 +90,7 @@ const Header = () => {
                     :
                         <li><NavLink 
                         title='Confirmer sa présence' 
-                        className='header_nav_link' 
+                        className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_active" : "header_nav_link")} 
                         end to='/guestList'
                         >
                             LISTE DES INVITÉS
@@ -101,8 +99,8 @@ const Header = () => {
                     
                     {!userData.isAdmin ?
                         <li><NavLink 
-                            title='Nous contacter' 
-                            className='header_nav_link header_nav_link_messages' 
+                            title='Nous contacter'
+                            className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_active header_nav_link_messages" : "header_nav_link header_nav_link_messages")} 
                             end to='/contact'
                         >
                             CONTACT
@@ -113,7 +111,7 @@ const Header = () => {
                     :
                         <li><NavLink 
                             title='Nous contacter' 
-                            className='header_nav_link header_nav_link_messages' 
+                            className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_active header_nav_link_messages" : "header_nav_link header_nav_link_messages")} 
                             end to='/messages'
                         >
                             MESSAGES 
@@ -126,15 +124,15 @@ const Header = () => {
                     {isLoggedIn ? 
                         <li><NavLink 
                             title='Se déconnecter'
-                            className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_2 header_nav_link_active" : "header_nav_link header_nav_link_2 header_nav_link_inactive")}
+                            className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_active" : "header_nav_link")} 
                             onClick={authCtx.logout}
-                            end to='/'
+                            end to='/login'
                         >
                             DÉCONNEXION
                         </NavLink></li> 
                     :
                         <li><NavLink 
-                        className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_2 header_nav_link_active" : "header_nav_link header_nav_link_2 header_nav_link_inactive")}
+                        className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_active" : "header_nav_link")} 
                         title='Se connecter'
                         end to='/login'
                         >
