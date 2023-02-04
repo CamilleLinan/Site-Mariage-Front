@@ -1,0 +1,171 @@
+@media screen and (max-width: 850px) {
+    .message {
+        margin-bottom: 3rem !important;
+        width: 95%;
+        &_list {
+            width: 95%;
+            &_item {
+                width: 90% !important;
+                &_sendAt {
+                    & span {
+                        display: none;
+                    }
+                }
+                &_reply_box_btn {
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+}
+
+.message {
+    &_title {
+        font-family: 'Montserrat-Light';
+        font-size: 27px;
+        margin: -2rem auto 2rem auto;
+        text-align: center;
+    }
+
+    &_list {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        
+        &_item {
+            position: relative;
+            width: 60%;
+            max-width: 600px;
+            border: 1px solid $secondary-clr;
+            border-radius: 0.3rem;
+            margin-bottom: 2.2rem;
+            background-color: $tertiary-clr;
+            @include box-shadow;
+            
+            &_decoUnread {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: -1.5rem;
+                width: 0.7rem;
+                height: 0.7rem;
+                border-radius: 1rem;
+                @include box-shadow;
+                background-color: $secondary-clr;
+            }
+
+            &_container {
+                display: flex;
+                flex-direction: column;
+                padding: 0.8rem 1rem 0.3rem 1rem;
+                
+                &_titles {
+                    display: flex;
+                    align-items: center;
+                    margin: 0 0 0.5rem 0;
+
+                    &_1 {
+                        justify-content: space-between;
+                    }
+
+                    &_2 {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            &_isNotRead {
+                box-shadow: 0 0 16px #0000002e;
+                border-left: 7px solid $secondary-clr;
+            }
+
+            &_sendAt {
+                font-size: 13px;
+                font-family: 'Montserrat-Italic';
+                color: rgba(0, 0, 0, 0.7);
+            }
+
+            &_btn {
+                color: $secondary-clr;
+                padding: 0;
+                border: 0;
+                font-size: 23px;
+                margin-left: 0.5rem;
+                background-color: transparent;
+            }
+            
+            &_titles {
+                font-family: 'Montserrat-bold';
+                margin: 0;
+                &_contact {
+                    text-align: initial;
+                }
+                &_container {
+                    display: flex;
+                }
+            }
+            
+            &_subtitles {
+                margin: 0 0.5rem;
+                &_contact {
+                    text-align: initial;
+                    margin: 0.5rem 0;
+                }
+                
+                &_message {
+                    margin: 0.5rem 0;
+                    &_contact {
+                        text-align: initial;
+                        &_italic {
+                            font-family: 'Montserrat-Italic';
+                        }
+                    }
+                }
+            }
+
+            &_deco {
+                height: 2px;
+                width: 100%;
+                background-color: $secondary-clr;
+                display: block;
+            }
+
+            &_response {
+                padding: 0.5rem 1rem 0.3rem 1rem;
+            }
+
+            &_reply {
+                padding: 1rem;
+                
+                &_box {
+                    display: flex;
+                    justify-content: center;
+                    
+                    &_btn {
+                        margin-top: 0;
+                        font-size: 15px;
+                        width: 60%;
+                    }
+                }
+                
+                &_textarea {
+                    width: 98%;
+                    height: 80px;
+                    margin: 0.5rem auto;
+                }
+
+                &_btns {
+                    display: flex;
+                    justify-content: space-around;
+                    &_btn {
+                        margin-top: 0.3rem;
+                        width: 40%;
+                        &_cancel {
+                            background-color: rgb(196, 196, 196);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

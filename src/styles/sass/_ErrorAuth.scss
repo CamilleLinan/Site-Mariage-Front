@@ -4,10 +4,6 @@
     }
 }
 
-.container_error_auth {
-    padding-bottom: 18rem;
-}
-
 .error_auth {
     display: flex;
     flex-direction: column;
@@ -15,7 +11,7 @@
     align-items: center;
     width: 60%;
     max-width: 800px;
-    margin: 3rem auto 3rem auto;
+    margin: 3rem auto 0rem auto;
     text-align: center;
     border: 2px solid $secondary-clr;
     padding: 1rem;
@@ -24,5 +20,10 @@
     
     &_title {
         margin-top: 0;
+    }
+
+    &_btn {
+        height: 2.5rem;
+        padding: 0 2rem;
     }
 }

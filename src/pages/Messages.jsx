@@ -1,17 +1,19 @@
+import Header from "../components/Layout/Header"
 import BannerTopPages from "../components/Layout/BannerTopPages"
-import ErrorAuthPage from "../components/ErrorAuth/ErrorAuthPage"
+import MessagesPage from "../components/Messages/MessagesPage"
 import BannerBottomPages from "../components/Layout/BannerBottomPages"
 import Footer from "../components/Layout/Footer"
 
-const ErrorAuth = () => {
-    return (
+const Message = () => {
+    return(
         <>
+            <Header />
             <BannerTopPages />
-            <ErrorAuthPage />
+            <MessagesPage />
             <BannerBottomPages />
             <Footer />
         </>
     )
 }
 
-export default ErrorAuth
+export default Message

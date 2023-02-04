@@ -7,6 +7,11 @@
         &_bottom_img {
             height: 190px !important;
         }
+        &_pages {
+            &_img {
+                width: 100% !important;
+            }
+        }
     }
 }
 
@@ -36,8 +41,10 @@
     }
     
     &_bottom {
-        position: relative;
-        margin: 60px 0 4.3rem 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 4.35rem;
         
         &_img {
             width: 100%;
@@ -60,7 +67,6 @@
         &_img {
             object-fit: cover;
             width: 60%;
-            min-width: 450px;
             max-width: 650px;
             
             &_bottom {

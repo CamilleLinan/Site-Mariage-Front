@@ -3,15 +3,23 @@
 @import 'Header';
 @import 'Banners';
 @import 'Home';
+@import 'Pages';
 @import 'Blog';
-@import 'NewArticle';
+@import 'ArticleForm';
 @import 'Modal';
 @import 'Confirm';
 @import 'GuestList';
 @import 'Contact';
+@import 'Messages';
 @import 'Login';
 @import 'ErrorAuth';
 @import 'Footer';
+
+@media screen and (max-width: 850px) {
+    body {
+        padding-bottom: 15rem !important;
+    }
+}
 
 html {
     position: relative;
@@ -22,8 +30,9 @@ html {
 }
 
 body {
-    min-height: 100vh;
+    min-height: 100%;
     margin: 0;
+    padding-bottom: 19rem;
 }
 
 a {

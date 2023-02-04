@@ -3,12 +3,10 @@ import BlogDisplayArticles from "./BlogDisplayArticles"
 
 const BlogPage = ({ propIsAdmin }) => {
     return (
-        <div className="container_blog_page">
-            <section className="blog_page">
-                <BlogIntro propIsAdmin={propIsAdmin} />
-                <BlogDisplayArticles propIsAdmin={propIsAdmin} />
-            </section>
-        </div>
+        <section className="pages blog">
+            <BlogIntro propIsAdmin={propIsAdmin} />
+            <BlogDisplayArticles propIsAdmin={propIsAdmin} />
+        </section>
     )
 }
 

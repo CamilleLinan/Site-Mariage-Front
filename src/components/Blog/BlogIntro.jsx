@@ -6,9 +6,9 @@ const plusIcon = <FontAwesomeIcon icon={faPlus} />
 
 const BlogIntro = ({ propIsAdmin }) => {
     return (
-        <article className="blog_intro">
-            <h2 className="blog_intro_title">Blog du mariage</h2>
-            <div className='blog_intro_content'>
+        <article className="pages_intro">
+            <h2 className="pages_intro_title">Blog du mariage</h2>
+            <div className='pages_intro_content'>
                 <p>Bienvenue sur notre blog de mariage !</p> 
                 <p>Nous sommes tellement heureux de partager notre histoire d'amour 
                 avec vous tous et de vous accompagner dans les préparatifs de notre 
@@ -21,7 +21,7 @@ const BlogIntro = ({ propIsAdmin }) => {
             </div>
 
             {propIsAdmin === true &&
-                <NavLink className="pages_intro_btn blog_intro_btn" title='Nouvel article' end to='/blog/newArticle'>
+                <NavLink className="pages_intro_btn blog_intro_btn" title='Nouvel article' end to='/newArticle'>
                     <i className="pages_intro_btn_icon">{plusIcon}</i> 
                     <span className="pages_intro_btn_txt">Nouvel article</span>
                 </NavLink>

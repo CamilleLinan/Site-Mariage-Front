@@ -1,15 +1,7 @@
-@media screen and (max-width: 850px) {
-    .container_blog_page {
-        padding-bottom: 15rem !important;
-    }
-
+@media screen and (max-width: 650px) {
     .blog {
-        &_intro {
-            width: 95% !important;
-        }
-        
         &_article {
-            width: 95% !important;
+            width: 98% !important;
             
             &_modify {
                 right: 1rem !important;
@@ -22,52 +14,22 @@
     }
 }
 
-.container_blog_page {
-    padding-bottom: 19rem;
+@media screen and (min-width: 650px) and (max-width: 1000px) {
+    .blog {
+        margin-bottom: 4rem !important;
+        &_article {
+            width: 90% !important;
+        }
+    }
 }
 
 .blog {
-    &_intro {
-        margin: auto;
-        text-align: center;
-        width: 60%;
-        max-width: 800px;
-        
-        &_title {
-            margin-top: 1.5rem;
-            font-size: 32px;
-            font-family: 'Montserrat-Light';
-        }
+    margin: auto;
 
-        &_content {
-            width: 80%;
-            margin: auto;
-        }
-        
-        &_link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: $primary-clr;
-            border: 1px solid $primary-clr;
-            border-radius: 1rem;
+    &_intro {
+        &_btn {
             height: 3rem;
-            width: 30%;
-            min-width: 165px;
-            font-size: 18px;
-            margin: 2rem auto 0 auto;
-            box-shadow: 0 0 5px #0000002e;
-            transition: all 400ms ease-in-out;
-            padding: 0.2rem 1rem;
-            cursor: pointer;
-            &:hover {
-                transform: scale(1.05);
-                box-shadow: 0 0 16px #0000002e;
-            }
-            
-            &_icon {
-                margin-right: 0.5rem;
-            }
+            width: 170px;
         }
     }
 
@@ -90,7 +52,7 @@
             justify-content: flex-end;
             position: absolute;
             right: 4rem;
-            top: 6rem;
+            top: 5rem;
             
             &_icon {
                 display: flex;
@@ -141,14 +103,12 @@
         }
         
         &_deco {
-            display: flex;
-            align-self: center;
             background-color: $primary-clr;
             height: 3px;
             width: 65%;
-            min-width: 350px;
+            min-width: 250px;
             max-width: 600px;
-            margin: 3rem 0;
+            margin: 2.5rem auto;
             border-radius: 1rem;
         }
         
@@ -184,7 +144,7 @@
         }
 
         &_comment {
-            margin-bottom: 0;
+            margin-bottom: 0.3rem;
             font-size: 14px;
             opacity: 0.7;
         }
