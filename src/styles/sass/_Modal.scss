@@ -1,6 +1,7 @@
 @media screen and (max-width: 850px) {
     .modal_container {
-        width: 60% !important;
+        width: 80% !important;
+        max-width: 400px;
         &_footer_btn {
             margin: 0 !important;
         }

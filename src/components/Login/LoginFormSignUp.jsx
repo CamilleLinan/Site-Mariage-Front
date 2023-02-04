@@ -82,7 +82,7 @@ const LoginFormSignUP = () => {
                         type="text"
                         name="firstname"
                         id="firstname"
-                        className={!errors.firstname ? "login_form_input" : "login_form_input login_form_input_error"}
+                        className={!errors.firstname ? "pages_input" : "pages_input login_form_input_error"}
                         {...register('firstname')}
                     />
                     {errors.firstname && <p className="login_form_error">{errors.firstname.message}</p>}
@@ -92,7 +92,7 @@ const LoginFormSignUP = () => {
                         type="text"
                         name="lastname"
                         id="lastname"
-                        className={!errors.lastname ? "login_form_input" : "login_form_input login_form_input_error"}
+                        className={!errors.lastname ? "pages_input" : "pages_input login_form_input_error"}
                         {...register('lastname')}
                     />
                     {errors.lastname && <p className="login_form_error">{errors.lastname.message}</p>}
@@ -102,7 +102,7 @@ const LoginFormSignUP = () => {
                         type="email"
                         name="email"
                         id="email"
-                        className={!errors.email ? "login_form_input" : "login_form_input login_form_input_error"}
+                        className={!errors.email ? "pages_input" : "pages_input login_form_input_error"}
                         {...register('email')}
                     />
                     {errors.email && <p className="login_form_error">{errors.email.message}</p>}
@@ -114,7 +114,7 @@ const LoginFormSignUP = () => {
                             type={!passwordIsVisible ? "password" : "text"}
                             name="password"
                             id="password"
-                            className={!errors.password ? "login_form_input login_form_input_password" : "login_form_input login_form_input_password login_form_input_error"}
+                            className={!errors.password ? "pages_input login_form_input_password" : "pages_input login_form_input_password login_form_input_error"}
                             {...register('password')}
                         />
                         <div id="icon-password-signup" className="icon_password" onClick={() => setPasswordIsVisible(!passwordIsVisible)}>
@@ -128,14 +128,14 @@ const LoginFormSignUP = () => {
                         type="password"
                         name="confirmPassword"
                         id="confirmPassword"
-                        className={!errors.confirmPassword ? "login_form_input" : "login_form_input login_form_input_error"}
+                        className={!errors.confirmPassword ? "pages_input" : "pages_input login_form_input_error"}
                         {...register('confirmPassword')}
                     />
                     {errors.confirmPassword && <p className="login_form_error">{errors.confirmPassword.message}</p>}
 
                 {errorServer && <p className="login_form_error login_form_error_server">{errorServer.message}</p>}
 
-                <button type="submit" className="login_form_btn">Créer un compte</button>
+                <button type="submit" className="pages_button login_form_btn">Créer un compte</button>
             </form>
         )}
     </>

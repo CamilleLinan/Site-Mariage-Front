@@ -1,10 +1,5 @@
 @media screen and (max-width: 850px) {
-    .container_contact {
-        padding-bottom: 16rem !important;
-    }
-
     .contact {
-        width: 95% !important;
         &_form {
             width: 90% !important;
             &_btn {
@@ -14,16 +9,11 @@
     }
 }
 
-.container_contact {
-    padding-bottom: 20rem;
-}
-
 .contact {
-    width: 70%;
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
     &_intro {
+        max-width: 600px;
+        margin: auto;
+
         &_title {
             margin-top: 1.5rem;
             font-size: 32px;
@@ -31,20 +21,18 @@
         }
         
         &_content {
-            margin: 0.5rem 0;
+            margin: 0;
             font-size: 16px;
         }
     }
 
     &_form {
-        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         max-width: 500px;
-        margin: auto;
-        
-        & span {
-            margin-left: auto;
-            margin-right: auto;
-        }
+        margin: 0 auto 1.2rem auto;
+        background-color: $tertiary-clr;
         
         &_container {
             display: flex;
@@ -54,20 +42,24 @@
             padding: 1rem 0.8rem;
         }
 
-        &_input {
-            height: 2.3rem;
-            margin-bottom: 1.5rem;
-            font-size: 16px;
-            border-radius: 0.3rem;
-            border: 2px solid $primary-clr;
-            &::placeholder {
-                color: rgba(0, 0, 0, 0.681);
+        &_intro {
+            &_title {
+                margin-top: 0;
+                margin-bottom: 0;
                 font-family: 'Montserrat-Bold';
-                font-size: 14px;
             }
+        }
+
+        &_input {
+            margin-top: 0;
+            margin-bottom: 1.3rem;
+            height: 2.1rem;
+            font-size: 15px;
+            font-family: 'Montserrat-Bold';
+            color: rgba(0, 0, 0, 0.681);
+            width: 98%;
             &:focus {
-                outline-color: $secondary-clr;
-                border: 3px solid $secondary-clr;
+                font-family: 'Montserrat';
             }
 
             &_message {
@@ -78,19 +70,8 @@
 
         &_btn {
             width: 50%;
+            height: 2.3rem;
             margin: 1rem auto 0 auto;
-            height: 2rem;
-            border-radius: 0.3rem;
-            border: 1px solid $primary-clr;
-            background-color: $primary-clr;
-            font-family: 'Montserrat-Bold';
-            font-size: 16px;
-            box-shadow: 0 0 5px #0000002e;
-            transition: all 400ms ease-in-out;
-            &:hover {
-                background-color: $secondary-clr;
-                box-shadow: 0 0 16px #0000002e;
-            }
         }
     }
 }

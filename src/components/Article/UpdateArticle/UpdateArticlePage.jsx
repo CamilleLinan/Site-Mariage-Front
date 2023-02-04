@@ -1,8 +1,7 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useCallback, useContext } from "react";
+import { useEffect, useState, useCallback, useContext } from "react";
 import { useParams } from "react-router-dom";
-import AuthContext from "../../context/authContext";
+import axios from "axios";
+import AuthContext from "../../../context/authContext";
 import UpdateArticleForm from "./UpdateArticleForm"
 
 const UpdateArticlePage = ({ propIsAdmin }) => {
@@ -32,18 +31,16 @@ const UpdateArticlePage = ({ propIsAdmin }) => {
     }, [getArticleData]);
 
     return(
-        <div className="container_new_article">
-            <section className="new_article">
-                <header className="new_article_header">
-                    <h2 className="new_article_header_title">Modifier un article</h2>
-                </header> 
-                {propIsAdmin === true ?
-                    <UpdateArticleForm propData={articleData} propAuth={authCtx} propIsAdmin={propIsAdmin} />
-                :
-                    <p>Seul l'administrateur de ce site peut éditer un article.</p>
-                }
-            </section>
-        </div> 
+        <section className="pages article">
+            <div className="pages_intro">
+                <h2 className="pages_intro_title">Modifier un article</h2>
+            </div>
+            {propIsAdmin === true ?
+                <UpdateArticleForm propData={articleData} propDataPicture={articleData.picture} propAuth={authCtx} propIsAdmin={propIsAdmin} />
+            :
+                <p>Seul l'administrateur de ce site peut éditer un article.</p>
+            }
+        </section>
     )
 }
 

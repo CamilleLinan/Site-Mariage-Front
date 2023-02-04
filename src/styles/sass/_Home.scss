@@ -16,6 +16,7 @@
 
         &_welcome {
             width: 95% !important;
+            margin-bottom: 5rem !important;
         }
     }
 }
@@ -51,7 +52,7 @@
     &_welcome {
         width: 60%;
         max-width: 700px;
-        margin: auto;
+        margin: 0 auto 8rem auto;
         
         &_title {
             font-family: 'Montserrat-Bold';

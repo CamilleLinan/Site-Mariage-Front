@@ -102,15 +102,6 @@
         }
         
         &_input {
-            height: 1.8rem;
-            border: 2px solid $primary-clr;
-            border-radius: 0.3rem;
-            margin: 0.3rem 0 0.5rem 0;
-            font-size: 16px;
-            &:focus {
-                outline-color: $secondary-clr;
-            }
-            
             &_password {
                 width: 100%;
             }
@@ -138,17 +129,6 @@
         &_btn {
             margin-top: 0.5rem;
             height: 2.5rem;
-            background-color: $primary-clr;
-            border: 1px solid $primary-clr;
-            border-radius: 0.3rem;
-            font-family: 'Montserrat-Bold';
-            font-size: 16px;
-            box-shadow: 0 0 5px #0000002e;
-            transition: all 400ms ease-in-out;
-            &:hover {
-                background-color: $secondary-clr;
-                box-shadow: 0 0 16px #0000002e;
-            }
         }
     }
 }

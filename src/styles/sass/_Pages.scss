@@ -1,0 +1,91 @@
+@media screen and (max-width: 850px) {
+    .pages {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        width: 95% !important;
+        &_intro {
+            width: 95% !important;
+        }
+    }
+}
+
+.pages {
+    &_intro {
+        width: 75%;
+        margin: auto;
+        text-align: center;
+        max-width: 800px;
+        
+        &_title {
+            margin-top: 1.5rem;
+            font-size: 32px;
+            font-family: "Montserrat-Light";
+        }
+
+        &_btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $primary-clr;
+            border: 1px solid $primary-clr;
+            border-radius: 1rem;
+            font-size: 18px;
+            margin: 2rem auto 0 auto;
+            padding: 0.2rem 1rem;
+            box-shadow: 0 0 5px #0000002e;
+            transition: all 400ms ease-in-out;
+            cursor: pointer;
+            &:hover {
+                box-shadow: 0 0 16px #0000002e;
+                background-color: $secondary-clr;
+                border: 1px solid $secondary-clr;
+            }
+
+            &_icon {
+                margin-right: 0.5rem;
+            }
+        }
+    }
+
+    &_input {
+        height: 1.8rem;
+        border: 2px solid $primary-clr;
+        border-radius: 0.3rem;
+        margin: 0.3rem 0 0.5rem 0;
+        font-size: 16px;
+        &:focus {
+            outline-color: $secondary-clr;
+        }
+
+        &_textarea {
+            border: 2px solid $primary-clr;
+            border-radius: 0.3rem;
+            font-size: 16px;
+            font-family: 'Montserrat';
+            &:focus {
+                outline-color: $secondary-clr;
+            }
+        }
+    }
+
+    &_button {
+        height: 2rem;
+        border-radius: 0.3rem;
+        border: 1px solid $primary-clr;
+        background-color: $primary-clr;
+        font-family: 'Montserrat-Bold';
+        font-size: 16px;
+        box-shadow: 0 0 5px #0000002e;
+        transition: all 400ms ease-in-out;
+        &:hover {
+            background-color: $secondary-clr;
+            box-shadow: 0 0 16px #0000002e;
+        }
+
+        &_cancel {
+            background-color: $cancel-color;
+        }
+    }
+}

@@ -11,6 +11,8 @@ const Header = () => {
     const authCtx = useContext(AuthContext);
     const isLoggedIn = authCtx.isLoggedIn;
 
+    const [ unreadMessagesCount, setUnreadMessagesCount ] = useState(0);
+    const [ unreadResponsesCount, setUnreadResponsesCount ] = useState(0);
     const [ userData, setUserData ] = useState([])
     const [ errorServer, setErrorServer ] = useState('');
     const [ isNavExpanded, setIsNavExpanded ] = useState(false)
@@ -33,6 +35,22 @@ const Header = () => {
         getUserData();
     }, [getUserData])
 
+    useEffect(() => {
+        axios({
+            method: 'GET',
+            url: `http://localhost:5000/api/messages`,
+            headers: {
+                Authorization: `Bearer ${authCtx.token}`,
+            }
+        })
+            .then(response => {
+                const unreadMessages = response.data.filter(message => !message.isRead);
+                setUnreadMessagesCount(unreadMessages.length);
+                const unreadResponses = response.data.filter(message => !message.response.isRead);
+                setUnreadResponsesCount(unreadResponses.length);
+            });
+    }, [authCtx.token]);
+
     return (
         <header className="header">
             <h1 className="header_title">M & P</h1>
@@ -46,8 +64,8 @@ const Header = () => {
             <div className={isNavExpanded ? "header_nav expanded" : "header_nav"}>
                 <ul>
                     <li><NavLink 
-                        title='Accueil' 
-                        className='header_nav_link' 
+                        title='Accueil'
+                        className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_active" : "header_nav_link")} 
                         end to='/'
                     >
                         ACCUEIL
@@ -55,7 +73,7 @@ const Header = () => {
                     
                     <li><NavLink 
                         title='Blog du mariage' 
-                        className='header_nav_link' 
+                        className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_active" : "header_nav_link")} 
                         end to='/blog'
                     >
                         BLOG DU MARIAGE
@@ -64,7 +82,7 @@ const Header = () => {
                     {!userData.isAdmin ?
                         <li><NavLink 
                             title='Confirmer sa présence' 
-                            className='header_nav_link' 
+                            className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_active" : "header_nav_link")} 
                             end to='/confirm'
                         >
                             CONFIRMER SA PRÉSENCE
@@ -72,33 +90,49 @@ const Header = () => {
                     :
                         <li><NavLink 
                         title='Confirmer sa présence' 
-                        className='header_nav_link' 
+                        className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_active" : "header_nav_link")} 
                         end to='/guestList'
                         >
                             LISTE DES INVITÉS
                         </NavLink></li>
                     }
                     
-                    <li><NavLink 
-                        title='Nous contacter' 
-                        className='header_nav_link' 
-                        end to='/contact'
-                    >
-                        NOUS CONTACTER
-                    </NavLink></li>
+                    {!userData.isAdmin ?
+                        <li><NavLink 
+                            title='Nous contacter'
+                            className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_active header_nav_link_messages" : "header_nav_link header_nav_link_messages")} 
+                            end to='/contact'
+                        >
+                            CONTACT
+                            {unreadResponsesCount > 0 &&
+                                <span className="header_nav_link_messages_number">{unreadResponsesCount}</span>
+                            }
+                        </NavLink></li>
+                    :
+                        <li><NavLink 
+                            title='Nous contacter' 
+                            className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_active header_nav_link_messages" : "header_nav_link header_nav_link_messages")} 
+                            end to='/messages'
+                        >
+                            MESSAGES 
+                            {unreadMessagesCount > 0 &&
+                                <span className="header_nav_link_messages_number">{unreadMessagesCount}</span>
+                            }
+                        </NavLink></li>
+                    }
 
                     {isLoggedIn ? 
                         <li><NavLink 
                             title='Se déconnecter'
-                            className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_2 header_nav_link_active" : "header_nav_link header_nav_link_2 header_nav_link_inactive")}
+                            className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_active" : "header_nav_link")} 
                             onClick={authCtx.logout}
-                            end to='/'
+                            end to='/login'
                         >
                             DÉCONNEXION
                         </NavLink></li> 
                     :
                         <li><NavLink 
-                        className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_2 header_nav_link_active" : "header_nav_link header_nav_link_2 header_nav_link_inactive")}
+                        className={({ isActive }) => (isActive ? "header_nav_link header_nav_link_active" : "header_nav_link")} 
                         title='Se connecter'
                         end to='/login'
                         >

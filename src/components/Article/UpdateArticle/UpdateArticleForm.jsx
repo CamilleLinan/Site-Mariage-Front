@@ -2,9 +2,9 @@ import axios from "axios";
 import { useRef, useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
-const UpdateArticleForm = ({ propData, propAuth, propIsAdmin }) => {
+const UpdateArticleForm = ({ propData, propDataPicture, propAuth, propIsAdmin }) => {
     const [ dataUpdate, setDataUpdate ] = useState(propData);
-    const [ dataPicture, setDataPicture ] = useState(propData.picture);
+    const [ dataPicture, setDataPicture ] = useState(propDataPicture);
     const [ newDataPicture, setNewDataPicture ] = useState('');
     const [ errorServer, setErrorServer ] = useState('');    
 
@@ -64,51 +64,55 @@ const UpdateArticleForm = ({ propData, propAuth, propIsAdmin }) => {
     };
     
     return(
-        <form action="" onSubmit={confirmUpdate} id='' className="new_article_form"> 
-            <div className="new_article_form_section">
-                <label htmlFor="title" className="new_article_form_label">Titre :</label>
+        <form action="" onSubmit={confirmUpdate} id='update-article-form' className="article_form"> 
+            <div className="article_form_section">
+                <label htmlFor="title" className="article_form_label">Titre :</label>
                     <input 
                         type='text'
                         name="title"
                         id="title"
-                        className="new_article_form_input"
+                        className="pages_input article_form_input"
                         defaultValue={dataUpdate.title}
                         onChange={changeHandler}
                         ref={titleInputRef}
                         required
                     /> 
 
-                <label htmlFor="description" className="new_article_form_label">Description :</label>
+                <label htmlFor="description" className="article_form_label">Description :</label>
                     <textarea
                         name='description' 
                         id="description"
-                        className="new_article_form_input new_article_form_input_description"
+                        className="pages_input_textarea article_form_input article_form_input_description"
                         defaultValue={dataUpdate.description} 
                         onChange={changeHandler}
                         ref={descriptionInputRef}
                         required 
                     />
-
-                <label htmlFor="file" className="new_article_form_label">Modifier l'image :</label>
-                    <div className="new_article_form_container">
-                        <img src={dataPicture} alt='' className="new_article_form_img" />
-                        <input 
-                            type="file" 
-                            name="file" 
-                            id="file"
-                            accept=".jpg, .jpeg, .png, .gif"
-                            onChange={changeHandlerPicture}
-                        />
-                    </div>
+                {dataPicture && <>
+                    <label htmlFor="file" className="article_form_label">Modifier l'image :</label>
+                        <div className="article_form_container">
+                            <img src={dataPicture} alt='' className="article_form_img" />
+                            <input 
+                                type="file" 
+                                name="file" 
+                                id="file"
+                                className="article_form_input_file"
+                                accept=".jpg, .jpeg, .png, .gif"
+                                onChange={changeHandlerPicture}
+                            />
+                        </div>
+                </> }   
             </div>
             
             {errorServer && <p className="error bold modal_container_section_message">{errorServer}</p>}
             
-            <footer className="new_article_footer">
-                <NavLink className="new_article_footer_btn new_article_footer_btn_cancel" title="Annuler" end to='/blog'>
-                    Annuler
-                </NavLink>
-                <button type="submit" className="new_article_footer_btn new_article_footer_btn_confirm">
+            <footer className="article_form_footer">
+                <button className="pages_button pages_button_cancel article_form_footer_btn">
+                    <NavLink title="Annuler" end to='/blog' className='article_form_footer_btn_navlink'>
+                            Annuler
+                    </NavLink>
+                </button>
+                <button type="submit" className="pages_button article_form_footer_btn">
                     Confirmer
                 </button>
             </footer>

@@ -13,7 +13,7 @@ const LoginPage = () => {
     }
 
     return (
-        <div className="container_login">
+        <div className="container_login pages">
             <header className="container_login_header">
                 <img src={logo} alt='site-mariage-logo' className='container_login_header_logo' />
                 <h1 className="container_login_header_title">Bienvenue sur le site de notre mariage !</h1>

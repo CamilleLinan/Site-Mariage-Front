@@ -36,7 +36,14 @@ const BlogDisplayArticles = ({ propIsAdmin }) => {
                     {articlesData.map((article, i) => (
                         <li key={article._id}>
                             {propIsAdmin === true &&
-                                <BlogModifyArticle propArticleId={article._id} propIsAdmin={propIsAdmin} /> 
+                                <BlogModifyArticle 
+                                    propArticleId={article._id} 
+                                    propIsAdmin={propIsAdmin}
+                                    onDelete={() => {
+                                        setArticlesData(prevArticles =>
+                                            prevArticles.filter(a => a._id !== article._id))
+                                    }}
+                                /> 
                             }
                             <BlogArticle
                                 img={article.picture}

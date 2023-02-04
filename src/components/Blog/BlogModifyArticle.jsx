@@ -8,7 +8,7 @@ import DeleteModal from "../Layout/DeleteModal";
 
 const dotIcon = <FontAwesomeIcon icon={faEllipsis} />
 
-const BlogModifyArticle = ({ propArticleId, propIsAdmin }) => {
+const BlogModifyArticle = ({ propArticleId, propIsAdmin, onDelete }) => {
     const authCtx = useContext(AuthContext);
 
     const [ isMenuExpanded, setIsMenuExpanded ] = useState(false)
@@ -29,7 +29,7 @@ const BlogModifyArticle = ({ propArticleId, propIsAdmin }) => {
         })
             .then(() => {
                 alert('L\'article a bien été supprimé !');
-                window.location.reload();
+                onDelete();
             })
             .catch(() => {
                 setErrorServer({ ...errorServer, message: 'Une erreur est survenue, merci de revenir plus tard.' })
