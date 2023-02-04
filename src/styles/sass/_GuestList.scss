@@ -1,10 +1,11 @@
 @media screen and (max-width: 850px) {
     .container_guest_list {
         width: 90% !important;
-        padding-bottom: 4rem !important;
     }
     .guest_list {
-        width: 90% !important;
+        &_page {
+            padding-bottom: 4rem !important;
+        }
     }
 }
 
