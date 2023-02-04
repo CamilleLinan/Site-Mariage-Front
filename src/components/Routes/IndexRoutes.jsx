@@ -22,8 +22,8 @@ const IndexRoutes = () => {
                 {isLoggedIn ? <Route path="/" element={<Home />} /> : <Route path="/" element={<Login />} />}
                 {isLoggedIn ? <Route path="/home" element={<Home />} /> : <Route path="/home" element={<ErrorAuth />} />}
                 {isLoggedIn ? <Route path="/blog" element={<Blog />} /> : <Route path="/blog" element={<ErrorAuth />} />}
-                {isLoggedIn ? <Route path="/newArticle" element={<NewArticle />} /> : <Route path="/newArticle" element={<ErrorAuth />} />}
-                {isLoggedIn ? <Route path="/updateArticle/:id" element={<UpdateArticle />} /> : <Route path="/updateArticle/" element={<ErrorAuth />} />}
+                {isLoggedIn ? <Route path="/blog/newArticle" element={<NewArticle />} /> : <Route path="/newArticle" element={<ErrorAuth />} />}
+                {isLoggedIn ? <Route path="/blog/updateArticle/:id" element={<UpdateArticle />} /> : <Route path="/updateArticle/" element={<ErrorAuth />} />}
                 {isLoggedIn ? <Route path="/confirm" element={<Confirm />} /> : <Route path="/confirm" element={<ErrorAuth />} />}
                 {isLoggedIn ? <Route path="/guestList" element={<GuestList />} /> : <Route path="/confirm" element={<ErrorAuth />} />}
                 {isLoggedIn ? <Route path="/contact" element={<Contact />} /> : <Route path="/contact" element={<ErrorAuth />} />}

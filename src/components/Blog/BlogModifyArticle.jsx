@@ -45,7 +45,7 @@ const BlogModifyArticle = ({ propArticleId, propIsAdmin }) => {
             
             <div className={isMenuExpanded ? "blog_article_modify_menu blog_article_modify_menu_expanded" : "blog_article_modify_menu"}>
                 <p className="blog_article_modify_menu_content">
-                    <NavLink title='Modifier' end to={'/updateArticle/' + propArticleId}>
+                    <NavLink title='Modifier' end to={'/blog/updateArticle/' + propArticleId}>
                         Modifier
                     </NavLink>
                 </p>

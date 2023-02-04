@@ -21,9 +21,9 @@ const BlogIntro = ({ propIsAdmin }) => {
             </div>
 
             {propIsAdmin === true &&
-                <NavLink className="blog_intro_link" title='Nouvel article' end to='/newArticle'>
-                    <i className="blog_intro_link_icon">{plusIcon}</i> 
-                    <span className="blog_intro_link_txt">Nouvel article</span>
+                <NavLink className="pages_intro_btn blog_intro_btn" title='Nouvel article' end to='/blog/newArticle'>
+                    <i className="pages_intro_btn_icon">{plusIcon}</i> 
+                    <span className="pages_intro_btn_txt">Nouvel article</span>
                 </NavLink>
             }
         </article>
