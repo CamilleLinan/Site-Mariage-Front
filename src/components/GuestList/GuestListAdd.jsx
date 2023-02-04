@@ -6,7 +6,7 @@ import AuthContext from '../../context/authContext';
 
 const plusIcon = <FontAwesomeIcon icon={faPlus} />
 
-const GuestListAdd = () => {
+const GuestListAdd = ({ onAddGuest }) => {
     const authCtx = useContext(AuthContext);
     const [ popUpOpen, setPopUpOpen ] = useState(false);
 
@@ -30,7 +30,7 @@ const GuestListAdd = () => {
         })
             .then(() => {
                 alert('Cet⸱te invité⸱e a bien été ajouté⸱e !');
-                window.location.reload()
+                onAddGuest()
             })
             .catch((error) => {
                 setErrorServer({ ...errorServer, message: 'Une erreur interne est survenue. Merci de revenir plus tard.' });

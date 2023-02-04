@@ -10,17 +10,30 @@
 
 .container_guest_list {
     position: relative;
-}
-
-.guest_list {
-    display: flex;
-    flex-direction: column;
     width: 55%;
     max-width: 550px;
     margin: 2.5rem auto 1rem auto;
     border: 2px solid $secondary-clr;
     border-radius: 0.3rem;
     box-shadow: 0 0 5px #0000002e;
+    
+    &_header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+        font-family: 'Montserrat-bold';
+        
+        &_content {
+            margin: 0.8rem 0;
+        }
+    }
+}
+
+.guest_list {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0;
 
     &_btn {
         width: 210px;
@@ -54,18 +67,6 @@
                     background-color: rgb(212, 212, 212);
                 }
             }
-        }
-    }
-
-    &_header {
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        padding: 0 1rem;
-        font-family: 'Montserrat-bold';
-        
-        &_content {
-            margin: 0.8rem 0;
         }
     }
 
